@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wunderkammer – Apps</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #5a5a5a;
+    --rule: #e2e2e2; --accent: #2f6feb; --card: #f6f7f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121316; --fg: #e8e8ea; --muted: #a0a0a8;
+      --rule: #2a2c31; --accent: #7aa2f7; --card: #1b1d21;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 3rem 1.25rem 4rem;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  a { color: var(--accent); }
+  h1 { font-size: 1.9rem; margin: 0 0 .35rem; }
+  .lead { color: var(--muted); margin: 0 0 2.5rem; }
+  h2 { font-size: 1.05rem; margin: 2rem 0 .75rem; }
+  .app {
+    display: block; background: var(--card); border: 1px solid var(--rule);
+    border-radius: .6rem; padding: 1rem 1.15rem; margin: .6rem 0;
+    text-decoration: none; color: inherit;
+  }
+  .app:hover { border-color: var(--accent); }
+  .app b { display: block; font-size: 1.05rem; }
+  .app span { color: var(--muted); font-size: .93rem; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0 1.25rem; }
+  footer { color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Wunderkammer</h1>
+<p class="lead">Kleine Android-Apps – offline nutzbar, ohne Werbung, ohne Tracker.</p>
+
+<h2>Datenschutzerklärungen</h2>
+
+<a class="app" href="nenne-drei/">
+  <b>Nenne drei … – Quiz &amp; Party</b>
+  <span>Quiz- und Partyspiel mit 2.002 Aufgaben · Datenschutzerklärung</span>
+</a>
+
+<a class="app" href="https://mandres747.github.io/DeepWave/">
+  <b>DeepWave – Binaural Beats</b>
+  <span>Binaurale Beats für Schlaf, Fokus und Entspannung · Datenschutzerklärung</span>
+</a>
+
+<hr>
+<footer>
+  Kontakt: <a href="mailto:wunderkammer-apps@proton.me">wunderkammer-apps@proton.me</a>
+</footer>
+
+</main>
+</body>
+</html>
