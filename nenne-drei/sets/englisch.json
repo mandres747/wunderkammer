@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "set": {
+    "id": "englisch",
+    "name": "Englisch",
+    "version": 1,
+    "language": "de",
+    "description": "Wortschatz und Grammatik für den Englischunterricht — Vokabeln, unregelmäßige Verben, Fragewörter, Präpositionen.",
+    "taskCount": 12
+  },
+  "tasks": [
+    {
+      "id": "eng-farben",
+      "prompt": "Nenne {n} Farben auf Englisch",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 1,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "red", "blue", "green", "yellow", "black", "white",
+        "purple", "orange", "pink", "brown", "grey"
+      ],
+      "answersExhaustive": false,
+      "wiki": "Farbe"
+    },
+    {
+      "id": "eng-tiere",
+      "prompt": "Nenne {n} Tiere auf Englisch",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 1,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "dog", "cat", "horse", "cow", "pig", "sheep", "chicken",
+        "mouse", "bird", "fish", "rabbit", "elephant", "lion", "tiger"
+      ],
+      "answersExhaustive": false,
+      "wiki": "Tier"
+    },
+    {
+      "id": "eng-wochentage",
+      "prompt": "Nenne {n} Wochentage auf Englisch",
+      "n": 3,
+      "nMax": 7,
+      "category": "Englisch",
+      "difficulty": 1,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday", "Sunday"
+      ],
+      "answersExhaustive": true,
+      "answerPoolSize": 7,
+      "wiki": "Wochentag"
+    },
+    {
+      "id": "eng-monate",
+      "prompt": "Nenne {n} Monate auf Englisch",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 1,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ],
+      "answersExhaustive": true,
+      "answerPoolSize": 12,
+      "wiki": "Monat"
+    },
+    {
+      "id": "eng-koerperteile",
+      "prompt": "Nenne {n} Körperteile auf Englisch",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 1,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "head", "arm", "leg", "hand", "foot", "eye", "ear",
+        "nose", "mouth", "finger", "shoulder", "knee"
+      ],
+      "answersExhaustive": false,
+      "wiki": "Körperteil"
+    },
+    {
+      "id": "eng-verben-simple-past",
+      "prompt": "Nenne {n} unregelmäßige Verben in der Simple-Past-Form",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 2,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "went", "ate", "saw", "took", "made", "wrote",
+        "came", "gave", "knew", "thought", "said", "found"
+      ],
+      "answersExhaustive": false,
+      "note": "Gemeint ist die Vergangenheitsform (z. B. \"went\" zu \"go\"), nicht die Grundform.",
+      "wiki": "Unregelmäßiges Verb"
+    },
+    {
+      "id": "eng-fragewoerter",
+      "prompt": "Nenne {n} englische Fragewörter (W-Fragen)",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 2,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "who", "what", "where", "when", "why", "how", "which", "whose"
+      ],
+      "answersExhaustive": false,
+      "wiki": "Interrogativpronomen"
+    },
+    {
+      "id": "eng-praepositionen",
+      "prompt": "Nenne {n} englische Präpositionen",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 3,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "in", "on", "at", "under", "over", "behind",
+        "between", "next to", "above", "below", "through", "during"
+      ],
+      "answersExhaustive": false,
+      "wiki": "Präposition"
+    },
+    {
+      "id": "eng-berufe",
+      "prompt": "Nenne {n} Berufe auf Englisch",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 2,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "teacher", "doctor", "nurse", "farmer", "baker", "driver",
+        "police officer", "firefighter", "engineer", "lawyer", "dentist", "pilot"
+      ],
+      "answersExhaustive": false,
+      "wiki": "Beruf"
+    },
+    {
+      "id": "eng-gefuehle",
+      "prompt": "Nenne {n} Gefühle auf Englisch",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 2,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "happy", "sad", "angry", "afraid", "surprised",
+        "excited", "tired", "bored", "nervous", "proud"
+      ],
+      "answersExhaustive": false,
+      "wiki": "Emotion"
+    },
+    {
+      "id": "eng-schulfaecher",
+      "prompt": "Nenne {n} Schulfächer auf Englisch",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 2,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "maths", "English", "science", "history", "geography",
+        "art", "music", "PE", "biology", "chemistry", "physics", "religion"
+      ],
+      "answersExhaustive": false,
+      "note": "Britisches Englisch: \"maths\"; amerikanisches Englisch: \"math\" — beides zählt.",
+      "wiki": "Unterrichtsfach"
+    },
+    {
+      "id": "eng-englischsprachige-laender",
+      "prompt": "Nenne {n} Länder, in denen Englisch eine Amtssprache ist",
+      "n": 3,
+      "nMax": 6,
+      "category": "Englisch",
+      "difficulty": 3,
+      "tags": ["unterricht", "fach:englisch"],
+      "answers": [
+        "Vereinigtes Königreich", "Vereinigte Staaten", "Irland", "Australien",
+        "Neuseeland", "Kanada", "Südafrika", "Indien", "Nigeria", "Jamaika",
+        "Malta", "Singapur"
+      ],
+      "answersExhaustive": false,
+      "note": "Gezählt werden Länder, in denen Englisch (Mit-)Amtssprache ist — nicht nur, wo es Mehrheits-Muttersprache ist.",
+      "wiki": "Englische Sprache"
+    }
+  ]
+}

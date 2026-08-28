@@ -1,4 +1,14 @@
 {
   "schema": 1,
-  "sets": []
+  "sets": [
+    {
+      "id": "englisch",
+      "name": "Englisch",
+      "version": 1,
+      "url": "https://mandres747.github.io/wunderkammer/nenne-drei/sets/englisch.json",
+      "description": "Wortschatz und Grammatik für den Englischunterricht — Vokabeln, unregelmäßige Verben, Fragewörter, Präpositionen.",
+      "taskCount": 12,
+      "language": "de"
+    }
+  ]
 }
