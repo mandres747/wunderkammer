@@ -23,6 +23,29 @@ BRASS_DARK = (150, 102, 40)
 PARCHMENT = (243, 234, 219)
 MUTED = (166, 178, 186)
 
+# Sammlerbogen (seit 2026-09-26): Karton, Tinte, Karte, Nadelrot
+CARTON = (214, 221, 226)
+CARTON_LINE = (204, 212, 218)
+INK_C = (28, 38, 48)
+INK_SOFT = (70, 84, 98)
+CARD = (250, 250, 247)
+PIN = (178, 52, 44)
+PIN_DARK = (120, 32, 28)
+FONTS = HERE / "fonts"  # EB Garamond + Caveat, OFL (Lizenzen daneben)
+
+
+def garamond(size, wght):
+    f = ImageFont.truetype(str(FONTS / "EBGaramond.ttf"), size)
+    f.set_variation_by_axes([wght])
+    return f
+
+
+def caveat(size, wght):
+    f = ImageFont.truetype(str(FONTS / "Caveat.ttf"), size)
+    f.set_variation_by_axes([wght])
+    return f
+
+
 FONT_DIR = Path("C:/Windows/Fonts")
 SERIF_BOLD = FONT_DIR / "georgiab.ttf"
 SANS = FONT_DIR / "segoeui.ttf"
@@ -30,12 +53,12 @@ SANS_SEMI = FONT_DIR / "seguisb.ttf"
 
 # Reihenfolge = Reihenfolge im Kabinett (links oben -> rechts unten)
 APP_ICONS = [
-    ("Wortgenau", APPS / "wortgenau/docs/store/icon_512.png"),
-    ("Malfeld", APPS / "malfeld/store/assets/icon_512.png"),
-    ("Lesepfadfinder", APPS / "eb-player/docs/store/icon_512.png"),
-    ("Mancala Ukoo", APPS / "Spiele/mancala-ukoo/store/icon_512.png"),
-    ("Nenne drei …", APPS / "Spiele/nenne-drei/playstore/icon-512.png"),
-    ("DeepWave", APPS / "BinauralBeatsApp/playstore/ic_launcher-playstore.png"),
+    ("Wortgenau", "Lesen", APPS / "wortgenau/docs/store/icon_512.png"),
+    ("Malfeld", "Lernen", APPS / "malfeld/store/assets/icon_512.png"),
+    ("Lesepfadfinder", "Lesen", APPS / "eb-player/docs/store/icon_512.png"),
+    ("Mancala Ukoo", "Spielen", APPS / "Spiele/mancala-ukoo/store/icon_512.png"),
+    ("Nenne drei", "Spielen", APPS / "Spiele/nenne-drei/playstore/icon-512.png"),
+    ("DeepWave", "Entspannen", APPS / "BinauralBeatsApp/playstore/ic_launcher-playstore.png"),
 ]
 
 
@@ -98,97 +121,60 @@ def draw_cabinet(draw, box, cols, rows, frame, gap, fill_inner):
 
 
 def make_icon(out):
-    S = 512
-    img = vertical_gradient((S, S), INK_LIGHT, INK)
-    draw = ImageDraw.Draw(img)
-    cells = draw_cabinet(draw, (72, 72, S - 72, S - 72), cols=2, rows=2, frame=18, gap=14, fill_inner=INK_LIGHT)
-    # Fundstuecke: Kreis, Raute, Quadrat, Sichel - ohne Text, damit es klein lesbar bleibt
-    objects = ["circle", "diamond", "square", "ring"]
-    for cell, kind in zip(cells, objects):
-        cx = (cell[0] + cell[2]) // 2
-        cy = (cell[1] + cell[3]) // 2
-        r = (cell[2] - cell[0]) // 4
-        if kind == "circle":
-            draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=PARCHMENT)
-        elif kind == "diamond":
-            draw.polygon([(cx, cy - r), (cx + r, cy), (cx, cy + r), (cx - r, cy)], fill=BRASS)
-        elif kind == "square":
-            k = int(r * 0.85)
-            draw.rounded_rectangle((cx - k, cy - k, cx + k, cy + k), radius=k // 4, fill=PARCHMENT)
-        else:
-            draw.ellipse((cx - r, cy - r, cx + r, cy + r), outline=BRASS, width=max(6, r // 4))
+    """Entwicklersymbol: Canva-Motiv (angesteckte Karte mit Muschel, Design
+    DAHWSHzD4Y4, Export canva_symbol.png) auf 512 x 512 gebracht."""
+    img = Image.open(HERE / "canva_symbol.png").convert("RGB").resize((512, 512), Image.LANCZOS)
     img.save(out, "PNG", optimize=True)
     return out
 
 
 def make_header(out):
+    """Sammlerbogen: blaugrauer Karton mit feinen Linien, die App-Symbole als
+    angesteckte Fundkarten mit handschriftlichem Etikett."""
     W, H = 4096, 2304
-    img = vertical_gradient((W, H), INK_LIGHT, INK)
+    img = Image.new("RGBA", (W, H), CARTON + (255,))
     draw = ImageDraw.Draw(img)
-
-    # Kabinett rechts: 3 x 2 Faecher mit den App-Symbolen
-    cab_w, cab_h = 1620, 1300
-    cab_x1 = W - 260
-    cab_x0 = cab_x1 - cab_w
-    cab_y0 = (H - cab_h) // 2
-    cab_y1 = cab_y0 + cab_h
-    # weicher Schatten hinter dem Kabinett
-    shadow = Image.new("RGB", (W, H), INK)
-    ImageDraw.Draw(shadow).rounded_rectangle((cab_x0 + 30, cab_y0 + 50, cab_x1 + 30, cab_y1 + 50), radius=40, fill=(6, 12, 16))
-    shadow = shadow.filter(ImageFilter.GaussianBlur(45))
-    img = Image.blend(img, shadow, 0.35)
-    draw = ImageDraw.Draw(img)
-    cells = draw_cabinet(draw, (cab_x0, cab_y0, cab_x1, cab_y1), cols=3, rows=2, frame=44, gap=36, fill_inner=INK_LIGHT)
-
-    label_font = font(SANS_SEMI, 46)
-    for cell, (name, path) in zip(cells, APP_ICONS):
-        cw = cell[2] - cell[0]
-        ch = cell[3] - cell[1]
-        size = int(min(cw, ch) * 0.58)
-        icon, mask = rounded_icon(path, size, radius=size // 5)
-        ix = cell[0] + (cw - size) // 2
-        iy = cell[1] + int(ch * 0.10)
-        # Schatten unter dem Symbol
-        sh = Image.new("RGB", (size + 60, size + 60), INK_LIGHT)
-        ImageDraw.Draw(sh).rounded_rectangle((30, 40, size + 30, size + 40), radius=size // 5, fill=(8, 14, 18))
-        sh = sh.filter(ImageFilter.GaussianBlur(18))
-        img.paste(sh, (ix - 30, iy - 30))
-        img.paste(icon, (ix, iy), mask)
-        draw = ImageDraw.Draw(img)
-        tw = draw.textlength(name, font=label_font)
-        draw.text((cell[0] + (cw - tw) / 2, iy + size + int(ch * 0.07)), name, font=label_font, fill=PARCHMENT)
+    for y in range(0, H, 96):
+        draw.line((0, y, W, y), fill=CARTON_LINE, width=2)
 
     # Wortmarke links
-    title_font = font(SERIF_BOLD, 215)
-    sub_font = font(SANS, 84)
-    tag_font = font(SANS_SEMI, 66)
-    left = 260
-    ty = cab_y0 + 150
-    draw.text((left, ty), "Wunderkammer", font=title_font, fill=PARCHMENT)
-    ty += 215 + 90
-    draw.text((left, ty), "Kleine Apps, sorgfältig gemacht.", font=sub_font, fill=MUTED)
-    ty += 84 + 24
-    draw.text((left, ty), "Lesen · Lernen · Spielen · Entspannen", font=sub_font, fill=MUTED)
+    left = 300
+    draw.text((left, 740), "Wunderkammer", font=garamond(236, 700), fill=INK_C)
+    draw.text((left + 10, 1080), "Kleine Apps, sorgfältig gemacht.", font=caveat(128, 600), fill=INK_C)
+    draw.text((left + 10, 1220), "Lesen · Lernen · Spielen · Entspannen", font=caveat(112, 500), fill=INK_SOFT)
+    draw.text((left + 10, 1440), "offline · ohne Werbung · ohne Tracker", font=garamond(74, 500), fill=INK_C)
 
-    # Messinglinie und drei Versprechen als Plaketten
-    ty += 84 + 130
-    draw.line((left, ty, left + 1150, ty), fill=BRASS, width=8)
-    ty += 80
-    x = left
-    for tag in ("offline", "ohne Werbung", "ohne Tracker"):
-        tw = draw.textlength(tag, font=tag_font)
-        pad = 42
-        box = (x, ty, x + tw + pad * 2, ty + 66 + pad)
-        draw.rounded_rectangle(box, radius=24, outline=BRASS, width=6)
-        draw.text((x + pad, ty + pad // 2 + 2), tag, font=tag_font, fill=PARCHMENT)
-        x = box[2] + 44
+    # Fundkarten rechts, versetzt und leicht schraeg
+    pos = [(2520, 660, -5), (3080, 600, 4), (3640, 700, -3),
+           (2560, 1480, 3), (3120, 1540, -4), (3660, 1440, 5)]
+    s = 340
+    for (name, kind, path), (x, y, rot) in zip(APP_ICONS, pos):
+        card = Image.new("RGBA", (s + 120, s + 290), (0, 0, 0, 0))
+        cd = ImageDraw.Draw(card)
+        cd.rectangle((0, 0, card.width - 1, card.height - 1), fill=CARD)
+        icon, mask = rounded_icon(path, s, radius=s // 6)
+        card.paste(icon, (60, 60), mask)
+        cd.rounded_rectangle((60, 60, 60 + s - 1, 60 + s - 1), radius=s // 6, outline=CARTON, width=3)
+        cd.text((card.width // 2, s + 150), name, font=caveat(80, 600), fill=INK_C, anchor="mm")
+        cd.text((card.width // 2, s + 228), kind, font=garamond(46, 500), fill=INK_SOFT, anchor="mm")
+        card = card.rotate(rot, resample=Image.BICUBIC, expand=True)
+        cx, cy = x - card.width // 2, y - card.height // 2
+        shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        shadow.paste((20, 30, 40, 95), (cx + 12, cy + 24), card.split()[3])
+        img.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(20)))
+        img.alpha_composite(card, (cx, cy))
+        draw = ImageDraw.Draw(img)
+        py = cy + 30
+        draw.ellipse((x - 26, py - 26, x + 26, py + 26), fill=PIN_DARK)
+        draw.ellipse((x - 22, py - 24, x + 20, py + 18), fill=PIN)
+        draw.ellipse((x - 12, py - 16, x - 2, py - 6), fill=(230, 140, 130))
 
-    img.save(out, "PNG", optimize=True)
+    img.convert("RGB").save(out, "PNG", optimize=True)
     return out
 
 
 if __name__ == "__main__":
-    for name, path in APP_ICONS:
+    for name, _, path in APP_ICONS:
         if not path.exists():
             raise SystemExit(f"Symbol fehlt: {name} -> {path}")
     a = make_icon(HERE / "developer_icon_512.png")
