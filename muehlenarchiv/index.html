@@ -43,7 +43,7 @@
 <section id="de" lang="de">
 <h1>Datenschutzerklärung</h1>
 <p class="lead">für die Android-App »Mühlenarchiv«<br>
-<span class="stand">Stand: 28. September 2026</span></p>
+<span class="stand">Stand: 1. Oktober 2026</span></p>
 
 <h2>1. Verantwortlich</h2>
 <address class="card">
@@ -56,10 +56,12 @@
 
 <h2>2. Grundsatz</h2>
 <p>
-  Die App »Mühlenarchiv« erhebt <strong>keine personenbezogenen Daten</strong>, schickt
+  Wir, die Anbieter, erhalten <strong>keine personenbezogenen Daten</strong>. Die App schickt
   nichts an uns oder an einen Server im Internet und enthält weder Werbung noch
   Analyse- oder Tracking-Bausteine. Es ist kein Konto und keine Registrierung nötig. Das
-  Spiel läuft vollständig offline; auch der »Fund des Tages« entsteht aus dem Datum.
+  Spiel läuft offline; auch der »Fund des Tages« entsteht aus dem Datum. Einzige Ausnahme ist
+  der Klassenmodus (Abschnitt 5): Er stellt auf Wunsch eine Seite im eigenen WLAN bereit – auch
+  dabei gelangt nichts ins Internet oder zu uns.
 </p>
 
 <h2>3. Daten auf dem Gerät</h2>
@@ -69,6 +71,9 @@
   <li>Die laufende Partie und die laufende Briefpartie als Partiecode (Spielart und Züge),
     damit sie ein Beenden der App übersteht.</li>
   <li>Einstellungen: Darstellung, große Schrift, Spielregel zum Springen.</li>
+  <li>Der Stand der Wirtshausabende (Ergebnisse, Spuren am Brett, gewähltes Gegenüber) und der
+    Rundreise (Besuch, Kerzen, Talismane, weiteste Reise).</li>
+  <li>Die Roboter der Mühlenmaschine mit den Namen, die Sie ihnen geben.</li>
 </ul>
 <p>
   Diese Daten liegen im privaten Speicherbereich der App; andere Apps können sie nicht
@@ -85,14 +90,39 @@
   werden können; geteilter Text bleibt nur im Eingabefeld und wird nicht gespeichert.
 </p>
 
-<h2>5. Berechtigungen</h2>
+<h2>5. Klassenmodus (»Klasse gegen Computer«)</h2>
+<p>
+  Im Klassenmodus stellt das Gerät der Lehrkraft eine Webseite im eigenen WLAN bereit – nur
+  solange dieser Bildschirm geöffnet ist und nur unter der WLAN-Adresse des Geräts, nicht im
+  Internet. Schülerinnen und Schüler öffnen sie im Browser (per QR-Code oder Adresse) und stimmen
+  über den nächsten Zug ab. Dabei gilt:
+</p>
 <ul>
-  <li><code>com.android.vending.BILLING</code>, <code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code> –
-    bringt die Bibliothek von Google Play mit, ausschließlich für den optionalen Kauf
-    (Abschnitt 7). Die App selbst sendet keine Daten.</li>
+  <li>Es werden keine Namen, Konten oder Kennungen abgefragt. Die Seite setzt keine Cookies und
+    speichert nichts im Browser.</li>
+  <li>Damit jedes Gerät nur eine Stimme hat, ordnet die App jede Stimme der IP-Adresse des
+    Schülergeräts im WLAN zu. Diese Zuordnung und der Zeitpunkt des letzten Abrufs (für die Anzeige
+    »Verbunden«) liegen nur im Arbeitsspeicher des Lehrergeräts. Stimmen werden nach jedem Zug
+    gelöscht, Abrufzeiten spätestens nach einer Minute; beim Verlassen des Bildschirms schließt die Seite, der Rest verschwindet spätestens mit dem Beenden der App.</li>
+  <li>Die Seite lädt nichts aus dem Internet; auch die Schriften liefert das Lehrergerät selbst.</li>
+  <li>Nichts davon wird dauerhaft gespeichert, protokolliert oder an uns oder Dritte übertragen.</li>
+</ul>
+<p>
+  Die IP-Adresse dient allein einer fairen Abstimmung (eine Stimme je Gerät) und wird nur so lange
+  verarbeitet wie die Abstimmung. Setzt eine Schule den Klassenmodus ein, verarbeitet das Gerät der
+  Lehrkraft diese Daten im Auftrag der Schule; wir haben darauf keinen Zugriff. Lehrkräfte klären
+  die Nutzung eines privaten Geräts mit der Schulleitung.
+</p>
+
+<h2>6. Berechtigungen</h2>
+<ul>
+  <li><code>INTERNET</code> – nutzt die App selbst nur für den Klassenmodus im lokalen WLAN
+    (Abschnitt 5); außerdem die Bibliothek von Google Play für den optionalen Kauf.</li>
+  <li><code>com.android.vending.BILLING</code>, <code>ACCESS_NETWORK_STATE</code> – bringt die
+    Bibliothek von Google Play mit, ausschließlich für den optionalen Kauf (Abschnitt 8).</li>
 </ul>
 
-<h2>6. Sicherung durch Android</h2>
+<h2>7. Sicherung durch Android</h2>
 <p>
   Wer die Android-Datensicherung eingeschaltet hat, dessen Fortschritt, Partien und
   Einstellungen nimmt Android in die Sicherung des Google-Kontos bzw. in den Geräteumzug auf.
@@ -100,23 +130,24 @@
   Daten nie. Der Kaufstatus ist ausgenommen; er wird bei Bedarf über Google Play wiederhergestellt.
 </p>
 
-<h2>7. Käufe</h2>
+<h2>8. Käufe</h2>
 <p>
-  Gratis sind die Neunermühle, ihr Fundkasten, der Einstiegskasten (Dreiermühle) und der Fund
-  des Tages. Ein einmaliger Kauf über Google Play öffnet alle sieben Spielarten, alle
-  Fundkästen mit der Partie von Z. und den Unbesiegbaren. Die Zahlungsdaten verarbeitet
+  Gratis sind die Neunermühle (auch als »Verkehrte Welt« und »Geheime Linie«), ihr Fundkasten,
+  der Einstiegskasten (Dreiermühle), der Fund des Tages, die Mühlenmaschine und der Klassenmodus.
+  Ein einmaliger Kauf über Google Play öffnet alle sieben Spielarten, alle Fundkästen mit der
+  Partie von Z., den Unbesiegbaren, die Wirtshausabende und Z.s Rundreise (der erste Abend und der erste Besuch sind gratis). Die Zahlungsdaten verarbeitet
   ausschließlich Google; die App erhält nur die Information, dass der Kauf erfolgt ist. Es gilt
   die Datenschutzerklärung von Google. Es gibt kein Abonnement und keine Spielwährung.
 </p>
 
-<h2>8. Ihre Rechte</h2>
+<h2>9. Ihre Rechte</h2>
 <p>
-  Da wir keine personenbezogenen Daten erheben oder speichern, entfallen Auskunfts-,
-  Berichtigungs- und Löschansprüche gegenüber uns. Ihre lokalen Daten löschen Sie durch
+  Bei uns liegen keine Daten über Sie, zu denen wir Auskunft geben, die wir berichtigen oder
+  löschen könnten. Ihre lokalen Daten löschen Sie durch
   Deinstallation oder in den Android-Einstellungen (»Speicher leeren«).
 </p>
 
-<h2>9. Änderungen</h2>
+<h2>10. Änderungen</h2>
 <p>
   Diese Erklärung wird angepasst, wenn sich der Funktionsumfang der App ändert.
   Maßgeblich ist die jeweils hier veröffentlichte Fassung.
@@ -128,7 +159,7 @@
 <section id="en" lang="en">
 <h1>Privacy Policy</h1>
 <p class="lead">for the Android app “Mühlenarchiv”<br>
-<span class="stand">Last updated: September 28, 2026</span></p>
+<span class="stand">Last updated: October 1, 2026</span></p>
 
 <h2>1. Controller</h2>
 <address class="card">
@@ -141,10 +172,11 @@
 
 <h2>2. Principle</h2>
 <p>
-  Mühlenarchiv collects <strong>no personal data</strong>, sends nothing to us or to any
-  server on the internet and contains no advertising, analytics or tracking components. No
-  account or registration is required. The game runs fully offline; even the “find of the
-  day” is created from the date.
+  We, the providers, receive <strong>no personal data</strong>. The app sends nothing to us or
+  to any server on the internet and contains no advertising, analytics or tracking components. No
+  account or registration is required. The game runs offline; even the “find of the day” is
+  created from the date. The only exception is class mode (section 5): on request it provides a
+  page on your own Wi-Fi – even then, nothing reaches the internet or us.
 </p>
 
 <h2>3. Data on your device</h2>
@@ -154,6 +186,9 @@
   <li>The game in progress and the game by message in progress as a game code (variant and
     moves), so that they survive closing the app.</li>
   <li>Settings: appearance, large text, the rule on flying.</li>
+  <li>The state of Tavern evenings (results, marks on the board, chosen opponent) and of Z.’s
+    round trip (visit, candles, talismans, furthest trip).</li>
+  <li>The Morris machine robots with the names you give them.</li>
 </ul>
 <p>
   This data is kept in the app’s private storage; other apps cannot read it. It is
@@ -170,14 +205,38 @@
   stays in the input field only and is not stored.
 </p>
 
-<h2>5. Permissions</h2>
+<h2>5. Class mode (“Class vs computer”)</h2>
+<p>
+  In class mode, the teacher’s device provides a web page on your own Wi-Fi – only while that
+  screen is open and only at the device’s Wi-Fi address, not on the internet. Students open it in
+  their browser (via QR code or address) and vote on the next move. The following applies:
+</p>
 <ul>
-  <li><code>com.android.vending.BILLING</code>, <code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code> –
-    added by the Google Play library, used only for the optional purchase (section 7). The app
-    itself sends no data.</li>
+  <li>No names, accounts or identifiers are asked for. The page sets no cookies and stores nothing
+    in the browser.</li>
+  <li>So that each device has only one vote, the app links each vote to the student device’s IP
+    address on the Wi-Fi. This link and the time of the last request (for the “Connected” count) are
+    held only in the teacher device’s memory. Votes are deleted after each move, request times after
+    one minute at the latest; leaving the screen closes the page, and anything left is gone when the app is closed at the latest.</li>
+  <li>The page loads nothing from the internet; even the fonts are served by the teacher’s device.</li>
+  <li>None of this is stored permanently, logged or sent to us or to third parties.</li>
+</ul>
+<p>
+  The IP address serves only a fair vote (one vote per device) and is processed only for as long
+  as the vote lasts. When a school uses class mode, the teacher’s device processes this data on
+  the school’s behalf; we have no access to it. Teachers should check with their school leadership
+  before using a personal device.
+</p>
+
+<h2>6. Permissions</h2>
+<ul>
+  <li><code>INTERNET</code> – used by the app itself only for class mode on your local Wi-Fi
+    (section 5); also used by the Google Play library for the optional purchase.</li>
+  <li><code>com.android.vending.BILLING</code>, <code>ACCESS_NETWORK_STATE</code> – added by the
+    Google Play library, used only for the optional purchase (section 8).</li>
 </ul>
 
-<h2>6. Android backup</h2>
+<h2>7. Android backup</h2>
 <p>
   If Android backup is switched on, Android includes your progress, games and settings in the
   backup of your Google account or in a device transfer. This is an operating system feature,
@@ -185,23 +244,23 @@
   restored through Google Play when needed.
 </p>
 
-<h2>7. Purchases</h2>
+<h2>8. Purchases</h2>
 <p>
-  Nine men’s morris, its box of finds, the starter box (three men’s morris) and the find of
-  the day are free. A one-time purchase through Google Play opens all seven variants, every
-  box of finds including Z.’s game, and the Unbeatable. Payment data is processed by Google
+  Nine men’s morris (also as Topsy-turvy and Secret line), its box of finds, the starter box
+  (three men’s morris), the find of the day, the Morris machine and class mode are free. A
+  one-time purchase through Google Play opens all seven variants, every box of finds including
+  Z.’s game, the Unbeatable, Tavern evenings and Z.’s round trip (the first evening and the first visit are free). Payment data is processed by Google
   only; the app only learns that the purchase was made. Google’s privacy policy applies. There
   is no subscription and no in-game currency.
 </p>
 
-<h2>8. Your rights</h2>
+<h2>9. Your rights</h2>
 <p>
-  As we do not collect or store any personal data, there are no access, rectification or
-  erasure claims against us. You can delete your local data by uninstalling the app or via
+  We hold no data about you that we could provide, correct or delete. You can delete your local data by uninstalling the app or via
   the Android settings (“Clear storage”).
 </p>
 
-<h2>9. Changes</h2>
+<h2>10. Changes</h2>
 <p>
   This policy is updated when the app’s features change. The version published here
   applies.
