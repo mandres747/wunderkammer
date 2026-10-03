@@ -12,3 +12,14 @@ Code und kein Inhalt der Apps.
 - Mancala Ukoo: https://mandres747.github.io/wunderkammer/mancala-ukoo/
 
 Kontakt: wunderkammer-apps@proton.me
+
+## Eigener Server und App-Seiten (seit 03.10.2026)
+
+Die Website laeuft auf dem eigenen Server (https://wunderkammer-apps.de, Doku `Apps/_server/SERVER.md`).
+`seiten/<sub>/` enthaelt die Werbe- und Erklaerseiten der einzelnen Apps fuer die Unterdomains
+`<sub>.wunderkammer-apps.de` (Muster und Checkliste: `seiten/MUSTER.md`, Upload: `seiten/hochladen.sh <sub>`).
+
+Beim Upload der Hauptdomain bleiben `seiten`, `store`, `docs` und `README.md` draussen:
+
+    tar --exclude=./seiten --exclude=./store --exclude=./docs --exclude=./README.md --exclude=./.git -czf - . \
+      | ssh wunderkammer 'tar -xzf - -C /opt/wunderkammer/sites/www'

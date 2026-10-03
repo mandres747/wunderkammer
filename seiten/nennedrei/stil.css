@@ -1,0 +1,209 @@
+/* Nenne drei – Pop-Plakat (Gestaltung beschlossen 25.09.2026, nenne-drei/docs/07_GESTALTUNG.md)
+   Stapel aus drei Aufgabenkarten, Tinten-Konturen 2,5 px, harte Versatzschatten ohne Unschärfe,
+   Signalpink = Handlung, Grasgrün = Bestätigung. Schriften lokal (OFL), keine Fremdabrufe. */
+
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 800; font-display: swap;
+  src: url("schrift/bricolage-grotesque-extrabold.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-weight: 400; font-display: swap;
+  src: url("schrift/figtree-regular.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-weight: 600; font-display: swap;
+  src: url("schrift/figtree-semibold.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-weight: 700; font-display: swap;
+  src: url("schrift/figtree-bold.woff2") format("woff2"); }
+
+:root {
+  --grund: #FAFBFA;
+  --karte: #FFFFFF;
+  --tinte: #0E2A22;          /* Text, Konturen, Schatten – 14,7 : 1 auf Grund */
+  --tinte-2: #4A5F57;        /* Nebentext – 6,6 : 1 */
+  --pink: #FF3D7F;           /* Fläche; darauf nur Tinte (4,5 : 1) */
+  --pink-text: #B8124F;      /* kleiner pinker Text – 4,9 : 1 auch auf Rosa */
+  --gruen: #22B573;          /* Fläche; darauf Tinte (5,8 : 1) */
+  --minze: #E3F4EA;
+  --rosa: #FFD6E4;
+  --auf-akzent: #0E2A22;
+  --schatten: #0E2A22;
+  --kontur: 2.5px solid var(--tinte);
+  --fuss-grund: #0E2A22;
+  --fuss-text: #F0FFF7;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grund: #0E2A22;
+    --karte: #15392E;
+    --tinte: #F0FFF7;
+    --tinte-2: #A8C4B8;
+    --pink: #FF5C93;
+    --pink-text: #FF8AB0;
+    --gruen: #3ED58E;
+    --minze: #1B4A3B;
+    --rosa: #4A1F33;
+    --schatten: #CFE8DC;
+    --fuss-grund: #071812;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--grund); color: var(--tinte);
+  font: 400 1.0625rem/1.6 Figtree, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--pink-text); font-weight: 600; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--pink-text); outline-offset: 3px; border-radius: 4px; }
+
+h1, h2, h3, .marke { font-family: "Bricolage Grotesque", Figtree, sans-serif; font-weight: 800; line-height: 1.08; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.9rem, 4.2vw, 2.9rem); margin: 0 0 0.4em; }
+h3 { font-size: 1.3rem; margin: 0 0 0.35em; }
+p { margin: 0 0 0.9em; }
+
+.huelle { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+.ueberspringen { position: absolute; left: -999px; top: 8px; background: var(--karte); padding: 8px 12px; z-index: 10; border: var(--kontur); }
+.ueberspringen:focus { left: 8px; }
+
+/* ---------- Bausteine: Pop-Fläche, Knopf, Aufkleber ---------- */
+.pop { background: var(--karte); border: var(--kontur); border-radius: 14px; box-shadow: 3px 3px 0 var(--schatten); }
+.pop--minze { background: var(--minze); }
+.pop--rosa { background: var(--rosa); }
+.knopf {
+  display: inline-flex; align-items: center; gap: 0.5em; min-height: 48px; padding: 0.55em 1.1em;
+  font: 700 1rem/1.2 Figtree, sans-serif; color: var(--auf-akzent); text-decoration: none; cursor: pointer;
+  background: var(--pink); border: 2.5px solid var(--auf-akzent); border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--schatten); transition: transform .08s, box-shadow .08s;
+}
+.knopf--leise { background: var(--karte); color: var(--tinte); border-color: var(--tinte); }
+.knopf:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--schatten); }
+.aufkleber {
+  display: inline-block; padding: 0.2em 0.7em; font-weight: 700; font-size: 0.95rem;
+  border: 2px solid var(--auf-akzent); border-radius: 10px; color: var(--auf-akzent); background: var(--gruen);
+  box-shadow: 2px 2px 0 var(--schatten);
+}
+.aufkleber--pink { background: var(--pink); }
+.aufkleber--weiss { background: #fff; }
+
+/* ---------- Kopf ---------- */
+.kopf { padding: 14px 0; }
+.kopf .huelle { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.marke { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; color: var(--tinte); text-decoration: none; }
+.marke img { width: 36px; height: 36px; border-radius: 9px; border: 2px solid var(--tinte); }
+.kopf nav ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; align-items: center; }
+.kopf nav a { color: var(--tinte); font-weight: 600; text-decoration: none; }
+.kopf nav a:hover { text-decoration: underline; }
+.kopf nav .sprache { border: 2px solid var(--tinte); border-radius: 8px; padding: 0.15em 0.55em; }
+@media (max-width: 760px) { .kopf nav li:not(.immer) { display: none; } }
+
+/* ---------- Held ---------- */
+.held { padding: 28px 0 64px; }
+.held .huelle { display: grid; gap: 40px; align-items: center; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .held .huelle { grid-template-columns: 1.1fr 0.9fr; } }
+.held h1 { font-size: clamp(2.6rem, 12vw, 5.6rem); margin: 0 0 0.25em; white-space: nowrap; }
+@media (min-width: 900px) { .held h1 { font-size: clamp(3rem, 6.2vw, 5.6rem); } }
+.held h1 .punkte { color: var(--pink-text); }
+.versprechen { font-size: clamp(1.15rem, 2.2vw, 1.4rem); max-width: 34em; }
+.fakten { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0 0 26px; }
+.fakten li:nth-child(2) { transform: rotate(-1.5deg); }
+.fakten li:nth-child(3) { transform: rotate(1deg); }
+.badge { display: inline-block; margin-left: -10px; } /* Badge-PNG bringt seinen Schutzraum selbst mit */
+.badge img { width: 240px; height: auto; }
+.hinweis { font-size: 0.95rem; color: var(--tinte-2); max-width: 32em; margin-top: 6px; }
+
+/* Kartenstapel (Leitmotiv) mit Probierrunde */
+.stapel-buehne { display: grid; justify-items: center; gap: 18px; }
+.stapel { position: relative; width: min(84%, 380px); aspect-ratio: 1 / 0.78; margin: 14px 14px 0 0; }
+.stapel .blatt { position: absolute; inset: 0; border: var(--kontur); border-radius: 16px; }
+.stapel .blatt--1 { background: var(--minze); transform: rotate(-8deg) translate(-14px, 6px); }
+.stapel .blatt--2 { background: var(--gruen); transform: rotate(-3.5deg) translate(-6px, 2px); }
+.stapel .blatt--vorn {
+  background: var(--karte); box-shadow: 5px 5px 0 var(--schatten);
+  display: grid; place-items: center; padding: 22px; text-align: center;
+}
+.aufgabe { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(1.5rem, 4.6vw, 2.15rem); line-height: 1.12; margin: 0; }
+.uhr { width: min(100%, 300px); height: 16px; border: var(--kontur); border-radius: 10px; overflow: hidden; background: var(--karte); }
+.uhr span { display: block; height: 100%; width: 100%; background: var(--pink); transform-origin: left; animation: ablauf 20s linear forwards; }
+@keyframes ablauf { to { transform: scaleX(0); } }
+.kacheln { display: flex; gap: 10px; }
+.kacheln span {
+  width: 52px; height: 56px; display: grid; place-items: center; background: var(--karte);
+  border: var(--kontur); border-radius: 12px; box-shadow: 3px 3px 0 var(--schatten);
+  font: 800 1.6rem "Bricolage Grotesque", sans-serif;
+}
+.probier { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.beispiele { min-height: 1.6em; text-align: center; color: var(--tinte-2); font-size: 0.98rem; margin: 0; max-width: 26em; }
+@media (prefers-reduced-motion: reduce) {
+  .uhr span { animation: none; transform: scaleX(0.6); }
+  .knopf { transition: none; }
+}
+
+/* ---------- Abschnitte ---------- */
+.abschnitt { padding: 64px 0; }
+.abschnitt--band { background: var(--minze); border-block: var(--kontur); }
+.vorspann { font-size: 1.15rem; max-width: 40em; color: var(--tinte-2); margin-bottom: 30px; }
+.raster { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.raster > .pop { padding: 22px 22px 14px; }
+
+/* So geht's */
+.schritte { counter-reset: s; list-style: none; padding: 0; margin: 0; }
+.schritte li { position: relative; padding-top: 34px !important; margin-top: 22px; }
+.schritte li::before {
+  counter-increment: s; content: counter(s); position: absolute; top: -26px; left: 18px;
+  width: 52px; height: 56px; display: grid; place-items: center;
+  background: var(--pink); color: var(--auf-akzent); border: 2.5px solid var(--auf-akzent); border-radius: 12px; box-shadow: 3px 3px 0 var(--schatten);
+  font: 800 1.7rem "Bricolage Grotesque", sans-serif;
+}
+.schritte li:nth-child(2)::before { background: var(--gruen); }
+.schritte li:nth-child(3)::before { background: #fff; color: #0E2A22; }
+
+/* Spielarten */
+.spielart h3 { display: flex; align-items: center; gap: 10px; }
+.spielart .marker { width: 14px; height: 14px; border-radius: 4px; border: 2px solid var(--tinte); background: var(--pink); flex: none; }
+.spielart:nth-child(3n+2) .marker { background: var(--gruen); }
+.spielart:nth-child(3n) .marker { background: var(--minze); }
+.zusatz { margin-top: 26px; font-size: 1rem; color: var(--tinte-2); }
+
+/* Screenshots */
+.galerie { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 6px 22px; margin: 0 -6px; list-style: none; }
+.galerie li { flex: 0 0 auto; width: 220px; scroll-snap-align: start; }
+@media (min-width: 900px) { .galerie li { width: 240px; } }
+figure { margin: 0; }
+.galerie img, .tv img { border: var(--kontur); border-radius: 14px; box-shadow: 4px 4px 0 var(--schatten); background: #fff; }
+figcaption { margin-top: 12px; font-weight: 600; font-size: 0.98rem; }
+.tv { display: grid; gap: 26px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); list-style: none; padding: 0; margin: 34px 0 0; }
+
+/* Für wen */
+.fuerwen .pop h3 { font-size: 1.45rem; }
+
+/* Preise */
+.preise { display: grid; gap: 26px; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 860px) { .preise { grid-template-columns: 1fr 1.2fr; } }
+.preise .pop { padding: 24px; }
+.preise ul { padding-left: 1.2em; margin: 0 0 0.6em; }
+.preise li { margin-bottom: 0.45em; }
+.preisliste { width: 100%; border-collapse: collapse; margin: 6px 0 10px; }
+.preisliste th, .preisliste td { text-align: left; padding: 10px 0; border-bottom: 2px solid var(--tinte); vertical-align: top; }
+.preisliste td.betrag { text-align: right; white-space: nowrap; font: 800 1.25rem "Bricolage Grotesque", sans-serif; padding-left: 14px; }
+.preisliste th { font-weight: 700; }
+.preisliste small { display: block; font-weight: 400; color: var(--tinte-2); font-size: 0.93rem; }
+.kleingedruckt { font-size: 0.93rem; color: var(--tinte-2); }
+.themen { columns: 2 12em; margin-top: 4px; }
+
+/* FAQ */
+.fragen { display: grid; gap: 16px; max-width: 860px; }
+.fragen details { padding: 0; }
+.fragen summary { cursor: pointer; padding: 16px 52px 16px 20px; font-weight: 700; font-size: 1.08rem; list-style: none; position: relative; min-height: 48px; }
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font: 800 1.6rem "Bricolage Grotesque", sans-serif; color: var(--pink-text); }
+.fragen details[open] summary::after { content: "–"; }
+.fragen details > div { padding: 0 20px 8px; }
+
+/* Abschluss + Fuß */
+.schluss { text-align: center; }
+.schluss .badge { margin: 8px auto 0; }
+.fuss { background: var(--fuss-grund); color: var(--fuss-text); padding: 40px 0 34px; margin-top: 30px; }
+.fuss a { color: var(--fuss-text); }
+.fuss ul { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.fuss p { margin: 0 0 8px; font-size: 0.93rem; opacity: 0.92; }
