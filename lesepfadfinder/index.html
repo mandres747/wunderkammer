@@ -9,35 +9,27 @@
      noindex ungelesen und die Seite koennte trotzdem im Index landen. -->
 <meta name="robots" content="noindex, follow">
 <title>Lesepfadfinder – Entscheidungsbücher für Erstleser</title>
-<style>
-    :root {
-        --grund: #fbf8f1;
-        --text: #23201c;
-        --gedaempft: #5d564c;
-        --linie: #e6ded0;
-        --akzent: #6b4f2a;
-    }
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        max-width: 44rem;
-        margin: 0 auto;
-        padding: 2rem 1.25rem 4rem;
-        line-height: 1.65;
-        color: var(--text);
-        background: var(--grund);
-    }
-    h1 { font-size: 1.7rem; border-bottom: 2px solid var(--akzent); padding-bottom: .5rem; }
-    h2 { font-size: 1.15rem; color: var(--akzent); margin-top: 2.2em; }
-    .lead { font-size: 1.05rem; }
-    .anschrift { background: #fffdf8; border: 1px solid var(--linie); border-radius: 6px; padding: 1rem 1.2rem; }
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: .35rem; }
-    .hinweis { font-size: .92rem; color: var(--gedaempft); }
-    .fuss { margin-top: 3em; padding-top: 1em; border-top: 1px solid var(--linie); font-size: .9rem; color: var(--gedaempft); }
-    a { color: var(--akzent); }
-</style>
+<link rel="icon" href="/assets/bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/bilder/apple-touch-icon.png">
+<meta name="theme-color" content="#D6DDE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141A20" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="/assets/schrift/ebgaramond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/start.css">
+<link rel="stylesheet" href="/assets/text.css">
 </head>
-<body>
+<body class="textseite">
+<a class="sprung" href="#inhalt">Zum Text springen</a>
+<header class="kopf">
+  <div class="breite">
+    <a class="marke" href="/" aria-label="Wunderkammer – Startseite"><img src="/assets/bilder/icon-192.png" alt="" width="40" height="40">Wunderkammer</a>
+    <nav aria-label="Seitenbereiche">
+      <a href="/#sammlung">Alle Apps</a>
+      <a href="/impressum/">Impressum</a>
+    </nav>
+  </div>
+</header>
+
+<main class="blatt" id="inhalt" style="--app: #328538">
 
 <h1>Lesepfadfinder</h1>
 <p class="lead"><strong>Entscheidungsbücher für Erstleser.</strong> Kinder von etwa sieben bis zehn
@@ -83,5 +75,11 @@ Die vollständige Erklärung steht hier:
     Stand: 26. September 2026
 </div>
 
+</main>
+
+<footer class="fuss-text">
+  <p><a href="/">Wunderkammer</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a></p>
+  <p>Diese Seite setzt keine Cookies, lädt nichts von fremden Servern und zählt keine Besuche.</p>
+</footer>
 </body>
 </html>

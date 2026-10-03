@@ -4,40 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Einsatz – Datenschutzerklärung / Privacy Policy</title>
-<style>
-  :root {
-    --bg: #ffffff; --fg: #1a1a1a; --muted: #5a5a5a;
-    --rule: #e2e2e2; --accent: #2f6feb; --card: #f6f7f9;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #121316; --fg: #e8e8ea; --muted: #a0a0a8;
-      --rule: #2a2c31; --accent: #7aa2f7; --card: #1b1d21;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; padding: 3rem 1.25rem 4rem;
-    background: var(--bg); color: var(--fg);
-    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  }
-  main { max-width: 42rem; margin: 0 auto; }
-  a { color: var(--accent); }
-  h1 { font-size: 1.9rem; margin: 0 0 .35rem; }
-  h2 { font-size: 1.05rem; margin: 2rem 0 .6rem; }
-  .lead { color: var(--muted); margin: 0 0 2.5rem; }
-  .stand { font-size: .9rem; }
-  .sprachen { margin: 0 0 2rem; font-size: .95rem; }
-  .card {
-    background: var(--card); border: 1px solid var(--rule);
-    border-radius: .6rem; padding: 1rem 1.15rem; font-style: normal;
-  }
-  hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0 1.25rem; }
-  footer { color: var(--muted); font-size: .9rem; }
-</style>
+<link rel="icon" href="/assets/bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/bilder/apple-touch-icon.png">
+<meta name="theme-color" content="#D6DDE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141A20" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="/assets/schrift/ebgaramond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/start.css">
+<link rel="stylesheet" href="/assets/text.css">
 </head>
-<body>
-<main>
+<body class="textseite">
+<a class="sprung" href="#inhalt">Zum Text springen</a>
+<header class="kopf">
+  <div class="breite">
+    <a class="marke" href="/" aria-label="Wunderkammer – Startseite"><img src="/assets/bilder/icon-192.png" alt="" width="40" height="40">Wunderkammer</a>
+    <nav aria-label="Seitenbereiche">
+      <a href="/#sammlung">Alle Apps</a>
+      <a href="/impressum/">Impressum</a>
+    </nav>
+  </div>
+</header>
+
+<main class="blatt" id="inhalt" style="--app: #A9784A">
 <p class="sprachen"><a href="#de">Deutsch</a> · <a href="#en">English</a></p>
 
 <section id="de" lang="de">
@@ -244,5 +231,10 @@
 </p>
 </section>
 </main>
+
+<footer class="fuss-text">
+  <p><a href="/">Wunderkammer</a> · <a href="/impressum/">Impressum</a> · <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a></p>
+  <p>Diese Seite setzt keine Cookies, lädt nichts von fremden Servern und zählt keine Besuche.</p>
+</footer>
 </body>
 </html>

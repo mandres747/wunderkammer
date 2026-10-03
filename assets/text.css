@@ -1,0 +1,72 @@
+/* Wunderkammer – Textseiten (Impressum, Datenschutzerklärungen) im Sammlerbogen-Stil.
+   Baut auf start.css auf: Karton, Tinte, Nadel. Der Text liegt auf einem angesteckten Blatt. */
+
+body.textseite { font-size: 1.12rem; line-height: 1.65; }
+
+.blatt {
+  position: relative; display: block;
+  max-width: 48rem; margin: 1.2rem auto 2.5rem;
+  background: var(--karte); box-shadow: var(--schatten);
+  border-top: 6px solid var(--app, var(--tinte));
+  padding: 3rem clamp(1.25rem, 5vw, 3.5rem) 2.5rem;
+  overflow-wrap: break-word;
+}
+.blatt::before {
+  content: ""; position: absolute; left: 50%; top: -12px; width: 22px; height: 22px; margin-left: -11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--nadel-licht) 0 14%, var(--nadel) 30% 68%, var(--nadel-dunkel) 100%);
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, .35);
+}
+@media (max-width: 600px) { .blatt { margin-left: .6rem; margin-right: .6rem; } }
+
+.blatt h1 {
+  font-size: clamp(2rem, 5.5vw, 2.8rem); line-height: 1.1; margin: 0 0 .6rem; font-weight: 700;
+  border: 0; padding: 0;
+}
+.blatt h2 {
+  font-size: 1.45rem; line-height: 1.25; margin: 2.3rem 0 .5rem; font-weight: 700;
+  color: var(--tinte); font-family: inherit;
+}
+.blatt h3 { font-size: 1.2rem; margin: 1.6rem 0 .4rem; }
+.blatt p, .blatt li { max-width: 40rem; }
+.blatt ul, .blatt ol { padding-left: 1.3rem; }
+.blatt li { margin: .3rem 0; }
+.blatt li::marker { color: var(--nadel); }
+.blatt a { color: var(--tinte); text-decoration-color: var(--nadel); }
+.blatt a:hover { text-decoration-thickness: 2px; }
+
+.blatt .lead { color: var(--tinte-weich); font-size: 1.18rem; margin: 0 0 2rem; }
+.blatt .stand, .blatt .hinweis { color: var(--tinte-weich); font-size: .98rem; }
+.blatt .sprachen { margin: 0 0 2rem; font-variant: small-caps; letter-spacing: .05em; }
+
+/* Kästen der alten Seiten: Anschrift als Etikett, Kurzfassung mit Nadelrand */
+.blatt .card, .blatt .anschrift, .blatt address {
+  font-style: normal; background: transparent; border: 1.5px dashed var(--tinte-weich);
+  border-radius: 0; padding: 1rem 1.2rem; margin: 1rem 0;
+}
+.blatt .kurz, .blatt .highlight {
+  background: color-mix(in srgb, var(--karton) 45%, var(--karte));
+  border: 0; border-left: 4px solid var(--nadel); border-radius: 0;
+  padding: .9rem 1.2rem; margin: 1.2rem 0;
+}
+
+.blatt table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 1rem; }
+.blatt th, .blatt td { border: 1px solid var(--karte-rand); padding: .55rem .8rem; text-align: left; vertical-align: top; }
+.blatt th { background: var(--tinte); color: var(--karte); font-weight: 600; }
+.blatt .tabelle-huelle { overflow-x: auto; }
+@media (max-width: 600px) { .blatt table { display: block; overflow-x: auto; } }
+
+.blatt code {
+  font-family: ui-monospace, Consolas, monospace; font-size: .9em;
+  background: color-mix(in srgb, var(--karton) 50%, var(--karte)); padding: .05em .3em; overflow-wrap: anywhere;
+}
+.blatt hr { border: 0; border-top: 1px solid var(--karte-rand); margin: 2.5rem 0 1.2rem; }
+.blatt footer, .blatt .footer, .blatt .fuss {
+  margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--karte-rand);
+  color: var(--tinte-weich); font-size: 1rem;
+}
+.blatt hr + footer { border-top: 0; margin-top: 0; padding-top: 0; }
+
+.fuss-text { padding: 1rem 0 3rem; text-align: center; color: var(--tinte-weich); font-size: 1rem; }
+.fuss-text p { margin: .3rem 0; }
+.fuss-text a { color: var(--tinte); }
