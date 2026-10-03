@@ -112,7 +112,8 @@ Nie `stil.css` einer anderen App kopieren und umfärben – sonst gleichen sich 
    (`_server/`), danach `curl -sI https://<sub>.wunderkammer-apps.de/` prüfen.
 9. Play Console: Feld „Website“ auf `https://<sub>.wunderkammer-apps.de/` (mit Nutzerfreigabe; Store-Änderung
    geht in die Prüfung – nicht mitten in eine laufende Versionsprüfung).
-10. Sammlerbogen (Hauptdomain) verlinkt die App-Seite – im Generator `store/make_developer_page.py`.
+10. Sammlerbogen (Hauptdomain) verlinkt die App-Seite: Karte in `index.html` (Vitrine bei Store-Start, sonst Werkstatt),
+    Icon/Screenshot in `store/make_startseite.py`, dann `store/make_startseite_en.py`; Play-Kopfbild in `store/make_developer_page.py`.
 11. Commit im wunderkammer-Repo nur mit Pfaden (`seiten/…`).
 
 ## Belegte Unterdomains
