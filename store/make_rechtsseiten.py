@@ -1,9 +1,11 @@
-"""Stellt Impressum und Datenschutzerklärungen auf den Sammlerbogen-Stil um.
+"""Setzt Impressum und Datenschutzerklärungen einheitlich in den Sammlerbogen-Stil.
 
-Der Inhalt jeder Seite bleibt unverändert. Ersetzt werden nur das eingebettete <style>,
-dazu kommen Kopf (Wortmarke, Navigation), das angesteckte Blatt um den Text und eine Fußzeile.
-Gestaltung: assets/start.css + assets/text.css. Bereits umgestellte Seiten (body.textseite)
-werden übersprungen. Aufruf:  python store/make_rechtsseiten.py
+Der Rechtstext jeder Seite bleibt unverändert. Gesetzt werden Kopf (Wortmarke, Alle Apps,
+Seite der App, Impressum), das angesteckte Blatt um den Text und eine Fußzeile. Alte
+Navigationsfußzeilen im Text („Wunderkammer · Impressum“ o. Ä.) fallen weg, weil Kopf und Fuß
+das übernehmen; Fußzeilen mit Inhalt (Stand, Sprachfassung) bleiben.
+Gestaltung: assets/start.css + assets/text.css. Beliebig oft ausführbar.
+Aufruf:  python store/make_rechtsseiten.py
 """
 import re
 from pathlib import Path
@@ -17,6 +19,15 @@ FARBE = {
     "malfeld": "#C9CF2E", "mancala-ukoo": "#6E4B2E", "muehlenarchiv": "#713A87",
     "nenne-drei": "#FF3D7F", "neuntekerbe": "#326228", "wortgenau": "#6B3FD1",
     "zunft-der-sechs": "#37D3C0",
+}
+# Ordner -> (Unterdomain der App-Seite, Name); Blindgitter hat keine eigene Seite
+APPSEITE = {
+    "deepwave": ("deepwave", "DeepWave"), "einsatz": ("einsatz", "Einsatz"),
+    "kopfkarte": ("kopfkarte", "Kopfkarte"), "lesepfadfinder": ("lesepfadfinder", "Lesepfadfinder"),
+    "malfeld": ("malfeld", "Malfeld"), "mancala-ukoo": ("mancala", "Mancala Ukoo"),
+    "muehlenarchiv": ("muehlenarchiv", "Mühlenarchiv"), "nenne-drei": ("nennedrei", "Nenne drei"),
+    "neuntekerbe": ("kerbe", "Die neunte Kerbe"), "wortgenau": ("wortgenau", "Wortgenau"),
+    "zunft-der-sechs": ("zunft", "Zunft der Sechs"),
 }
 
 KOPF_LINKS = """<link rel="icon" href="/assets/bilder/favicon-32.png" sizes="32x32" type="image/png">
@@ -36,24 +47,44 @@ TEXT = {
                fuss="This site sets no cookies, loads nothing from third-party servers and does not count visits."),
 }
 
+ALTER_FUSS = re.compile(r"\s*<hr>\s*<footer>(?:(?!</footer>).)*</footer>", re.S)
+NUR_NAVIGATION = re.compile(
+    r"^(?:\s|·|–|Wunderkammer|Übersicht|Impressum|Datenschutzerklärungen der Apps|Datenschutzerklärung)*$")
 
-def umstellen(pfad: Path) -> str:
+
+def alten_fuss_entfernen(inhalt: str) -> str:
+    def weg(m):
+        text = re.sub(r"<[^>]+>", " ", m.group(0))
+        return "" if NUR_NAVIGATION.match(text) else m.group(0)
+    return ALTER_FUSS.sub(weg, inhalt)
+
+
+def setzen(pfad: Path) -> str:
     s = pfad.read_text(encoding="utf-8")
-    if 'class="textseite"' in s:
-        return "schon umgestellt"
-    sprache = "en" if re.search(r'<html lang="en"', s) else "de"
+    sprache = "en" if '<html lang="en"' in s else "de"
     t = TEXT[sprache]
     ordner = pfad.relative_to(ROOT).parts[0]
 
-    s, n = re.subn(r"\s*<style>.*?</style>", "\n" + KOPF_LINKS, s, count=1, flags=re.S)
-    assert n == 1, "kein <style>"
+    if 'class="textseite"' in s:
+        # schon umgestellt: eigenen Kopf, Fuß und Blatt-Attribute herausnehmen, dann neu setzen
+        s = re.sub(r'<a class="sprung".*?</header>\n', "", s, count=1, flags=re.S)
+        s = re.sub(r'\n<footer class="fuss-text">.*?</footer>\n', "", s, count=1, flags=re.S)
+        s = s.replace('<body class="textseite">\n', "<body>", 1)
+        s = re.sub(r'<main class="blatt" id="inhalt" style="[^"]*"', "<main", s, count=1)
+    else:
+        s, n = re.subn(r"\s*<style>.*?</style>", "\n" + KOPF_LINKS, s, count=1, flags=re.S)
+        assert n == 1, f"kein <style> in {pfad}"
 
+    app_link = ""
+    if ordner in APPSEITE:
+        sub, name = APPSEITE[ordner]
+        app_link = f'\n      <a href="https://{sub}.wunderkammer-apps.de/">{name}</a>'
     kopf = f"""<a class="sprung" href="#inhalt">{t['sprung']}</a>
 <header class="kopf">
   <div class="breite">
     <a class="marke" href="{t['start']}" aria-label="{t['heim']}"><img src="/assets/bilder/icon-192.png" alt="" width="40" height="40">Wunderkammer</a>
     <nav aria-label="{t['nav']}">
-      <a href="{t['start']}#sammlung">{t['apps']}</a>
+      <a href="{t['start']}#sammlung">{t['apps']}</a>{app_link}
       <a href="/impressum/">{t['impressum']}</a>
     </nav>
   </div>
@@ -68,17 +99,17 @@ def umstellen(pfad: Path) -> str:
     stil = f' style="--app: {FARBE[ordner]}"'
     m = re.search(r"<body([^>]*)>", s)
     koerper_start, koerper_ende = m.end(), s.rindex("</body>")
-    inhalt = s[koerper_start:koerper_ende]
+    inhalt = alten_fuss_entfernen(s[koerper_start:koerper_ende])
     if "<main" in inhalt:
         inhalt = re.sub(r"<main([^>]*)>", lambda mm: f'<main class="blatt" id="inhalt"{stil}{mm.group(1)}>', inhalt, count=1)
     else:
         inhalt = f'\n<main class="blatt" id="inhalt"{stil}>{inhalt}</main>\n'
     s = s[:m.start()] + '<body class="textseite">\n' + kopf + inhalt + fuss + s[koerper_ende:]
     pfad.write_text(s, encoding="utf-8")
-    return f"umgestellt ({sprache})"
+    return sprache
 
 
 if __name__ == "__main__":
     for ordner in FARBE:
         for pfad in sorted((ROOT / ordner).rglob("*.html")):
-            print(pfad.relative_to(ROOT), "->", umstellen(pfad))
+            print(pfad.relative_to(ROOT), "->", setzen(pfad))
