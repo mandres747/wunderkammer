@@ -2,6 +2,52 @@
 
 Regeln: `Apps/CLAUDE.md`, Abschnitt „Endlektorat der Texte“. Je Seite ein Abschnitt, neuester oben.
 
+## Lesepfadfinder – Unterseiten `presse/` und `selbst-entscheiden/` (+ Fußzeile/Schule auf `index.html`), 03.10.2026
+
+**Umfang:** alle sichtbaren Texte beider neuen Seiten (Titel, Meta-Description, OG-Texte und -Alt, Brotkrumen,
+Kurz- und Langtext, Fakten-Kasten, Bildunterschriften, Alt-Texte, Download-Angaben, Nutzungshinweis, Links,
+Pressekontakt, Ratgebertext, Quellen, Markenhinweis, Abschluss, Fußzeile), JSON-LD, `LIESMICH.txt` im
+Pressebilder-ZIP, Meldungen von `kopieren.js`; auf `index.html` der Absatz „Schule“ und die Fußzeile.
+Anrede **Sie** wie auf `index.html` (Eltern/Presse); Fußzeilenlink „Bücher, in denen du entscheidest“
+nimmt bewusst den App-Leitsatz auf (Vorgabe des Auftrags).
+
+**Faktenabgleich (Prüfpunkt 4)** – alle App-Fakten aus `index.html` (dort am 03.10. gegen 1.0.4 (9), API und
+Store belegt, siehe `lesepfadfinder/_LEKTORAT.md`), dazu:
+
+| Aussage | Beleg |
+|---|---|
+| Seit September 2026 bei Google Play | Produktion 1.0.0 seit ~24.09.2026 (Memory/Release-Notiz); Store-Seite zeigt 1.0.4 (curl 03.10.) |
+| 4 Bücher, 8–10 Enden, 1 gratis, 3 × 2,99 € Einmalkauf | `index.html` Regal/Preise (Stand Oktober 2026) |
+| Vorlesen „über die Sprachausgabe des Geräts“ | FAQ „Wer liest vor?“ auf `index.html` |
+| Begleitmaterial CC BY-SA 4.0, frei kopierbar und veränderbar | Live-PDF gelesen 03.10. („Sie dürfen es kopieren, verändern und weitergeben“), Quelle `eb-player/docs/begleitmaterial/emmi-band-1-lehrkraefte.html` Z. 86–88 |
+| Pressekontakt Michael Andres | Impressum `wunderkammer-apps.de/impressum/` (curl 03.10.) |
+| „1000 Gefahren“ = Reihe bei Ravensburger | Bibliotheks-/Händlerkataloge (Ravensburger, Fabian Lenk, „Du entscheidest selbst!“) |
+| „Choose Your Own Adventure“, erster Band 1979 | „The Cave of Time“, Edward Packard, Bantam, Juli 1979 |
+| Forschung | nur die drei Quellen von `index.html` (NRP 2000; Takacs/Swart/Bus 2015; Furenes/Kucirkova/Bus 2021), gleiche vorsichtige Formulierung („können ablenken“) |
+| Bilddateien, Größen | `_bauen.py presse`: Icon/Feature = Store-Dateien, Screenshots = Satz 1.0.4 (`f089522`), Angaben in KB dezimal gerundet |
+
+**Geändert beim Lektorat:**
+- `index.html`, Schule: „frei kopierbar“ → „unter der freien Lizenz CC BY-SA 4.0: frei kopierbar und veränderbar“
+  (Lizenz seit 03.10., Link auf die deutsche Lizenzfassung); Presse- und Themenseite nennen die Lizenz ebenso.
+- Langtext auf 197 Wörter gekürzt (Satz „Spiele, Punkte oder Tagesziele …“ gestrichen), Umfangsangabe „knapp 200 Wörter“.
+- „Choose Your Own Adventure, die seit 1979 erscheint“ → „deren erster Band 1979 erschien“ (Reihe lief nicht durchgehend).
+- Seitentitel der Themenseite auf 63 Zeichen gekürzt; Brotkrume „Entscheidungsbücher“ statt des langen Titels (Umbruch bei 390 px).
+- Fallback-Meldung des Kopierknopfs ohne „Strg+C“ (auf dem Handy gibt es keine Strg-Taste).
+- Geschützte Zeichen: „CC BY‑SA 4.0“ mit geschütztem Bindestrich/Leerzeichen, „1080 × 2340 px“, „190 KB“, „1,3 MB“, „2,99 €“.
+
+**Typografie** maschinell geprüft: keine geraden Anführungszeichen/Apostrophe im sichtbaren Text, keine
+Doppel-Leerzeichen, kein „ - “, keine „...“; deutsche Anführungszeichen „…“, Gedankenstrich –, Auslassungspunkte …
+(„Du stehst vor einer Tür …“). „z. B.“ kommt nicht vor.
+
+**Bewusst belassen / weggelassen:**
+- Lena Bertenstein nur als Name der Autorin genannt, ohne Angaben zur Person (Pseudonym).
+- Screenshots im Pressebereich aus dem Live-Satz 1.0.4, App-Symbol und Titelgrafik aber schon die neuen
+  („Fährtenzeichen“, 1.1.0 in Prüfung) – wie auf `index.html`. Nach Freigabe 1.1.0: `SATZ = "1.1.0"`, `_bauen.py` neu.
+- Keine Altersangaben zu „1000 Gefahren“ (nicht geprüft); keine Wertung der Reihen; Markenhinweis unter dem Text.
+- Ratgeber-Aussagen „Verstehen wird gebraucht“ und „Überschaubare Etappen“ sind Begründungen, keine Studienbefunde,
+  und stehen ohne Quellenzuordnung; Studien nur dort genannt, wo die drei Quellen es tragen.
+- „Ohne Konto, ohne Datensammlung“ wörtlich wie Store/`index.html`; Offline-Angabe mit der Einschränkung „Nur ein Kauf braucht kurz eine Verbindung“.
+
 ## Nenne drei – `seiten/nennedrei/` (DE + EN), 03.10.2026
 
 **Umfang:** alle sichtbaren Texte beider Seiten (Titel, Meta-Description, Open-Graph-Texte und -Alt,
