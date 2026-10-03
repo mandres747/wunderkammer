@@ -11,7 +11,7 @@ Code und kein Inhalt der Apps.
 - Nenne drei: https://mandres747.github.io/wunderkammer/nenne-drei/
 - Mancala Ukoo: https://mandres747.github.io/wunderkammer/mancala-ukoo/
 
-Kontakt: wunderkammer-apps@proton.me
+Kontakt: kontakt@wunderkammer-apps.de
 
 ## Eigener Server und App-Seiten (seit 03.10.2026)
 
