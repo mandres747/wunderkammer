@@ -1,0 +1,239 @@
+/* Wunderkammer – Startseite im Stil des Sammlerbogens (Play-Entwicklerseite).
+   Karton-Blaugrau, Tinte, angesteckte Fundkarten mit Nadelrot, EB Garamond + Caveat.
+   Kein Fremdabruf, kein Skript. */
+
+@font-face {
+  font-family: "EB Garamond"; src: url("schrift/ebgaramond.woff2") format("woff2");
+  font-weight: 400 800; font-display: swap;
+}
+@font-face {
+  font-family: "Caveat"; src: url("schrift/caveat.woff2") format("woff2");
+  font-weight: 400 700; font-display: swap;
+}
+
+:root {
+  --karton: #D6DDE2;
+  --linie: #CDD5DB;
+  --tinte: #1C2630;
+  --tinte-weich: #465460;
+  --karte: #FAFAF7;
+  --karte-rand: #E3E7EA;
+  --nadel: #B2342C;
+  --nadel-dunkel: #78201C;
+  --nadel-licht: #E68C82;
+  --schatten: 0 1px 0 rgba(28, 38, 48, .06), 0 10px 22px -8px rgba(20, 30, 40, .35);
+  --fund-filter: none;
+  --fund-deckkraft: .9;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --karton: #141A20;
+    --linie: #1A2129;
+    --tinte: #E4E9ED;
+    --tinte-weich: #A7B3BD;
+    --karte: #222B33;
+    --karte-rand: #2E3842;
+    --nadel: #E0665C;
+    --nadel-dunkel: #9A3A32;
+    --nadel-licht: #F4B1A9;
+    --schatten: 0 1px 0 rgba(0, 0, 0, .3), 0 12px 26px -8px rgba(0, 0, 0, .7);
+    --fund-filter: invert(1);
+    --fund-deckkraft: .55;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+body {
+  margin: 0;
+  background-color: var(--karton);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 31px, var(--linie) 31px 32px);
+  color: var(--tinte);
+  font: 400 1.125rem/1.6 "EB Garamond", Georgia, serif;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { text-decoration-color: var(--nadel); }
+:focus-visible { outline: 3px solid var(--nadel); outline-offset: 3px; }
+
+.sprung {
+  position: absolute; left: 1rem; top: -4rem; z-index: 10;
+  background: var(--tinte); color: var(--karton); padding: .6rem 1rem;
+}
+.sprung:focus { top: 1rem; }
+
+.breite { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+.hand { font-family: "Caveat", cursive; }
+
+/* ---------- Kopf ---------- */
+.kopf { padding: 1rem 0; }
+.kopf .breite { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.marke {
+  display: flex; align-items: center; gap: .65rem; text-decoration: none;
+  font-weight: 700; font-size: 1.35rem; letter-spacing: .01em; min-height: 48px;
+}
+.marke img { width: 40px; height: 40px; border-radius: 4px; box-shadow: var(--schatten); }
+.kopf nav { margin-left: auto; display: flex; gap: .25rem 1.1rem; flex-wrap: wrap; align-items: center; }
+.kopf nav a {
+  text-decoration: none; font-variant: small-caps; letter-spacing: .06em; font-size: 1.05rem;
+  min-height: 48px; display: inline-flex; align-items: center;
+}
+.kopf nav a:hover { text-decoration: underline; }
+.kopf nav .sprache {
+  border: 1.5px solid currentColor; padding: 0 .7rem; min-height: 40px; font-variant: normal;
+  letter-spacing: .04em; font-size: .95rem;
+}
+@media (max-width: 640px) { .kopf nav .weg-mobil { display: none; } }
+
+/* ---------- Held ---------- */
+.held { padding: 2.5rem 0 4rem; }
+.held .breite { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.held .vorzeile { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 600; margin: 0; line-height: 1.1; }
+.held h1 {
+  font-size: clamp(3.1rem, 9.4vw, 6.4rem); line-height: .95; margin: .4rem 0 1.2rem;
+  font-weight: 700; letter-spacing: -.01em;
+}
+.held .lead { font-size: clamp(1.2rem, 2vw, 1.4rem); max-width: 34rem; margin: 0 0 1.6rem; }
+.etiketten { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-wrap: wrap; gap: .6rem; }
+.etiketten li {
+  background: var(--karte); border: 1px solid var(--karte-rand); padding: .2rem .8rem;
+  font-variant: small-caps; letter-spacing: .05em; font-size: 1.05rem; box-shadow: var(--schatten);
+}
+.etiketten li:nth-child(odd) { transform: rotate(-1.2deg); }
+.etiketten li:nth-child(even) { transform: rotate(1deg); }
+.knoepfe { display: flex; flex-wrap: wrap; gap: .9rem 1.4rem; align-items: center; }
+.knopf {
+  display: inline-flex; align-items: center; min-height: 52px; padding: 0 1.5rem;
+  background: var(--tinte); color: var(--karton); text-decoration: none;
+  font-size: 1.15rem; font-weight: 600; letter-spacing: .02em;
+  box-shadow: 4px 4px 0 var(--nadel);
+  transition: transform .15s, box-shadow .15s;
+}
+.knopf:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--nadel); }
+.knopf-leise { font-size: 1.1rem; min-height: 48px; display: inline-flex; align-items: center; }
+
+/* Sammlerbogen im Held: angesteckte Fundkarten + Kupferstiche */
+.bogen { position: relative; aspect-ratio: 1 / 1; min-height: 300px; }
+.bogen .fund { position: absolute; filter: var(--fund-filter); opacity: var(--fund-deckkraft); pointer-events: none; }
+.bogen .f1 { width: 26%; left: -4%; bottom: 4%; transform: rotate(-8deg); }
+.bogen .f2 { width: 11%; left: 44%; top: 4%; transform: rotate(18deg); }
+.bogen .f3 { width: 30%; right: 0; bottom: -4%; transform: rotate(-6deg); }
+.angesteckt {
+  position: absolute; width: 31%; background: var(--karte); padding: 2.2% 2.2% 1.6%;
+  box-shadow: var(--schatten); text-decoration: none; text-align: center;
+  transition: transform .2s;
+}
+.angesteckt img { border-radius: 18%; width: 100%; }
+.angesteckt span { display: block; font-family: "Caveat", cursive; font-size: clamp(1rem, 1.75vw, 1.5rem); font-weight: 600; margin-top: .35rem; line-height: 1.1; white-space: nowrap; }
+.angesteckt::before, .karte::before, .fundkarte::before {
+  content: ""; position: absolute; left: 50%; top: -9px; width: 20px; height: 20px; margin-left: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--nadel-licht) 0 14%, var(--nadel) 30% 68%, var(--nadel-dunkel) 100%);
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, .35); z-index: 2;
+}
+.angesteckt:nth-of-type(1) { left: 6%; top: 6%; transform: rotate(-5deg); }
+.angesteckt:nth-of-type(2) { left: 58%; top: 2%; transform: rotate(4deg); }
+.angesteckt:nth-of-type(3) { left: 22%; top: 52%; transform: rotate(3deg); }
+.angesteckt:nth-of-type(4) { left: 64%; top: 47%; transform: rotate(-4deg); }
+.angesteckt:hover { transform: rotate(0) scale(1.04); z-index: 3; }
+
+@media (max-width: 860px) {
+  .held { padding-top: 1rem; }
+  .held .breite { grid-template-columns: 1fr; }
+  .bogen { max-width: 30rem; width: 100%; margin: 1rem auto 0; }
+}
+
+/* ---------- Abschnitte ---------- */
+section { padding: 3.5rem 0; scroll-margin-top: 1rem; }
+.kopfzeile { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem 1.2rem; margin-bottom: 2rem; }
+h2 { font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.05; margin: 0; font-weight: 700; }
+.kopfzeile .hand { font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--tinte-weich); font-weight: 500; }
+.einleitung { max-width: 44rem; margin: -1rem 0 2.2rem; font-size: 1.2rem; }
+
+/* Vitrine: Apps bei Google Play */
+.vitrine { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.6rem 2rem; }
+.karte {
+  position: relative; background: var(--karte); box-shadow: var(--schatten);
+  display: grid; grid-template-columns: 9.5rem 1fr; gap: 1.3rem; padding: 1.5rem;
+  border-top: 6px solid var(--app);
+}
+.karte:nth-child(odd) { transform: rotate(-.5deg); }
+.karte:nth-child(even) { transform: rotate(.6deg); }
+.karte .bild { align-self: start; border: 1px solid var(--karte-rand); background: var(--karton); }
+.karte .bild img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; object-position: top; }
+.karte .name { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
+.karte .name img { width: 52px; height: 52px; border-radius: 12px; }
+.karte h3 { font-family: "Caveat", cursive; font-size: 2.1rem; line-height: 1; margin: 0; font-weight: 700; }
+.fach { display: block; font-variant: small-caps; letter-spacing: .07em; font-size: 1rem; color: var(--tinte-weich); }
+.karte p { margin: 0 0 .7rem; }
+.karte ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+.karte li::marker { color: var(--nadel); }
+.karte .aktionen { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.1rem; }
+.badge { display: inline-block; }
+.badge img { width: 180px; height: auto; }
+.mehr { min-height: 48px; display: inline-flex; align-items: center; font-size: 1.08rem; }
+
+@media (max-width: 960px) { .vitrine { grid-template-columns: 1fr; } }
+@media (max-width: 520px) {
+  .karte { grid-template-columns: 1fr; }
+  .karte .bild { width: 62%; margin: 0 auto; order: 2; }
+}
+
+/* Werkstatt: bald im Store */
+.werkstatt { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 2.4rem 1.6rem; }
+.fundkarte {
+  position: relative; display: flex; flex-direction: column; background: var(--karte);
+  box-shadow: var(--schatten); padding: 1.6rem 1.3rem 1.2rem; text-decoration: none;
+  transition: transform .2s;
+}
+.fundkarte:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.fundkarte:nth-child(3n+2) { transform: rotate(.8deg); }
+.fundkarte:nth-child(3n) { transform: rotate(-.4deg); }
+.fundkarte:hover { transform: rotate(0) translateY(-4px); }
+.fundkarte .kopf-k { display: flex; gap: .8rem; align-items: center; margin-bottom: .7rem; }
+.fundkarte .kopf-k img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+.fundkarte h3 { font-family: "Caveat", cursive; font-size: 1.85rem; line-height: 1; margin: 0; font-weight: 700; }
+.fundkarte p { margin: 0 0 1rem; flex: 1; }
+.fundkarte .fuss { display: flex; justify-content: space-between; align-items: center; gap: .6rem; }
+.stempel {
+  display: inline-block; border: 2px solid var(--nadel); color: var(--nadel);
+  padding: .05rem .55rem; font-variant: small-caps; letter-spacing: .08em; font-weight: 600;
+  transform: rotate(-4deg); font-size: .98rem; white-space: nowrap;
+}
+.fundkarte .pfeil { text-decoration: underline; text-underline-offset: .18em; }
+.fundkarte .farbe { height: 4px; background: var(--app); margin: -1.6rem -1.3rem 1.4rem; }
+
+/* Versprechen */
+.versprechen { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.2rem 2rem; }
+.versprechen li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: start; }
+.versprechen img { width: 5.5rem; height: 5.5rem; object-fit: contain; filter: var(--fund-filter); opacity: var(--fund-deckkraft); }
+.versprechen h3 { margin: .2rem 0 .3rem; font-size: 1.35rem; line-height: 1.2; }
+.versprechen p { margin: 0; }
+@media (max-width: 960px) { .versprechen { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .versprechen { grid-template-columns: 1fr; } }
+
+/* Schlusszettel */
+.zettel {
+  background: var(--karte); box-shadow: var(--schatten); max-width: 46rem; margin: 0 auto;
+  padding: 2.4rem 2rem; text-align: center; transform: rotate(-.6deg); position: relative;
+}
+.zettel h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+.zettel p { margin: .8rem auto 1.6rem; max-width: 34rem; }
+.zettel .knoepfe { justify-content: center; }
+
+/* Fuß */
+.fuss-seite { padding: 3rem 0 3.5rem; font-size: 1.02rem; border-top: 1px solid var(--tinte-weich); margin-top: 3rem; }
+.fuss-seite .spalten { display: grid; grid-template-columns: 1.1fr 1.4fr 1fr; gap: 2rem; }
+.fuss-seite h2 { font-size: 1.3rem; margin-bottom: .6rem; }
+.fuss-seite ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 1.2rem; }
+.fuss-seite li { break-inside: avoid; padding: .15rem 0; }
+.fuss-seite li a { display: inline-block; min-height: 32px; }
+.fuss-seite p { margin: 0 0 .7rem; }
+.fuss-seite .klein { color: var(--tinte-weich); font-size: .95rem; }
+@media (max-width: 860px) { .fuss-seite .spalten { grid-template-columns: 1fr; } }
+.karte.ohne-bild { grid-template-columns: 1fr; }
