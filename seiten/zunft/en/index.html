@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Not in production yet (closed testing only, as of 3 Oct 2026): after the Google Play launch remove
+     noindex, switch on the badge and add installUrl to the JSON-LD. -->
+<meta name="robots" content="noindex">
+<title>Guild of Six – Dice Game with a Workshop for Android</title>
+<meta name="description" content="Roll dice, craft charms and set out on the road: a dice game with a workshop and a story. No ads, no in-game currency, no internet needed.">
+<link rel="canonical" href="https://zunft.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="de" href="https://zunft.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="en" href="https://zunft.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://zunft.wunderkammer-apps.de/">
+<meta name="theme-color" content="#0F1C1A">
+<link rel="icon" href="../bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../bilder/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../bilder/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wunderkammer-Apps">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:title" content="Guild of Six – Roll, forge, take to the road">
+<meta property="og:description" content="A dice game with a workshop: every score yields materials you craft into charms. No ads, no in-game currency.">
+<meta property="og:url" content="https://zunft.wunderkammer-apps.de/en/">
+<meta property="og:image" content="https://zunft.wunderkammer-apps.de/bilder/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Copper engraving in shades of green: six dice makers at a workbench, next to a brass die with verdigris and the lettering “Guild of Six – Roll · Forge · Take to the road”.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../schrift/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../stil.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Guild of Six: Dice Journey","operatingSystem":"Android","applicationCategory":"GameApplication","inLanguage":["en","de"],"url":"https://zunft.wunderkammer-apps.de/en/","image":"https://zunft.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
+</script>
+</head>
+<body>
+<a class="ueberspringen" href="#inhalt">Skip to content</a>
+
+<header class="kopf">
+  <div class="huelle">
+    <a class="marke" href="./"><img src="../bilder/icon-192.png" alt="" width="36" height="36">Guild of Six</a>
+    <nav aria-label="Page navigation">
+      <ul>
+        <li><a href="#so-gehts">How to play</a></li>
+        <li><a href="#werkstatt">Workshop</a></li>
+        <li><a href="#preise">Pricing</a></li>
+        <li><a href="#fragen">FAQ</a></li>
+        <li class="immer"><a class="sprache" href="../" hreflang="de" lang="de">Deutsch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="held" aria-labelledby="titel">
+  <div class="huelle">
+    <div>
+      <span class="mono">Roll · Forge · Take to the road</span>
+      <h1 id="titel">Guild of Six</h1>
+      <p class="versprechen">A dice game with a workshop. Five dice, up to three rolls – and every score brings more than points: it also yields materials. Out of them, you craft charms. Luck turns into a plan.</p>
+      <ul class="fakten" aria-label="At a glance">
+        <li>No ads</li>
+        <li>No in-game currency</li>
+        <li>Plays offline</li>
+        <li>No account</li>
+      </ul>
+      <p class="bald" role="status"><strong>Coming soon to Google Play</strong><span>Guild of Six is currently in closed testing.</span></p>
+      <!-- Switch on once the app is in production:
+      <a class="badge" href="https://play.google.com/store/apps/details?id=de.zunftdersechs.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play"></a>
+      -->
+      <!-- APPSTORE-LIVE: add the Apple badge once Apple approves (App ID 6820245472) --><span class="bald">iPhone &amp; iPad: coming soon to the App Store</span>
+      <p class="hinweis">For Android, in English and German, works with TalkBack.</p>
+    </div>
+
+    <div class="platte tisch" data-tisch
+      data-texte='{"wuerfel":"Die %1: %2","zaehlt":"counts","wurf":"Reroll %1 · %2 left","keinWurf":"No rolls left","stand":"Roll %1 of 3 · tap a die to hold it","fertig":"All three rolls used","dazu":"Plus:","kombi":{"HOCH":"High die","PAAR":"Pair","ZWEI_PAARE":"Two pairs","DRILLING":"Three of a kind","KLEINE_STRASSE":"Small straight","FULL_HOUSE":"Full house","GROSSE_STRASSE":"Large straight","VIERLING":"Four of a kind","FUENFLING":"Five of a kind"},"stoff":{"SPAN":"Shavings","MESSING":"Brass","EISEN":"Iron","KRISTALL":"Crystal","MONDSTAUB":"Moondust","TAU":"Dew","GLUT":"Ember"}}'>
+      <div class="kopfzeile-tisch">
+        <span class="mono">Try a roll</span>
+        <span class="mono" data-stand aria-live="polite">Example</span>
+      </div>
+      <p class="stadt">Ashford</p>
+      <p class="leise">No charms yet, just like at the start of the journey.</p>
+      <ul class="wuerfelreihe" aria-label="Your five dice">
+        <li><button class="wuerfel" type="button" data-augen="3" aria-pressed="false" disabled aria-label="Die 1: 3"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="3" aria-pressed="false" disabled aria-label="Die 2: 3"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="5" aria-pressed="false" disabled aria-label="Die 3: 5"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="3" aria-pressed="false" disabled aria-label="Die 4: 3"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="5" aria-pressed="false" disabled aria-label="Die 5: 5"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+      </ul>
+      <ul class="zaehlt" aria-hidden="true"><li class="ja"></li><li class="ja"></li><li class="ja"></li><li class="ja"></li><li class="ja"></li></ul>
+      <div class="rechnung" aria-live="polite">
+        <p class="kombi">Full house</p>
+        <div class="gleichung">
+          <span class="topf topf--wert"><span class="mono">Value</span><b data-wert>59</b></span>
+          <span class="op" aria-hidden="true">×</span>
+          <span class="topf topf--kraft"><span class="mono">Power</span><b data-kraft>4</b></span>
+          <span class="op" aria-hidden="true">=</span>
+          <span class="punkte" data-punkte>236</span>
+        </div>
+        <ul class="stoffe" aria-label="Materials from this score"><li class="vorspann-stoffe">Plus:</li><li style="--farbe:#8FA3B3">Iron</li><li style="--farbe:#D9B650">Brass</li></ul>
+      </div>
+      <div class="tisch-knoepfe">
+        <button class="knopf" type="button" data-wurf hidden>Roll</button>
+        <button class="knopf knopf--leise" type="button" data-neu hidden>New hand</button>
+      </div>
+      <p class="erklaer">Value = base value of the combination + pips of the dice that count. Calculated by the app’s rules. In the game you then decide when to score – three scores per station.</p>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="so-gehts" aria-labelledby="h-so">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">The rules in three steps</span>
+      <h2 id="h-so">How to play</h2>
+      <div class="skala" style="--wert: 33%" aria-hidden="true"></div>
+    </div>
+    <ol class="walz">
+      <li class="platte"><span class="mono">Step 1 of 3</span><h3>Roll</h3><p>Five dice, up to three rolls: pairs, straights, full house and five of a kind. Hold what fits and reroll the rest. The game picks the best reading of your dice by itself.</p></li>
+      <li class="platte"><span class="mono">Step 2 of 3</span><h3>Score</h3><p>Every score has two pots: value × power = points. Three scores per station must together reach the test piece. And every score yields materials – brass, iron, crystal, moondust.</p></li>
+      <li class="platte"><span class="mono">Step 3 of 3</span><h3>Forge</h3><p>Between two towns you stop at the workshop: craft charms, regrind the faces of your dice, trade what you don’t need. Then the journey goes on.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="abschnitt" id="werkstatt" aria-labelledby="h-werkstatt">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Workbench · Forge · Trader</span>
+      <h2 id="h-werkstatt">The workshop</h2>
+      <div class="skala" style="--wert: 66%" aria-hidden="true"></div>
+    </div>
+    <div class="werkstatt">
+      <ul class="punktliste">
+        <li><strong>Workbench:</strong> Two materials make a charm. There are 21 recipes, and you discover most of them yourself – riddles in the guild book hint at what belongs together. Charms can be refined, most of them up to level 3.</li>
+        <li><strong>Forge:</strong> Grind the faces of your dice, add ember notches or a moon face. The changes last for the whole journey.</li>
+        <li><strong>Trader:</strong> Three of the same material for any one.</li>
+        <li><strong>Guild book:</strong> Look up every recipe – even in the middle of the workshop. And a slip can be undone.</li>
+        <li><strong>No hidden maths:</strong> Every score is calculated step by step. You always see which charm did what.</li>
+      </ul>
+      <ul class="talismane" aria-label="Four of the 21 charms">
+        <li><figure><img src="../bilder/tal-kupfer.webp" width="256" height="256" loading="lazy" decoding="async" alt="Copper engraving of a plain copper ring with green patina spots."><figcaption>Copper Ring<small>Always more power</small></figcaption></figure></li>
+        <li><figure><img src="../bilder/tal-amboss.webp" width="256" height="256" loading="lazy" decoding="async" alt="Copper engraving of a small anvil."><figcaption>Anvil<small>More power on three, four or five of a kind or a full house</small></figcaption></figure></li>
+        <li><figure><img src="../bilder/tal-einser.webp" width="256" height="256" loading="lazy" decoding="async" alt="Copper engraving of a copper die with a single pip and a four-leaf clover hanging from it."><figcaption>Lucky One<small>Every lit one multiplies the power</small></figcaption></figure></li>
+        <li><figure><img src="../bilder/tal-dreiauge.webp" width="256" height="256" loading="lazy" decoding="async" alt="Copper engraving of a medallion with three eyes arranged in a triangle."><figcaption>Three-Eye<small>Every lit three adds value</small></figcaption></figure></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="geschichte" aria-labelledby="h-geschichte">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Six journeyman years</span>
+      <h2 id="h-geschichte">The story</h2>
+      <div class="skala" style="--wert: 100%" aria-hidden="true"></div>
+    </div>
+    <div class="geschichte">
+      <div>
+        <p class="sage">Long ago, the six finest dice makers in the land carved a single die together: the First Die. No one has seen it for generations, and in Sixwells the space between the fountains stands empty.</p>
+        <p>Whoever wants to become a master sets out on the journey: eight towns, eight test pieces – from Ashford to Sixwells. Each town was home to one of the founders. Your mentors Anselm, Wendel, Marthe and Almut send you on your way, each with their own voice, strengths and weaknesses. Every new guild rank starts a new year on the road, and the towns tell you more – until you know where the First Die belongs.</p>
+        <p>Copper engravings, a map of your journey and town ambience accompany you.</p>
+        <figure class="stich"><img src="../bilder/prolog-1-540.webp" srcset="../bilder/prolog-1-540.webp 540w, ../bilder/prolog-1-1080.webp 1080w" sizes="(min-width: 900px) 560px, 100vw" width="540" height="404" loading="lazy" decoding="async" alt="Copper engraving: six dice makers in work clothes lean over a workbench by candlelight, a small die in the middle."><figcaption>The six founders, from the prologue. The illustrations were created with AI assistance.</figcaption></figure>
+      </div>
+      <figure class="stich"><img src="../bilder/karte-walz-540.webp" srcset="../bilder/karte-walz-540.webp 540w, ../bilder/karte-walz-1080.webp 1080w" sizes="(min-width: 900px) 560px, 100vw" width="540" height="720" loading="lazy" decoding="async" alt="Engraved map at night: a road winds from a village by the river past a mill, a harbour, a mountain town and a glassworks up to a town with six fountains."><figcaption>The map of the journey: from Ashford to Sixwells.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="bilder" aria-labelledby="h-bilder">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">From the game</span>
+      <h2 id="h-bilder">What it looks like</h2>
+    </div>
+    <ul class="galerie" tabindex="0" aria-label="Phone screenshots">
+      <li><figure><img src="../bilder/telefon-en-01_prolog-360.webp" srcset="../bilder/telefon-en-01_prolog-360.webp 360w, ../bilder/telefon-en-01_prolog-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Prologue, plate 1 of 4: “The six founders”, an engraving of the dice makers at the workbench, followed by the opening of the legend."><figcaption>Prologue: the legend of the First Die</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-02_zunfthaus-360.webp" srcset="../bilder/telefon-en-02_zunfthaus-360.webp 360w, ../bilder/telefon-en-02_zunfthaus-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Start screen “Guild of Six” with the buttons New journey, Daily journey, Guild book and Settings; below, “Your guild”: Senior journeyman, 1 of 24 letters, 3 of 21 recipes."><figcaption>The guild hall</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-03_spieltisch-360.webp" srcset="../bilder/telefon-en-03_spieltisch-360.webp 360w, ../bilder/telefon-en-03_spieltisch-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Game table in Sixwells: test piece 1,006 of 15,000, four ones – three of them held – and a six; below, four of a kind with value 64 times power 255.6 equals 16,358."><figcaption>At the game table</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-04_rechnung-360.webp" srcset="../bilder/telefon-en-04_rechnung-360.webp 360w, ../bilder/telefon-en-04_rechnung-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="The calculation runs step by step: +1 above four dice, the Lucky One charm lights up, line “Lucky One: power ×1.6”."><figcaption>Every score calculated</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-05_zwischentitel-360.webp" srcset="../bilder/telefon-en-05_zwischentitel-360.webp 360w, ../bilder/telefon-en-05_zwischentitel-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Title card “Station 4 of 8: Highstone” with an engraving of a mountain town and a stonemason; below, a paragraph about Brun, the founder of the Three."><figcaption>Eight towns, eight stories</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-06_werkbank-360.webp" srcset="../bilder/telefon-en-06_werkbank-360.webp 360w, ../bilder/telefon-en-06_werkbank-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Workbench: the charm Crown of Six is refined to level 2 with two embers; below, the stock of materials and the Refine button."><figcaption>At the workbench</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-07_haendler-360.webp" srcset="../bilder/telefon-en-07_haendler-360.webp 360w, ../bilder/telefon-en-07_haendler-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Trader: swapping three iron for one dew, with the guild trial “Haste” in Highstone at the top."><figcaption>At the trader</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="umfang" aria-labelledby="h-umfang">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">What awaits you</span>
+      <h2 id="h-umfang">No two journeys are alike</h2>
+    </div>
+    <div class="raster">
+      <article class="platte"><span class="mono">8 towns</span><h3>Guild trials</h3><p>Fog, Rust, Haste and other trials change a town’s rules. You can see on the map in advance which ones lie ahead.</p></article>
+      <article class="platte"><span class="mono">4 mentors</span><h3>Their own strengths</h3><p>Anselm plays with no special rules. Wendel, Marthe and Almut each bring an advantage and a drawback – so the journey plays differently with each of them.</p></article>
+      <article class="platte"><span class="mono">6 ranks · 24 letters</span><h3>From journeyman to master</h3><p>Six guild ranks from Journeyman to Master of Six, separately for each mentor: 24 master’s letters to earn.</p></article>
+      <article class="platte"><span class="mono">Every day</span><h3>The daily journey</h3><p>The same rolls for everyone, comparable on the same day. No streak to break and no reminder to pull you back.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="fuer-wen" aria-labelledby="h-fuerwen">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Who it’s for</span>
+      <h2 id="h-fuerwen">Who is the game for?</h2>
+    </div>
+    <div class="raster">
+      <article class="platte"><h3>Dice fans</h3><p>You know the game with five dice and three rolls and want to make more of it than luck.</p></article>
+      <article class="platte"><h3>Tinkerers</h3><p>You like to do the maths, combine charms and crack riddles until the guild book is full.</p></article>
+      <article class="platte"><h3>Fair-play fans</h3><p>No ads, no energy, no waiting, no in-game currency. Play as long as you like – and stop whenever you like.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="preise" aria-labelledby="h-preise">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Played fair</span>
+      <h2 id="h-preise">What’s free – and what costs</h2>
+      <p class="vorspann">No subscription, no in-game currency, no ads. The only thing that costs is a single one-time purchase.</p>
+    </div>
+    <div class="preis">
+      <div class="platte">
+        <span class="mono">Free</span>
+        <p class="betrag">$0</p>
+        <ul class="grade" aria-label="Included for free">
+          <li class="frei"><span>Mentor Anselm (Workshop)</span><span>from the start</span></li>
+          <li class="frei"><span>Mentor Wendel (Smith)</span><span>reach station 4</span></li>
+          <li class="frei"><span>Ranks Journeyman, Senior journeyman, Workmaster</span><span>free</span></li>
+          <li class="frei"><span>Daily journey</span><span>free</span></li>
+        </ul>
+      </div>
+      <div class="platte">
+        <span class="mono">The Guild Charter · one-time purchase</span>
+        <p class="betrag">$3.79</p>
+        <ul class="grade" aria-label="Included in the Guild Charter">
+          <li><span>Mentor Marthe (Glassblower)</span><span>score 3 straights on one journey</span></li>
+          <li><span>Mentor Almut (Moon Reader)</span><span>roll five of a kind</span></li>
+          <li><span>Ranks Chief master, Guild master, Master of Six</span><span>included</span></li>
+          <li><span>The end of the story</span><span>included</span></li>
+          <li><span>Future mentors and journeyman challenges</span><span>included</span></li>
+        </ul>
+        <p class="kleingedruckt">You also unlock Wendel, Marthe and Almut through a deed. During closed testing everything is free. US price as of October 2026; in Germany €3.99. The price Google Play shows at checkout is what counts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="fragen" aria-labelledby="h-fragen">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Questions</span>
+      <h2 id="h-fragen">Frequently asked questions</h2>
+    </div>
+    <div class="fragen">
+      <details><summary>When will the game be available?</summary><div><p>Guild of Six is currently in closed testing on Google Play. As soon as it is available to everyone, the link to the store listing will appear here.</p></div></details>
+      <details><summary>Do I need an internet connection?</summary><div><p>No. The game runs offline, including the daily journey: your device creates it from the date.</p></div></details>
+      <details><summary>Is there an iPhone version?</summary><div><p>No, Guild of Six is only available for Android.</p></div></details>
+      <details><summary>Is this gambling?</summary><div><p>No. There is no money at stake, no loot boxes and no in-game currency. The dice bring chance into play – what you make of it is down to holding, charms and the forge.</p></div></details>
+      <details><summary>Does the app collect data?</summary><div><p>No sign-up, no account, no ads, no trackers. Your progress stays on your device. The details are in the <a href="https://wunderkammer-apps.de/zunft-der-sechs/" hreflang="de">privacy policy</a> (in German).</p></div></details>
+      <details><summary>I have a new phone. Are my progress and the Guild Charter gone?</summary><div><p>No. The Guild Charter is tied to your Google account; “Restore purchase” brings it back. Your progress comes along with Android backup or the data transfer when switching phones, if it is turned on.</p></div></details>
+      <details><summary>Which languages does the game support?</summary><div><p>English and German. It works with TalkBack.</p></div></details>
+      <details><summary>How were the pictures made?</summary><div><p>The copper engravings were designed in Canva with AI assistance. The sounds are public-domain recordings (CC0).</p></div></details>
+      <details><summary>I have a question or found a bug.</summary><div><p>Write to us at <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche schluss" aria-labelledby="h-schluss">
+  <div class="huelle">
+    <h2 id="h-schluss">The guild awaits you.</h2>
+    <p class="vorspann">Eight towns, six founders, one lost die.</p>
+    <p class="bald"><strong>Coming soon to Google Play</strong><span>Free to play up to Workmaster.</span></p>
+    <!-- Switch on once the app is in production:
+    <a class="badge" href="https://play.google.com/store/apps/details?id=de.zunftdersechs.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play" loading="lazy"></a>
+    -->
+    <!-- APPSTORE-LIVE: add the Apple badge once Apple approves (App ID 6820245472) --><span class="bald">iPhone &amp; iPad: coming soon to the App Store</span>
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="huelle">
+    <ul>
+      <li><a href="https://wunderkammer-apps.de/">More apps from the Wunderkammer</a></li>
+      <li><a href="https://wunderkammer-apps.de/zunft-der-sechs/" hreflang="de">App privacy policy (German)</a></li>
+      <li><a href="https://wunderkammer-apps.de/impressum/" hreflang="de">Legal notice and website privacy (German)</a></li>
+      <li><a href="mailto:kontakt@wunderkammer-apps.de">Contact</a></li>
+    </ul>
+    <p>This page sets no cookies, loads nothing from other servers and does not count visits.</p>
+    <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </div>
+</footer>
+<script src="../probier.js" defer></script>
+</body>
+</html>

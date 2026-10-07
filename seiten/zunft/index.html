@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Noch nicht in Produktion (nur geschlossener Test, Stand 03.10.2026): erst nach dem Start bei Google Play
+     noindex entfernen, Badge einschalten und installUrl im JSON-LD ergänzen. -->
+<meta name="robots" content="noindex">
+<title>Zunft der Sechs – Würfelspiel mit Werkstatt für Android</title>
+<meta name="description" content="Würfle, fertige Talismane und geh auf die Walz: ein Würfelspiel mit Werkstatt und Geschichte. Ohne Werbung, ohne Spielwährung, ohne Internet.">
+<link rel="canonical" href="https://zunft.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="de" href="https://zunft.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="en" href="https://zunft.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://zunft.wunderkammer-apps.de/">
+<meta name="theme-color" content="#0F1C1A">
+<link rel="icon" href="bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="bilder/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="bilder/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wunderkammer-Apps">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Zunft der Sechs – Würfeln, schmieden, auf die Walz">
+<meta property="og:description" content="Ein Würfelspiel mit Werkstatt: Jede Wertung bringt Werkstoffe, aus denen Talismane entstehen. Ohne Werbung, ohne Spielwährung.">
+<meta property="og:url" content="https://zunft.wunderkammer-apps.de/">
+<meta property="og:image" content="https://zunft.wunderkammer-apps.de/bilder/og-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kupferstich in Grüntönen: sechs Würfelmacher an einer Werkbank, daneben ein Messingwürfel mit Grünspan und der Schriftzug „Zunft der Sechs – Würfeln · Schmieden · Auf die Walz“.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="schrift/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="stil.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Zunft der Sechs: Würfel-Walz","operatingSystem":"Android","applicationCategory":"GameApplication","inLanguage":["de","en"],"url":"https://zunft.wunderkammer-apps.de/","image":"https://zunft.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
+</script>
+</head>
+<body>
+<a class="ueberspringen" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="kopf">
+  <div class="huelle">
+    <a class="marke" href="./"><img src="bilder/icon-192.png" alt="" width="36" height="36">Zunft der Sechs</a>
+    <nav aria-label="Seitennavigation">
+      <ul>
+        <li><a href="#so-gehts">So geht’s</a></li>
+        <li><a href="#werkstatt">Werkstatt</a></li>
+        <li><a href="#preise">Preise</a></li>
+        <li><a href="#fragen">Fragen</a></li>
+        <li class="immer"><a class="sprache" href="en/" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="held" aria-labelledby="titel">
+  <div class="huelle">
+    <div>
+      <span class="mono">Würfeln · Schmieden · Auf die Walz</span>
+      <h1 id="titel">Zunft der Sechs</h1>
+      <p class="versprechen">Ein Würfelspiel mit Werkstatt. Fünf Würfel, bis zu drei Würfe – und jede Wertung bringt nicht nur Punkte, sondern auch Werkstoffe. Aus ihnen fertigst du Talismane. So wird aus Glück ein Plan.</p>
+      <ul class="fakten" aria-label="Auf einen Blick">
+        <li>Keine Werbung</li>
+        <li>Keine Spielwährung</li>
+        <li>Ohne Internet</li>
+        <li>Ohne Konto</li>
+      </ul>
+      <p class="bald" role="status"><strong>Erscheint bald bei Google Play</strong><span>Zunft der Sechs ist gerade im geschlossenen Test.</span></p>
+      <!-- Badge einschalten, sobald die App in Produktion ist:
+      <a class="badge" href="https://play.google.com/store/apps/details?id=de.zunftdersechs.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play"></a>
+      -->
+      <!-- APPSTORE-LIVE: Apple-Badge hier einsetzen, sobald Apple freigibt (App-ID 6820245472) --><span class="bald">iPhone &amp; iPad: bald im App Store</span>
+      <p class="hinweis">Für Android, auf Deutsch und Englisch, vorlesbar mit TalkBack.</p>
+    </div>
+
+    <div class="platte tisch" data-tisch
+      data-texte='{"wuerfel":"Würfel %1: %2","zaehlt":"zählt mit","wurf":"%1 neu würfeln · noch %2","keinWurf":"Keine Würfe mehr","stand":"Wurf %1 von 3 · Würfel antippen zum Halten","fertig":"Drei Würfe gewürfelt","dazu":"Dazu:","kombi":{"HOCH":"Höchster Würfel","PAAR":"Paar","ZWEI_PAARE":"Zwei Paare","DRILLING":"Drilling","KLEINE_STRASSE":"Kleine Straße","FULL_HOUSE":"Full House","GROSSE_STRASSE":"Große Straße","VIERLING":"Vierling","FUENFLING":"Fünfling"},"stoff":{"SPAN":"Span","MESSING":"Messing","EISEN":"Eisen","KRISTALL":"Kristall","MONDSTAUB":"Mondstaub","TAU":"Tau","GLUT":"Glut"}}'>
+      <div class="kopfzeile-tisch">
+        <span class="mono">Probierwurf</span>
+        <span class="mono" data-stand aria-live="polite">Beispiel</span>
+      </div>
+      <p class="stadt">Eschenau</p>
+      <p class="leise">Ohne Talismane, wie am Anfang der Walz.</p>
+      <ul class="wuerfelreihe" aria-label="Deine fünf Würfel">
+        <li><button class="wuerfel" type="button" data-augen="3" aria-pressed="false" disabled aria-label="Würfel 1: 3"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="3" aria-pressed="false" disabled aria-label="Würfel 2: 3"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="5" aria-pressed="false" disabled aria-label="Würfel 3: 5"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="3" aria-pressed="false" disabled aria-label="Würfel 4: 3"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+        <li><button class="wuerfel" type="button" data-augen="5" aria-pressed="false" disabled aria-label="Würfel 5: 5"><span class="koerper" aria-hidden="true"><i class="auge a1"></i><i class="auge a2"></i><i class="auge a3"></i><i class="auge a4"></i><i class="auge a5"></i><i class="auge a6"></i><i class="auge a7"></i><i class="auge a8"></i><i class="auge a9"></i></span></button></li>
+      </ul>
+      <ul class="zaehlt" aria-hidden="true"><li class="ja"></li><li class="ja"></li><li class="ja"></li><li class="ja"></li><li class="ja"></li></ul>
+      <div class="rechnung" aria-live="polite">
+        <p class="kombi">Full House</p>
+        <div class="gleichung">
+          <span class="topf topf--wert"><span class="mono">Wert</span><b data-wert>59</b></span>
+          <span class="op" aria-hidden="true">×</span>
+          <span class="topf topf--kraft"><span class="mono">Kraft</span><b data-kraft>4</b></span>
+          <span class="op" aria-hidden="true">=</span>
+          <span class="punkte" data-punkte>236</span>
+        </div>
+        <ul class="stoffe" aria-label="Werkstoffe aus dieser Wertung"><li class="vorspann-stoffe">Dazu:</li><li style="--farbe:#8FA3B3">Eisen</li><li style="--farbe:#D9B650">Messing</li></ul>
+      </div>
+      <div class="tisch-knoepfe">
+        <button class="knopf" type="button" data-wurf hidden>Würfeln</button>
+        <button class="knopf knopf--leise" type="button" data-neu hidden>Neue Hand</button>
+      </div>
+      <p class="erklaer">Wert = Grundwert der Kombination + Augen der Würfel, die mitzählen. Gerechnet nach den Regeln der App. Dort entscheidest du dann, wann du wertest – drei Wertungen je Station.</p>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="so-gehts" aria-labelledby="h-so">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Die Regeln in drei Schritten</span>
+      <h2 id="h-so">So geht’s</h2>
+      <div class="skala" style="--wert: 33%" aria-hidden="true"></div>
+    </div>
+    <ol class="walz">
+      <li class="platte"><span class="mono">Schritt 1 von 3</span><h3>Würfeln</h3><p>Fünf Würfel, bis zu drei Würfe: Paare, Straßen, Full House und Fünfling. Du hältst, was passt, und würfelst den Rest neu. Die beste Deutung deiner Würfel wählt das Spiel selbst.</p></li>
+      <li class="platte"><span class="mono">Schritt 2 von 3</span><h3>Werten</h3><p>Jede Wertung hat zwei Töpfe: Wert × Kraft = Punkte. Drei Wertungen je Station müssen zusammen das Probestück erreichen. Und jede Wertung bringt Werkstoffe – Messing, Eisen, Kristall, Mondstaub.</p></li>
+      <li class="platte"><span class="mono">Schritt 3 von 3</span><h3>Schmieden</h3><p>Zwischen zwei Städten kehrst du in der Werkstatt ein: Talismane fertigen, Würfelseiten umschleifen, Überzähliges tauschen. Dann geht die Walz weiter.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="abschnitt" id="werkstatt" aria-labelledby="h-werkstatt">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Werkbank · Schmiede · Händler</span>
+      <h2 id="h-werkstatt">Die Werkstatt</h2>
+      <div class="skala" style="--wert: 66%" aria-hidden="true"></div>
+    </div>
+    <div class="werkstatt">
+      <ul class="punktliste">
+        <li><strong>Werkbank:</strong> Aus zwei Werkstoffen entsteht ein Talisman. 21 Rezepte gibt es, die meisten entdeckst du selbst – Rätsel im Zunftbuch verraten, was zusammengehört. Talismane lassen sich veredeln, die meisten bis Stufe 3.</li>
+        <li><strong>Schmiede:</strong> Du schleifst die Seiten deiner Würfel um, setzt Glutkerben oder eine Mondseite. Die Änderungen gelten für die ganze Walz.</li>
+        <li><strong>Händler:</strong> Drei gleiche Werkstoffe gegen einen beliebigen.</li>
+        <li><strong>Zunftbuch:</strong> Jedes Rezept schlägst du nach – auch mitten in der Werkstatt. Und ein Fehlgriff lässt sich zurücknehmen.</li>
+        <li><strong>Keine Rechnung im Dunkeln:</strong> Jede Wertung wird Schritt für Schritt vorgerechnet. Du siehst immer, welcher Talisman was gebracht hat.</li>
+      </ul>
+      <ul class="talismane" aria-label="Vier der 21 Talismane">
+        <li><figure><img src="bilder/tal-kupfer.webp" width="256" height="256" loading="lazy" decoding="async" alt="Kupferstich eines schlichten Kupferrings mit grünen Patinaflecken."><figcaption>Kupferring<small>Immer mehr Kraft</small></figcaption></figure></li>
+        <li><figure><img src="bilder/tal-amboss.webp" width="256" height="256" loading="lazy" decoding="async" alt="Kupferstich eines kleinen Ambosses."><figcaption>Amboss<small>Mehr Kraft bei Drilling, Full House, Vierling, Fünfling</small></figcaption></figure></li>
+        <li><figure><img src="bilder/tal-einser.webp" width="256" height="256" loading="lazy" decoding="async" alt="Kupferstich eines Kupferwürfels mit einem Auge, an dem ein Kleeblatt hängt."><figcaption>Einserglück<small>Jede leuchtende Eins vervielfacht die Kraft</small></figcaption></figure></li>
+        <li><figure><img src="bilder/tal-dreiauge.webp" width="256" height="256" loading="lazy" decoding="async" alt="Kupferstich eines Medaillons mit drei Augen im Dreieck."><figcaption>Dreiauge<small>Jede leuchtende Drei bringt Wert</small></figcaption></figure></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="geschichte" aria-labelledby="h-geschichte">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Sechs Wanderjahre</span>
+      <h2 id="h-geschichte">Die Geschichte</h2>
+      <div class="skala" style="--wert: 100%" aria-hidden="true"></div>
+    </div>
+    <div class="geschichte">
+      <div>
+        <p class="sage">Vor langer Zeit schnitzten die sechs besten Würfelmacher des Landes gemeinsam einen einzigen Würfel: den Urwürfel. Seit Generationen hat ihn niemand gesehen, und in Sechsbrunn ist die Mitte zwischen den Brunnen leer.</p>
+        <p>Wer Meister werden will, geht auf die Walz: acht Städte, acht Probestücke – von Eschenau bis Sechsbrunn. Jede Stadt war Sitz eines der Gründer. Deine Lehrmeister Anselm, Wendel, Marthe und Almut schicken dich los, jeder mit eigener Stimme, eigenen Stärken und Schwächen. Mit jedem Zunftgrad beginnt ein neues Wanderjahr, und die Städte erzählen mehr – bis du weißt, wohin der Urwürfel gehört.</p>
+        <p>Kupferstiche, eine Karte der Walz und Stadtgeräusche begleiten dich.</p>
+        <figure class="stich"><img src="bilder/prolog-1-540.webp" srcset="bilder/prolog-1-540.webp 540w, bilder/prolog-1-1080.webp 1080w" sizes="(min-width: 900px) 560px, 100vw" width="540" height="404" loading="lazy" decoding="async" alt="Kupferstich: sechs Würfelmacher in Arbeitskleidung beugen sich bei Kerzenlicht über eine Werkbank, in der Mitte ein kleiner Würfel."><figcaption>Die sechs Gründer, aus dem Prolog. Die Illustrationen wurden mit KI-Unterstützung gestaltet.</figcaption></figure>
+      </div>
+      <figure class="stich"><img src="bilder/karte-walz-540.webp" srcset="bilder/karte-walz-540.webp 540w, bilder/karte-walz-1080.webp 1080w" sizes="(min-width: 900px) 560px, 100vw" width="540" height="720" loading="lazy" decoding="async" alt="Gestochene Landkarte bei Nacht: Ein Weg windet sich von einem Dorf am Fluss vorbei an Mühle, Hafen, Bergstadt und Glashütte hinauf zu einer Stadt mit sechs Brunnen."><figcaption>Die Karte der Walz: von Eschenau bis Sechsbrunn.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="bilder" aria-labelledby="h-bilder">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Aus dem Spiel</span>
+      <h2 id="h-bilder">So sieht’s aus</h2>
+    </div>
+    <ul class="galerie" tabindex="0" aria-label="Bildschirmfotos vom Handy">
+      <li><figure><img src="bilder/telefon-de-01_prolog-360.webp" srcset="bilder/telefon-de-01_prolog-360.webp 360w, bilder/telefon-de-01_prolog-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Prolog, Tafel 1 von 4: „Die sechs Gründer“, Kupferstich der Würfelmacher an der Werkbank, darunter der Beginn der Sage."><figcaption>Prolog: die Sage vom Urwürfel</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-02_zunfthaus-360.webp" srcset="bilder/telefon-de-02_zunfthaus-360.webp 360w, bilder/telefon-de-02_zunfthaus-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Startseite „Zunft der Sechs“ mit den Knöpfen Neue Walz, Walz des Tages, Zunftbuch und Einstellungen; darunter „Deine Zunft“: Altgeselle, 1 von 24 Briefen, 3 von 21 Rezepten."><figcaption>Das Zunfthaus</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-03_spieltisch-360.webp" srcset="bilder/telefon-de-03_spieltisch-360.webp 360w, bilder/telefon-de-03_spieltisch-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Spieltisch in Sechsbrunn: Probestück 1.006 von 15.000, vier Einsen, drei davon gehalten, und eine Sechs, darunter Vierling mit Wert 64 mal Kraft 255,6 gleich 16.358."><figcaption>Am Spieltisch</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-04_rechnung-360.webp" srcset="bilder/telefon-de-04_rechnung-360.webp 360w, bilder/telefon-de-04_rechnung-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Die Rechnung läuft Schritt für Schritt: Über vier Würfeln steht +1, der Talisman Einserglück leuchtet, Zeile „Einserglück: Kraft ×1,6“."><figcaption>Jede Wertung vorgerechnet</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-05_zwischentitel-360.webp" srcset="bilder/telefon-de-05_zwischentitel-360.webp 360w, bilder/telefon-de-05_zwischentitel-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Zwischentitel „Station 4 von 8: Hohenstein“ mit Kupferstich einer Bergstadt und einem Steinmetz; darunter ein Absatz über Brun, den Gründer der Drei."><figcaption>Acht Städte, acht Geschichten</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-06_werkbank-360.webp" srcset="bilder/telefon-de-06_werkbank-360.webp 360w, bilder/telefon-de-06_werkbank-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Werkbank: Der Talisman Sechserkrone wird mit zwei Glut auf Stufe 2 veredelt, darunter der Vorrat an Werkstoffen und der Knopf „Veredeln“."><figcaption>An der Werkbank</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-07_haendler-360.webp" srcset="bilder/telefon-de-07_haendler-360.webp 360w, bilder/telefon-de-07_haendler-720.webp 720w" sizes="236px" width="360" height="600" loading="lazy" decoding="async" alt="Händler: drei Eisen gegen einen Tau tauschen, darüber die Zunftprobe „Hast“ in Hohenstein."><figcaption>Beim Händler</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="umfang" aria-labelledby="h-umfang">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Was dich erwartet</span>
+      <h2 id="h-umfang">Jede Walz verläuft anders</h2>
+    </div>
+    <div class="raster">
+      <article class="platte"><span class="mono">8 Städte</span><h3>Zunftproben</h3><p>Nebel, Rost, Hast und andere Proben ändern die Regeln einer Stadt. Welche dich erwarten, siehst du vorab auf der Karte.</p></article>
+      <article class="platte"><span class="mono">4 Lehrmeister</span><h3>Eigene Stärken</h3><p>Anselm spielt ohne Besonderheiten. Wendel, Marthe und Almut bringen je einen Vorteil und einen Nachteil mit – so spielt sich die Walz mit jedem anders.</p></article>
+      <article class="platte"><span class="mono">6 Zunftgrade · 24 Briefe</span><h3>Vom Gesellen zum Meister</h3><p>Sechs Zunftgrade vom Gesellen bis zum Meister der Sechs, für jeden Lehrmeister einzeln: 24 Meisterbriefe zu erringen.</p></article>
+      <article class="platte"><span class="mono">Jeden Tag</span><h3>Die Walz des Tages</h3><p>Für alle dieselben Würfe, am selben Tag vergleichbar. Ohne Serie, die abreißt, und ohne Erinnerung, die dich zurückholt.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="fuer-wen" aria-labelledby="h-fuerwen">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Für wen</span>
+      <h2 id="h-fuerwen">Für wen ist das Spiel?</h2>
+    </div>
+    <div class="raster">
+      <article class="platte"><h3>Würfelfreunde</h3><p>Du kennst das Spiel mit fünf Würfeln und drei Würfen und willst mehr daraus machen als Glück.</p></article>
+      <article class="platte"><h3>Tüftler</h3><p>Du rechnest gern nach, kombinierst Talismane und knackst Rätsel, bis das Zunftbuch voll ist.</p></article>
+      <article class="platte"><h3>Wer fair spielen will</h3><p>Keine Werbung, keine Energie, keine Wartezeiten, keine Spielwährung. Du spielst, so lange du willst – und hörst auf, wann du willst.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="preise" aria-labelledby="h-preise">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Fair gespielt</span>
+      <h2 id="h-preise">Was gratis ist – und was kostet</h2>
+      <p class="vorspann">Kein Abo, keine Spielwährung, keine Werbung. Was kostet, ist ein einziger, einmaliger Kauf.</p>
+    </div>
+    <div class="preis">
+      <div class="platte">
+        <span class="mono">Kostenlos</span>
+        <p class="betrag">0&nbsp;€</p>
+        <ul class="grade" aria-label="Kostenlos enthalten">
+          <li class="frei"><span>Lehrmeister Anselm (Werkstatt)</span><span>von Anfang an</span></li>
+          <li class="frei"><span>Lehrmeister Wendel (Schmied)</span><span>erreiche Station 4</span></li>
+          <li class="frei"><span>Zunftgrade Geselle, Altgeselle, Werkmeister</span><span>gratis</span></li>
+          <li class="frei"><span>Walz des Tages</span><span>gratis</span></li>
+        </ul>
+      </div>
+      <div class="platte">
+        <span class="mono">Der Zunftbrief · einmaliger Kauf</span>
+        <p class="betrag">3,99&nbsp;€</p>
+        <ul class="grade" aria-label="Im Zunftbrief enthalten">
+          <li><span>Lehrmeisterin Marthe (Glasbläserin)</span><span>werte 3 Straßen auf einer Walz</span></li>
+          <li><span>Lehrmeisterin Almut (Mondkundige)</span><span>wirf einen Fünfling</span></li>
+          <li><span>Zunftgrade Obermeister, Zunftmeister, Meister der Sechs</span><span>inklusive</span></li>
+          <li><span>Das Ende der Geschichte</span><span>inklusive</span></li>
+          <li><span>Künftige Lehrmeister und Gesellenstücke</span><span>inklusive</span></li>
+        </ul>
+        <p class="kleingedruckt">Wendel, Marthe und Almut spielst du außerdem durch eine Tat frei. Im geschlossenen Test ist alles frei. Preis in Deutschland, Stand Oktober 2026. Verbindlich ist der Preis, den Google Play beim Kauf anzeigt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="fragen" aria-labelledby="h-fragen">
+  <div class="huelle">
+    <div class="kopfzeile">
+      <span class="mono">Fragen</span>
+      <h2 id="h-fragen">Häufige Fragen</h2>
+    </div>
+    <div class="fragen">
+      <details><summary>Wann erscheint das Spiel?</summary><div><p>Zunft der Sechs ist gerade im geschlossenen Test bei Google Play. Sobald das Spiel für alle erscheint, steht hier der Link zum Store-Eintrag.</p></div></details>
+      <details><summary>Brauche ich Internet?</summary><div><p>Nein. Das Spiel läuft ohne Internet, auch die Walz des Tages: Sie entsteht auf deinem Gerät aus dem Datum.</p></div></details>
+      <details><summary>Gibt es das Spiel fürs iPhone?</summary><div><p>Nein, Zunft der Sechs gibt es nur für Android.</p></div></details>
+      <details><summary>Ist das ein Glücksspiel?</summary><div><p>Nein. Es geht um kein Geld, es gibt keine Lootboxen und keine Spielwährung. Die Würfel bringen Zufall ins Spiel – was du daraus machst, entscheiden Halten, Talismane und Schmiede.</p></div></details>
+      <details><summary>Sammelt die App Daten?</summary><div><p>Keine Registrierung, kein Konto, keine Werbung, keine Tracker. Dein Spielstand bleibt auf deinem Gerät. Die Einzelheiten stehen in der <a href="https://wunderkammer-apps.de/zunft-der-sechs/">Datenschutzerklärung</a>.</p></div></details>
+      <details><summary>Ich habe ein neues Handy. Sind Spielstand und Zunftbrief weg?</summary><div><p>Nein. Der Zunftbrief hängt an deinem Google-Konto; „Kauf wiederherstellen“ holt ihn zurück. Den Spielstand nimmt die Android-Sicherung oder die Datenübertragung beim Gerätewechsel mit, wenn sie eingeschaltet ist.</p></div></details>
+      <details><summary>In welchen Sprachen gibt es das Spiel?</summary><div><p>Deutsch und Englisch. Mit TalkBack lässt es sich vorlesen.</p></div></details>
+      <details><summary>Wie sind die Bilder entstanden?</summary><div><p>Die Kupferstiche wurden mit KI-Unterstützung in Canva gestaltet. Die Geräusche sind gemeinfreie Aufnahmen (CC0).</p></div></details>
+      <details><summary>Ich habe eine Frage oder einen Fehler gefunden.</summary><div><p>Schreib uns an <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche schluss" aria-labelledby="h-schluss">
+  <div class="huelle">
+    <h2 id="h-schluss">Die Zunft erwartet dich.</h2>
+    <p class="vorspann">Acht Städte, sechs Gründer, ein verschwundener Würfel.</p>
+    <p class="bald"><strong>Erscheint bald bei Google Play</strong><span>Gratis spielbar bis zum Werkmeister.</span></p>
+    <!-- Badge einschalten, sobald die App in Produktion ist:
+    <a class="badge" href="https://play.google.com/store/apps/details?id=de.zunftdersechs.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play" loading="lazy"></a>
+    -->
+    <!-- APPSTORE-LIVE: Apple-Badge hier einsetzen, sobald Apple freigibt (App-ID 6820245472) --><span class="bald">iPhone &amp; iPad: bald im App Store</span>
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="huelle">
+    <ul>
+      <li><a href="https://wunderkammer-apps.de/">Weitere Apps der Wunderkammer</a></li>
+      <li><a href="https://wunderkammer-apps.de/zunft-der-sechs/">Datenschutz der App</a></li>
+      <li><a href="https://wunderkammer-apps.de/impressum/">Impressum und Datenschutz der Website</a></li>
+      <li><a href="mailto:kontakt@wunderkammer-apps.de">Kontakt</a></li>
+    </ul>
+    <p>Diese Seite setzt keine Cookies, lädt nichts von fremden Servern und zählt keine Besuche.</p>
+    <p>Google Play und das Google Play-Logo sind Marken von Google LLC.</p>
+  </div>
+</footer>
+<script src="probier.js" defer></script>
+</body>
+</html>
