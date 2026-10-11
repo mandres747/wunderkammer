@@ -150,8 +150,11 @@ fg = fg.resize((round(fg.width * 630 / fg.height), 630), Image.LANCZOS)
 links = (fg.width - 1200) // 2
 fg.crop((links, 0, links + 1200, 630)).save(B / "og-de.png", optimize=True)
 
-# --- Google-Play-Badge: nur kopieren, nie verändern ---
-(B / "google-play-badge-de.png").write_bytes((HIER / "_quelle" / "google-play-badge-de.png").read_bytes())
+# --- Google-Play-Badge: Logo unveraendert, nur den durchsichtigen Leerraum ringsum
+# wegschneiden (Apples App-Store-Badge-SVG hat keinen -- sonst wirkt Google kleiner,
+# obwohl beide Badges per CSS auf dieselbe Hoehe gesetzt sind) ---
+_badge = Image.open(HIER / "_quelle" / "google-play-badge-de.png").convert("RGBA")
+_badge.crop(_badge.getbbox()).save(B / "google-play-badge-de.png", optimize=True)
 presse()
 shutil.rmtree(TMP)  # Zwischenbilder nicht im Repo liegen lassen
 print("fertig")
