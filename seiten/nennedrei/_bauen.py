@@ -49,7 +49,9 @@ for sprache, datei in [("de", "feature-graphic-1024x500.png"), ("en", "feature-g
     og.paste(fg, ((1200 - fg.width) // 2, (630 - hoehe) // 2))
     og.save(B / f"og-{sprache}.png", optimize=True)
 
-# Google-Play-Badges: nur kopieren, nie veraendern (Badge-Richtlinien)
-for sprache in ("de", "en"):
+# Store-Badges: nur kopieren, nie veraendern (Badge-Richtlinien von Google und Apple).
+# App-Store-Badges (SVG) aus toolbox.marketingtools.apple.com, schwarz, de-de/en-us (06.10.2026).
+for sprache, apple in (("de", "de-de"), ("en", "en-us")):
     (B / f"google-play-badge-{sprache}.png").write_bytes((BADGES / f"google-play-badge-{sprache}.png").read_bytes())
+    (B / f"app-store-badge-{sprache}.svg").write_bytes((BADGES / f"app-store-badge-{apple}.svg").read_bytes())
 print("fertig")

@@ -110,6 +110,16 @@ p { margin: 0 0 0.9em; }
 .fakten li:nth-child(3) { transform: rotate(1deg); }
 .badge { display: inline-block; margin-left: -10px; } /* Badge-PNG bringt seinen Schutzraum selbst mit */
 .badge img { width: 240px; height: auto; }
+/* Beide Stores nebeneinander, gleiche sichtbare Hoehe (das Google-PNG traegt rundum Schutzraum, das Apple-SVG nicht) */
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 0 14px; }
+.badge--apple { margin-left: 0; padding: 15px 0; }
+.badge--apple img { width: auto; height: 62px; }
+.schluss .badges { justify-content: center; }
+/* Bis zur Freigabe durch Apple: Hinweis statt App-Store-Badge (Badge darf nicht verfremdet werden) */
+.bald {
+  display: inline-block; margin: 8px 0; padding: 0.5em 1em; font-weight: 700; color: var(--tinte);
+  background: var(--rosa); border: 2.5px dashed var(--tinte); border-radius: 999px; transform: rotate(-2deg);
+}
 .hinweis { font-size: 0.95rem; color: var(--tinte-2); max-width: 32em; margin-top: 6px; }
 
 /* Kartenstapel (Leitmotiv) mit Probierrunde */
@@ -202,7 +212,7 @@ figcaption { margin-top: 12px; font-weight: 600; font-size: 0.98rem; }
 
 /* Abschluss + Fuß */
 .schluss { text-align: center; }
-.schluss .badge { margin: 8px auto 0; }
+.schluss .badge { margin: 8px 0 0; }
 .fuss { background: var(--fuss-grund); color: var(--fuss-text); padding: 40px 0 34px; margin-top: 30px; }
 .fuss a { color: var(--fuss-text); }
 .fuss ul { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 10px 26px; }

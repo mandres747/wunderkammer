@@ -1,0 +1,176 @@
+/* DeepWave – „Schwebung“ (Gestaltung beschlossen 25.09.2026, BinauralBeatsApp/docs/GESTALTUNG.md)
+   Zwei Sinuswellen, links Orchidee, rechts Mondweiß; ihre Überlagerung als gestrichelte, atmende Hülle.
+   Weich und rund: Karten 24 px ohne Rand, Wellenlinie statt Trennstrich, runder Startknopf mit zwei
+   Hüllringen, Chips als Pillen. Fraunces (SOFT) für Titel und Zahlen, Fließtext Systemschrift wie in der App.
+   Dunkel ist die Grundstimmung (wie die App); helles Systemdesign bekommt die helle App-Palette. */
+
+@font-face { font-family: "Fraunces DW"; font-weight: 600; font-display: swap;
+  src: url("schrift/fraunces-soft-semibold.woff2") format("woff2"); }
+
+:root {
+  --grund: #1D0E1D;          /* Pflaumennacht */
+  --grund-2: #251225;
+  --karte: #2F182F;
+  --karte-2: #3A1D3A;
+  --text: #F1E9F4;           /* Mondweiß – 15,6 : 1 */
+  --leise: #BFA9C2;          /* gedämpft – 8,6 : 1 */
+  --orchidee: #E07BDE;       /* Akzent, Fläche und Text – 7,2 : 1 */
+  --orchidee-text: #E07BDE;
+  --auf-orchidee: #1D0E1D;
+  --welle-r: #F1E9F4;
+  --ring: rgba(224, 123, 222, .35);
+  --fuss: #140914;
+  color-scheme: dark light;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --grund: #F8F0F7;        /* Rosé-Grau */
+    --grund-2: #F1E4EF;
+    --karte: #FFFFFF;
+    --karte-2: #F4E9F2;
+    --text: #2A1530;
+    --leise: #6E5670;
+    --orchidee: #8A2E8A;     /* Textstufe – 6,7 : 1 */
+    --orchidee-text: #8A2E8A;
+    --auf-orchidee: #FFFFFF;
+    --welle-r: #B35AB0;
+    --ring: rgba(138, 46, 138, .25);
+    --fuss: #EAD7E7;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--grund); color: var(--text);
+  font: 400 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--orchidee-text); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--orchidee-text); outline-offset: 3px; border-radius: 12px; }
+
+h1, h2, h3, .marke, .zahl { font-family: "Fraunces DW", Georgia, serif; font-weight: 600; letter-spacing: -.005em; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.12; margin: 0 0 .4em; }
+h3 { font-size: 1.25rem; line-height: 1.2; margin: 0 0 .35em; }
+p { margin: 0 0 .9em; }
+
+.huelle { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.ueberspringen { position: absolute; left: -999px; top: 8px; z-index: 10; background: var(--karte); color: var(--text); padding: 10px 14px; border-radius: 12px; }
+.ueberspringen:focus { left: 8px; }
+
+/* ---------- Kopf ---------- */
+.kopf { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--grund) 88%, transparent); backdrop-filter: blur(8px); }
+.kopf .huelle { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.marke { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-size: 1.35rem; min-height: 48px; }
+.marke img { border-radius: 10px; }
+.kopf ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+.kopf li a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 12px; border-radius: 999px; color: var(--text); text-decoration: none; font-weight: 500; }
+.kopf li a:hover { background: var(--karte); }
+.kopf .sprache { border: 1.5px solid var(--leise); }
+@media (max-width: 760px) { .kopf li:not(.immer) { display: none; } }
+
+/* ---------- Wellenlinie als Trenner ---------- */
+.wellenlinie { display: block; width: 72px; height: 12px; margin: 0 0 18px; color: var(--orchidee); }
+.zentriert .wellenlinie { margin-inline: auto; }
+
+/* ---------- Held ---------- */
+.held { padding: 36px 0 56px; background: radial-gradient(120% 80% at 75% 30%, var(--karte-2) 0%, var(--grund) 60%); }
+.held .huelle { display: grid; gap: 36px; align-items: center; }
+@media (min-width: 900px) { .held .huelle { grid-template-columns: 1.05fr 1fr; } .held { padding: 64px 0 80px; } }
+h1 { font-size: clamp(3rem, 11vw, 5.6rem); line-height: 1; margin: 0 0 .25em; }
+.versprechen { font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.45; max-width: 34em; }
+.fakten { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 18px 0 26px; }
+.fakten li { padding: 6px 14px; border-radius: 999px; background: var(--karte); color: var(--text); font-size: .95rem; font-weight: 500; }
+.fakten li::before { content: "∿ "; color: var(--orchidee-text); }
+.badge { display: inline-block; width: 220px; border-radius: 12px; }
+.badge img { width: 100%; }
+.hinweis { color: var(--leise); font-size: .95rem; margin-top: 12px; max-width: 32em; }
+
+/* Schwebungs-Bühne */
+.buehne { background: var(--karte); border-radius: 28px; padding: 22px 20px 24px; box-shadow: 0 30px 80px -40px rgba(224, 123, 222, .45); }
+.buehne svg { width: 100%; height: auto; display: block; }
+.buehne .links { stroke: var(--orchidee); }
+.buehne .rechts { stroke: var(--welle-r); opacity: .85; }
+.buehne .huelle-linie { stroke: var(--leise); stroke-dasharray: 4 6; opacity: .9; }
+.legende { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; margin: 6px 0 14px; font-size: .9rem; color: var(--leise); }
+.legende span::before { content: ""; display: inline-block; width: 18px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; background: currentColor; }
+.legende .l::before { background: var(--orchidee); }
+.legende .r::before { background: var(--welle-r); }
+.legende .h::before { background: repeating-linear-gradient(90deg, var(--leise) 0 4px, transparent 4px 8px); }
+.regler { display: grid; gap: 6px; margin: 4px 0 18px; }
+.regler label { display: flex; justify-content: space-between; gap: 12px; font-weight: 500; }
+.regler output { font-family: "Fraunces DW", Georgia, serif; font-size: 1.2rem; color: var(--orchidee-text); }
+input[type="range"] { width: 100%; height: 48px; accent-color: var(--orchidee); background: transparent; margin: 0; }
+.hoer { display: flex; align-items: center; gap: 18px; }
+.start {
+  position: relative; flex: none; width: 76px; height: 76px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--orchidee); color: var(--auf-orchidee); display: grid; place-items: center;
+  box-shadow: 0 0 0 8px var(--ring), 0 0 0 16px color-mix(in srgb, var(--ring) 45%, transparent);
+  margin: 16px;
+}
+.start svg { width: 28px; height: 28px; fill: currentColor; }
+.start .pause { display: none; }
+.start[aria-pressed="true"] .spiel { display: none; }
+.start[aria-pressed="true"] .pause { display: block; }
+.hoer p { margin: 0; font-size: .95rem; color: var(--leise); }
+.hoer strong { color: var(--text); font-weight: 600; }
+
+/* ---------- Abschnitte ---------- */
+.abschnitt { padding: 64px 0; }
+.abschnitt--tief { background: var(--grund-2); }
+.vorspann { font-size: 1.1rem; color: var(--leise); max-width: 40em; margin-bottom: 1.6em; }
+.raster { display: grid; gap: 18px; }
+@media (min-width: 720px) { .raster { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) { .raster--3 { grid-template-columns: repeat(3, 1fr); } }
+.karte { background: var(--karte); border-radius: 24px; padding: 24px; }
+.karte p:last-child, .karte ul:last-child { margin-bottom: 0; }
+.schritte { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.schritte li { counter-increment: s; }
+.schritte li::before { content: counter(s); display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; margin-bottom: 14px;
+  font: 600 1.5rem/1 "Fraunces DW", Georgia, serif; color: var(--auf-orchidee); background: var(--orchidee); box-shadow: 0 0 0 6px var(--ring); }
+.ehrlich { margin-top: 28px; border-left: 4px solid var(--orchidee); border-radius: 0 24px 24px 0; }
+.liste { margin: 0; padding-left: 1.2em; }
+.liste li { margin-bottom: .35em; }
+.liste li::marker { content: "∿  "; color: var(--orchidee-text); }
+.pille { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--karte-2); color: var(--orchidee-text); font-size: .85rem; font-weight: 600; vertical-align: .15em; margin-left: 6px; }
+
+/* Galerie */
+.galerie { list-style: none; display: flex; gap: 18px; overflow-x: auto; padding: 4px 4px 18px; margin: 0; scroll-snap-type: x mandatory; border-radius: 24px; }
+.galerie li { flex: none; width: 236px; scroll-snap-align: start; }
+.galerie img { border-radius: 22px; background: var(--karte); }
+.galerie figure { margin: 0; }
+.galerie figcaption { font-size: .92rem; color: var(--leise); margin-top: 10px; }
+
+/* Preise */
+.preise { display: grid; gap: 18px; }
+@media (min-width: 900px) { .preise { grid-template-columns: 1fr 1.3fr; } }
+.preisliste { width: 100%; border-collapse: collapse; }
+.preisliste th, .preisliste td { text-align: left; vertical-align: top; padding: 14px 0; border-bottom: 1px solid var(--karte-2); }
+.preisliste tr:last-child th, .preisliste tr:last-child td { border-bottom: 0; }
+.preisliste th { font-weight: 600; padding-right: 14px; }
+.preisliste small { display: block; font-weight: 400; color: var(--leise); font-size: .93rem; margin-top: 2px; }
+.betrag { font-family: "Fraunces DW", Georgia, serif; font-size: 1.3rem; white-space: nowrap; color: var(--orchidee-text); text-align: right !important; }
+.kleingedruckt { font-size: .92rem; color: var(--leise); margin-top: 14px; }
+
+/* Fragen */
+.fragen { display: grid; gap: 12px; max-width: 820px; }
+.fragen details { background: var(--karte); border-radius: 20px; }
+.fragen summary { cursor: pointer; padding: 14px 22px; min-height: 48px; display: flex; align-items: center; font-weight: 600; list-style: none; }
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::after { content: "∿"; margin-left: auto; padding-left: 14px; color: var(--orchidee-text); font-size: 1.3rem; transition: transform .2s; }
+.fragen details[open] summary::after { transform: rotate(90deg); }
+.fragen details > div { padding: 0 22px 16px; }
+
+.schluss { text-align: center; }
+.schluss .vorspann { margin-inline: auto; }
+
+/* Fuß */
+.fuss { background: var(--fuss); padding: 40px 0 48px; font-size: .95rem; color: var(--leise); }
+.fuss ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 22px; padding: 0; margin: 0 0 16px; }
+.fuss a { display: inline-flex; align-items: center; min-height: 48px; color: var(--text); }
+.fuss p { margin: 0 0 6px; }
+
+@media (prefers-reduced-motion: reduce) { .fragen summary::after { transition: none; } }

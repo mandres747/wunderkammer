@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Not in production yet (as of 3 Oct 2026: closed test 0.3.0 only). At launch: remove noindex,
+     switch on the badge links and JSON-LD, check prices and the free scope against the production version. -->
+<meta name="robots" content="noindex">
+<title>Mühlenarchiv – morris board game for Android</title>
+<meta name="description" content="The whole nine men’s morris family with no ads: seven variants, opponents with character and an archive of unfinished games. Coming soon to Google Play.">
+<link rel="canonical" href="https://muehlenarchiv.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="de" href="https://muehlenarchiv.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="en" href="https://muehlenarchiv.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://muehlenarchiv.wunderkammer-apps.de/">
+<meta name="theme-color" content="#EFEEE8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#19141C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../bilder/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../bilder/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wunderkammer Apps">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:title" content="Mühlenarchiv – the whole morris family">
+<meta property="og:description" content="Seven variants, opponents with character and an archive of unfinished games – no ads, no subscription, offline.">
+<meta property="og:url" content="https://muehlenarchiv.wunderkammer-apps.de/en/">
+<meta property="og:image" content="https://muehlenarchiv.wunderkammer-apps.de/bilder/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A morris board drawn in violet with white and black stones, one point shown as a dashed circle, next to the name Mühlenarchiv.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../schrift/young-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../stil.css">
+<!-- At launch:
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Mühlenarchiv: Morris Game","operatingSystem":"Android","applicationCategory":"GameApplication","inLanguage":["de","en"],"url":"https://muehlenarchiv.wunderkammer-apps.de/en/","installUrl":"https://play.google.com/store/apps/details?id=de.muehlenarchiv.app","image":"https://muehlenarchiv.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Wunderkammer Apps","url":"https://wunderkammer-apps.de/"}}
+</script>
+-->
+</head>
+<body>
+<a class="ueberspringen" href="#inhalt">Skip to content</a>
+
+<header class="kopf">
+  <div class="huelle">
+    <a class="marke" href="./"><img src="../bilder/icon-192.png" alt="" width="36" height="36">Mühlenarchiv</a>
+    <nav aria-label="Page navigation">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#variants">Variants</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="immer"><a class="sprache" href="../" hreflang="de" lang="de">Deutsch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="held" aria-labelledby="titel">
+  <div class="huelle">
+    <div>
+      <span class="akte">The archive of unfinished games</span>
+      <h1 id="titel">Mühlenarchiv</h1>
+      <p class="versprechen">German for “the morris archive”. Nine men’s morris is more than one game – it’s a whole family. Seven of its members, opponents with character and an archive full of games that break off halfway. You play them to the end.</p>
+      <ul class="fakten" aria-label="At a glance">
+        <li>No ads</li>
+        <li>No subscription</li>
+        <li>No account</li>
+        <li>Offline</li>
+      </ul>
+      <p class="bald"><strong>Coming soon to Google Play</strong><span>Mühlenarchiv is still in closed testing. This page describes the test version; things may still change before launch.</span></p>
+      <!-- At launch, instead of the notice above:
+      <a class="badge" href="https://play.google.com/store/apps/details?id=de.muehlenarchiv.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play"></a>
+      -->
+      <p class="hinweis">For Android 8 or later. In class, students vote in the browser – on any device with a browser, no app needed.</p>
+    </div>
+
+    <div class="blatt fund" data-fund='{"start":"Tap the point where White closes a mill.","richtig":"A mill on {p}! Now White may remove one of Black’s stones.","falsch":"{p} doesn’t close a mill. Take another look at the lines.","hinweis":"The open point is dashed: {p}. Tap it.","weiss":"white stone","schwarz":"black stone","offen":"open point","leer":"empty"}' hidden>
+      <span class="akte">Sample find · Nine men’s morris</span>
+      <h2>A mill is missing</h2>
+      <p class="aufgabe">White is to move and places a stone. Where does White close a mill?</p>
+      <div class="muehle" role="group" aria-label="Nine men’s morris board with 24 points">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"></svg>
+      </div>
+      <p class="fund-status" aria-live="polite"></p>
+      <div class="fund-knoepfe">
+        <button class="knopf" type="button" data-loesung>Hint</button>
+        <button class="knopf" type="button" data-neu>Start over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="abriss">
+
+<section class="abschnitt" id="how" aria-labelledby="h-so">
+  <div class="huelle">
+    <h2 id="h-so">How it works</h2>
+    <p class="vorspann">In the basement of an old city library, Ilse collects morris boards: scratched roof tiles, photos taken in the sand, notches in a tavern board, tournament records. Many games break off halfway.</p>
+    <ol class="schritte raster">
+      <li class="blatt"><span class="akte">Find</span><h3>An unfinished game</h3><p>Every find is an interrupted position with a task, such as “White to move wins a stone in two moves”. More than 130 finds in seven boxes, each with exactly one solution – proven by the program, not guessed.</p></li>
+      <li class="blatt"><span class="akte">Trail</span><h3>Follow Z.</h3><p>Between the finds, a mysterious “Z.” keeps turning up. The more boxes you solve, the closer you get to the story.</p></li>
+      <li class="blatt"><span class="akte">Game</span><h3>Play for yourself</h3><p>Against characters with their own style, with two players on one device or by message over any messenger. Plus a new daily find, the same for everyone – no streaks, no pressure.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--blatt" id="variants" aria-labelledby="h-spielarten">
+  <div class="huelle">
+    <h2 id="h-spielarten">Seven variants, documented not smoothed over</h2>
+    <p class="vorspann">Every variant shows its origin and source in the app. Whether you may fly with three stones is disputed in the sources – you decide with a setting.</p>
+    <ul class="register">
+      <li><b>Nine men’s morris</b><span>Europe</span></li>
+      <li><b>Six men’s morris</b><span>Europe, Middle Ages</span></li>
+      <li><b>Twelve men’s morris</b><span>Europe, North America</span></li>
+      <li><b>Three men’s morris</b><span>Europe, Asia, antiquity</span></li>
+      <li><b>Lasker morris</b><span>Germany, 1931</span></li>
+      <li><b>Morabaraba</b><span>Southern Africa</span></li>
+      <li><b>Achi</b><span>Ghana</span></li>
+    </ul>
+    <div class="raster">
+      <article class="blatt"><span class="akte">Opponents</span><h3>Opponents with character</h3><p>Instead of “easy, medium, hard”: Hedwig the innkeeper hems you in, Anton the forester captures wherever he can, Marlene the cantor builds double mills. In three men’s morris and Achi, the Unbeatable awaits – it knows every position.</p></article>
+      <article class="blatt"><span class="akte">Way to play</span><h3>Topsy-turvy</h3><p>If you can close a mill, you must – and that helps your opponent. First down to two stones wins.</p></article>
+      <article class="blatt"><span class="akte">Way to play</span><h3>Secret line</h3><p>Each side secretly picks a line. Close yours – or guess your opponent’s before they do. Bluffing encouraged.</p></article>
+      <article class="blatt"><span class="akte">Workshop</span><h3>Morris machine</h3><p>Build robots from rule cards, put them in order and watch which rule decides each move – with a tournament against the characters. A way into algorithms, not a coding course and not AI: the robot learns nothing, it does what the cards say.</p></article>
+      <article class="blatt"><span class="akte">Campaign</span><h3>Tavern evenings</h3><p>Ten evenings at Z.’s old board. Whoever wins leaves a mark – a point breaks off, a connection cracks, a diagonal is carved in. The board remembers.</p></article>
+      <article class="blatt"><span class="akte">Campaign</span><h3>Z.’s round trip</h3><p>Seven visits on Z.’s old routes, each harder than the last, with three candles and a talisman before every visit. The trip ends where it began: back in the archive.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="bilder" aria-labelledby="h-bilder">
+  <div class="huelle">
+    <h2 id="h-bilder">Screenshots</h2>
+    <ul class="galerie" tabindex="0" aria-label="Phone screenshots">
+      <li><figure><img src="../bilder/telefon-en-1-start-360.webp" srcset="../bilder/telefon-en-1-start-360.webp 360w, ../bilder/telefon-en-1-start-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Home screen: the daily find, the archive of unfinished games, games in progress and other ways to play."><figcaption>The whole morris family</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-2-geheime-linie-360.webp" srcset="../bilder/telefon-en-2-geheime-linie-360.webp 360w, ../bilder/telefon-en-2-geheime-linie-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Secret line against Hedwig the innkeeper: one line on the board is marked, with a button to confirm it below."><figcaption>Pick your line in secret</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-3-wirtshaus-360.webp" srcset="../bilder/telefon-en-3-wirtshaus-360.webp 360w, ../bilder/telefon-en-3-wirtshaus-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Tavern evenings: a board with broken-off points and a carved diagonal, with the chronicle of past evenings below."><figcaption>The board remembers</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-4-fund-360.webp" srcset="../bilder/telefon-en-4-fund-360.webp 360w, ../bilder/telefon-en-4-fund-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Daily find: an interrupted nine men’s morris position in which White is to move and wins a stone in two moves."><figcaption>An unfinished game every day</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-5-rundreise-360.webp" srcset="../bilder/telefon-en-5-rundreise-360.webp 360w, ../bilder/telefon-en-5-rundreise-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Z.’s round trip: choosing a talisman and the seven stops of the trip with candles."><figcaption>Seven visits, one talisman</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-6-klasse-360.webp" srcset="../bilder/telefon-en-6-klasse-360.webp 360w, ../bilder/telefon-en-6-klasse-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Class vs computer: a QR code to join, the board and a countdown for the vote."><figcaption>The whole class votes</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-7-maschine-360.webp" srcset="../bilder/telefon-en-7-maschine-360.webp 360w, ../bilder/telefon-en-7-maschine-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Morris machine: a robot playing against a character, with its rule cards and the card that decided the move below."><figcaption>Build a robot</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-8-partie-360.webp" srcset="../bilder/telefon-en-8-partie-360.webp 360w, ../bilder/telefon-en-8-partie-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="A game of nine men’s morris against Hedwig the innkeeper, with buttons to take back a move, offer a draw, resign, and view rules and origin."><figcaption>Opponents with character</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--blatt" id="for-whom" aria-labelledby="h-fuerwen">
+  <div class="huelle">
+    <h2 id="h-fuerwen">Who is it for?</h2>
+    <div class="raster">
+      <article class="blatt"><h3>Morris players</h3><p>You know nine men’s morris and want more: twelve men’s morris, Morabaraba, Lasker morris – and opponents who don’t all play the same.</p></article>
+      <article class="blatt"><h3>Puzzle fans</h3><p>A find every day, more than 130 in the archive, each with exactly one solution. Plus a story that moves on with the boxes.</p></article>
+      <article class="blatt"><h3>The classroom</h3><p>Class vs computer: the teacher’s device shows the board on the projector, everyone else votes on the next move in their browser – on the same Wi-Fi, no app, no account, no names. The Morris machine shows how an algorithm works through its rules.</p></article>
+      <article class="blatt"><h3>Two players</h3><p>On one device at the table or as a game by message: every move becomes a short code you send over your messenger. No account, no server.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="pricing" aria-labelledby="h-preise">
+  <div class="huelle">
+    <h2 id="h-preise">What’s free – and what costs</h2>
+    <p class="vorspann">No ads, no subscription. A single one-time purchase is planned.</p>
+    <div class="preise">
+      <div class="blatt">
+        <span class="akte">Free</span>
+        <ul>
+          <li>Nine men’s morris against every opponent – also as Topsy-turvy and Secret line</li>
+          <li>Two players on one device and by message</li>
+          <li>Morris machine and Class vs computer</li>
+          <li>Two boxes of finds and the daily find</li>
+          <li>The first tavern evening and the first visit of the round trip</li>
+        </ul>
+      </div>
+      <div class="blatt">
+        <span class="akte">One-time purchase</span>
+        <h3>The full archive</h3>
+        <p class="betrag">$2.79</p>
+        <p>Every variant, every box of finds including Z.’s game, the Unbeatable, Tavern evenings and Z.’s round trip.</p>
+        <p class="kleingedruckt">Planned price in the USA as of October 2026 (Germany: €2.99). The app has not been released yet; the price shown by Google Play at checkout is binding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--blatt" id="faq" aria-labelledby="h-fragen">
+  <div class="huelle">
+    <h2 id="h-fragen">FAQ</h2>
+    <div class="fragen">
+      <details><summary>When will Mühlenarchiv be released?</summary><div><p>As soon as closed testing on Google Play is complete. There is no fixed date yet.</p></div></details>
+      <details><summary>Do I need an internet connection?</summary><div><p>No. Mühlenarchiv works offline. Only Class vs computer uses your own Wi-Fi so the class can vote – none of it leaves the Wi-Fi.</p></div></details>
+      <details><summary>Is Mühlenarchiv available for iPhone?</summary><div><p>The app is Android-only. In Class vs computer, though, any device with a browser can vote, iPhones included.</p></div></details>
+      <details><summary>Does the app collect data?</summary><div><p>No account, no ads, no data collection. In a game by message, you send your moves yourself through your messenger; nothing reaches us. The details are in the <a href="https://wunderkammer-apps.de/muehlenarchiv/" hreflang="de">privacy policy (German)</a>.</p></div></details>
+      <details><summary>I have a new phone. Is my purchase gone?</summary><div><p>No. Purchases are tied to your Google account. On the new device, “Restore purchase” brings it back.</p></div></details>
+      <details><summary>Which languages does the app support?</summary><div><p>English and German.</p></div></details>
+      <details><summary>A rule doesn’t match my source.</summary><div><p>Write to us at <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a> – ideally including the source you know.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt schluss" aria-labelledby="h-schluss">
+  <div class="huelle">
+    <span class="akte">Case still open</span>
+    <h2 id="h-schluss">Many games are waiting for their ending.</h2>
+    <p class="vorspann">Mühlenarchiv is coming soon to Google Play – no ads, no subscription, no account.</p>
+    <!-- At launch:
+    <a class="badge" href="https://play.google.com/store/apps/details?id=de.muehlenarchiv.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play" loading="lazy"></a>
+    -->
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="huelle">
+    <ul>
+      <li><a href="https://wunderkammer-apps.de/">More apps from the Wunderkammer</a></li>
+      <li><a href="https://wunderkammer-apps.de/muehlenarchiv/" hreflang="de">App privacy policy (German)</a></li>
+      <li><a href="https://wunderkammer-apps.de/impressum/" hreflang="de">Legal notice and website privacy (German)</a></li>
+      <li><a href="mailto:kontakt@wunderkammer-apps.de">Contact</a></li>
+    </ul>
+    <p>This page sets no cookies, loads nothing from other servers and does not count visits.</p>
+    <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </div>
+</footer>
+<script src="../probier.js" defer></script>
+</body>
+</html>

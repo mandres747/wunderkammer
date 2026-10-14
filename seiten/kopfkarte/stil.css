@@ -1,0 +1,249 @@
+/* Kopfkarte – Kartografenbogen (Gestaltung beschlossen 26.09.2026, kopfkarte/CLAUDE.md „Gestaltung“)
+   Gestochener Kartenbogen: Doppelrahmen, Gradleiste, Windrose; der Palast als Wegkarte mit
+   nummerierten Stationen und gestricheltem Korallweg. 2-px-Ecken, Tintenlinien statt Schatten.
+   Alegreya (Titel, Merkbegriffe), Alegreya SC (Beschriftungen), Alegreya Sans (Text). Alles lokal. */
+
+@font-face { font-family: "Alegreya"; font-weight: 500; font-display: swap;
+  src: url("schrift/alegreya-medium.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya"; font-weight: 700; font-display: swap;
+  src: url("schrift/alegreya-bold.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya SC"; font-weight: 500; font-display: swap;
+  src: url("schrift/alegreya-sc-medium.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya SC"; font-weight: 700; font-display: swap;
+  src: url("schrift/alegreya-sc-bold.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya Sans"; font-weight: 400; font-display: swap;
+  src: url("schrift/alegreya-sans-regular.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya Sans"; font-weight: 500; font-display: swap;
+  src: url("schrift/alegreya-sans-medium.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya Sans"; font-weight: 700; font-display: swap;
+  src: url("schrift/alegreya-sans-bold.woff2") format("woff2"); }
+
+:root {
+  --papier: #FBF7EF;         /* Bogen */
+  --karte: #FFFDF8;          /* aufgelegte Karte */
+  --tinte: #1F3A68;          /* Nachtblau 218° – Titel, Linien; 10,9 : 1 auf Papier */
+  --text: #1C2A44;           /* Fließtext 13,6 : 1 */
+  --leise: #4B5A75;          /* Nebentext 6,6 : 1 */
+  --weg: #C4532A;            /* Koralle 16° – nur Linien und Flächen */
+  --weg-text: #A8431F;       /* Koralle als Text 5,6 : 1 */
+  --auf-weg: #FFFDF8;        /* Schrift auf Korallfläche */
+  --zart: #E9E2D3;           /* Haarlinien, Felder */
+  --nacht: #121A2B;          /* Bänder (wie der Store-Rahmen) */
+  --nacht-text: #F3EBDB;
+  --nacht-leise: #C9C1B0;
+  --nacht-weg: #F29B72;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papier: #121A2B;
+    --karte: #1A2438;
+    --tinte: #A9C2F0;        /* 9,6 : 1 auf Nachtgrund */
+    --text: #E4EAF6;
+    --leise: #A6B2C9;
+    --weg: #F29B72;
+    --weg-text: #F29B72;     /* 7,6 : 1 */
+    --auf-weg: #121A2B;
+    --zart: #2A3650;
+    --nacht: #0B111D;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body {
+  margin: 0; background: var(--papier); color: var(--text);
+  font: 400 1.125rem/1.6 "Alegreya Sans", system-ui, sans-serif;
+  font-variant-numeric: lining-nums;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--weg-text); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--weg); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { font-family: Alegreya, Georgia, serif; font-weight: 700; color: var(--tinte); line-height: 1.12; margin: 0; }
+h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); }
+h3 { font-size: 1.4rem; font-weight: 700; }
+p { margin: 0 0 0.9em; }
+.sc { font-family: "Alegreya SC", Georgia, serif; font-weight: 500; letter-spacing: 0.06em; }
+
+.huelle { width: min(1180px, 100% - 32px); margin-inline: auto; }
+.ueberspringen { position: absolute; left: -999px; top: 8px; background: var(--karte); color: var(--tinte); padding: 10px 14px; border: 1.5px solid var(--tinte); z-index: 10; }
+.ueberspringen:focus { left: 16px; }
+
+/* Gradleiste: Maßstabsbalken unter Titeln (wie in der App) */
+.gradleiste { height: 7px; border: 1.5px solid var(--tinte); border-radius: 1px;
+  background: repeating-linear-gradient(90deg, var(--tinte) 0 22px, transparent 22px 44px); margin: 14px 0 0; }
+
+/* ---------- Kopf ---------- */
+.kopf { border-bottom: 1.5px solid var(--tinte); background: var(--papier); position: sticky; top: 0; z-index: 5; }
+.kopf .huelle { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.marke { display: inline-flex; align-items: center; gap: 10px; font-family: Alegreya, serif; font-weight: 700; font-size: 1.45rem; color: var(--tinte); text-decoration: none; }
+.marke img { border-radius: 2px; border: 1px solid var(--tinte); }
+.kopf ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+.kopf li a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 10px; color: var(--tinte); text-decoration: none;
+  font-family: "Alegreya SC", serif; font-weight: 500; letter-spacing: 0.05em; font-size: 1.05rem; }
+.kopf li a:hover { text-decoration: underline; }
+.kopf .sprache { border: 1.5px solid var(--tinte); border-radius: 2px; min-height: 40px; margin-block: 4px; }
+@media (max-width: 760px) { .kopf li:not(.immer) { display: none; } }
+
+/* ---------- Held ---------- */
+.held { padding: clamp(28px, 6vw, 72px) 0 clamp(36px, 6vw, 80px); }
+.held .huelle { display: grid; gap: clamp(28px, 5vw, 64px); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 960px) { .held .huelle { grid-template-columns: 1fr 1.05fr; } }
+.ueber { color: var(--weg-text); font-size: 1.05rem; margin-bottom: 10px; }
+h1 { font-size: clamp(3.4rem, 13vw, 6.4rem); letter-spacing: -0.01em; }
+.versprechen { font-size: clamp(1.2rem, 2.4vw, 1.45rem); margin: 18px 0 22px; max-width: 34em; }
+.legende { list-style: none; margin: 0 0 26px; padding: 14px 16px; border: 1.5px solid var(--tinte); border-radius: 2px; outline: 1px solid var(--tinte); outline-offset: 3px;
+  display: grid; gap: 6px 18px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); background: var(--karte); }
+.legende li { display: flex; align-items: center; gap: 10px; }
+.legende li::before { content: attr(data-n); flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--tinte);
+  display: grid; place-items: center; font: 700 0.85rem/1 Alegreya, serif; color: var(--tinte); }
+.legende li:first-child::before { background: var(--weg); border-color: var(--weg); color: var(--auf-weg); }
+
+.bald { display: inline-block; border: 1.5px dashed var(--weg); border-radius: 2px; padding: 12px 18px; background: var(--karte); }
+.bald strong { display: block; font-family: Alegreya, serif; font-size: 1.3rem; color: var(--tinte); }
+.bald span { color: var(--leise); font-size: 1rem; }
+.hinweis { color: var(--leise); font-size: 1rem; margin-top: 14px; max-width: 34em; }
+
+/* Kartenbogen mit Doppelrahmen */
+.bogen { position: relative; background: var(--karte); border: 1.5px solid var(--tinte); border-radius: 2px; padding: 22px clamp(14px, 3vw, 26px) 20px;
+  outline: 1px solid var(--tinte); outline-offset: -7px; }
+.bogen-kopf { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 4px 6px 0; }
+.bogen-kopf .sc { color: var(--leise); font-size: 0.95rem; }
+.bogen-kopf strong { display: block; font-family: Alegreya, serif; font-size: 1.55rem; color: var(--tinte); line-height: 1.15; }
+.windrose { flex: none; width: 52px; height: 52px; color: var(--tinte); }
+.windrose .spitze { fill: var(--weg); }
+
+/* Wegkarte */
+.wegkarte { width: 100%; height: auto; display: block; margin: 8px 0 4px; overflow: visible; }
+.wegkarte .pfad { fill: none; stroke: var(--weg); stroke-width: 2.2; stroke-dasharray: 7 6; }
+.wegkarte .station circle { fill: var(--karte); stroke: var(--tinte); stroke-width: 2; }
+.wegkarte .station text { font: 700 17px Alegreya, serif; fill: var(--tinte); text-anchor: middle; dominant-baseline: central; }
+.wegkarte .station .ort { font: 500 15px "Alegreya SC", serif; letter-spacing: 0.04em; fill: var(--tinte); dominant-baseline: hanging; }
+.wegkarte .station.jetzt circle { fill: var(--weg); stroke: var(--weg); }
+.wegkarte .station.jetzt text:not(.ort) { fill: var(--auf-weg); }
+.wegkarte .station.fertig circle { fill: var(--tinte); }
+.wegkarte .station.fertig text:not(.ort) { fill: var(--karte); }
+
+/* Probierrunde */
+.probe { border-top: 1.5px solid var(--tinte); margin-top: 10px; padding: 14px 6px 4px; min-height: 230px; }
+.probe .sc { color: var(--leise); font-size: 0.95rem; display: block; }
+.probe .ort-titel { font-family: Alegreya, serif; font-weight: 700; font-size: 1.45rem; color: var(--tinte); margin: 2px 0 10px; display: flex; align-items: center; gap: 8px; }
+.probe .ort-titel::before { content: ""; width: 14px; height: 18px; flex: none; background: var(--weg);
+  clip-path: path("M7 0C3.1 0 0 3.1 0 7c0 5.2 7 11 7 11s7-5.8 7-11C14 3.1 10.9 0 7 0z"); }
+.merkfeld { border: 1.5px solid var(--tinte); outline: 1px solid var(--tinte); outline-offset: -6px; border-radius: 2px; min-height: 104px;
+  display: grid; place-items: center; font: 700 clamp(1.8rem, 5vw, 2.4rem)/1.1 Alegreya, serif; color: var(--text); padding: 14px; text-align: center; }
+.auswahl { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.auswahl button { min-height: 44px; padding: 6px 14px; font: 500 1.1rem Alegreya, serif; color: var(--text); background: var(--karte);
+  border: 1.5px solid var(--zart); border-radius: 2px; cursor: pointer; }
+.auswahl button:hover { border-color: var(--tinte); }
+.auswahl button[aria-pressed="true"] { border-color: var(--tinte); background: var(--tinte); color: var(--karte); }
+.auswahl button.verbraucht { color: var(--leise); text-decoration: line-through; text-decoration-thickness: 1px; }
+.ergebnis-zahl { font: 700 2.6rem/1 Alegreya, serif; color: var(--tinte); margin: 2px 0 8px; }
+.ergebnis-liste { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 4px; }
+.ergebnis-liste li { display: flex; gap: 10px; align-items: baseline; border-bottom: 1px solid var(--zart); padding: 4px 0; }
+.ergebnis-liste .zeichen { font-weight: 700; width: 1.2em; flex: none; }
+.ergebnis-liste .ok .zeichen { color: var(--tinte); }
+.ergebnis-liste .falsch .zeichen { color: var(--weg-text); }
+.ergebnis-liste small { color: var(--leise); font-size: 0.95rem; }
+.knoepfe { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.knopf { min-height: 48px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+  font: 700 1.05rem "Alegreya Sans", sans-serif; border-radius: 2px; border: 1.5px solid var(--tinte); background: var(--tinte); color: var(--karte); text-decoration: none; }
+.knopf--rand { background: transparent; color: var(--tinte); }
+.knopf:disabled { opacity: 0.45; cursor: default; }
+.probe-hinweis { color: var(--leise); font-size: 0.98rem; margin: 10px 0 0; }
+
+/* ---------- Abschnitte ---------- */
+.abschnitt { padding: clamp(48px, 8vw, 96px) 0; }
+.abschnitt--nacht { background: var(--nacht); color: var(--nacht-text); }
+.abschnitt--nacht h2, .abschnitt--nacht h3 { color: var(--nacht-text); }
+.abschnitt--nacht .gradleiste { border-color: var(--nacht-text); background: repeating-linear-gradient(90deg, var(--nacht-text) 0 22px, transparent 22px 44px); }
+.abschnitt--nacht a { color: var(--nacht-weg); }
+.kopfzeile { margin-bottom: clamp(26px, 4vw, 44px); max-width: 760px; }
+.kopfzeile .sc { color: var(--weg-text); display: block; margin-bottom: 6px; }
+.abschnitt--nacht .kopfzeile .sc { color: var(--nacht-weg); }
+.vorspann { font-size: 1.2rem; margin-top: 16px; max-width: 40em; }
+.abschnitt--nacht .vorspann { color: var(--nacht-leise); }
+
+/* So geht's: drei Stationen am Weg */
+.weg { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; position: relative; counter-reset: st; }
+.weg li { position: relative; padding-left: 70px; counter-increment: st; }
+.weg li::before { content: counter(st); position: absolute; left: 0; top: -4px; width: 48px; height: 48px; border-radius: 50%;
+  border: 2px solid var(--nacht-text); display: grid; place-items: center; font: 700 1.3rem Alegreya, serif; background: var(--nacht); z-index: 1; }
+.weg li:first-child::before { background: var(--nacht-weg); border-color: var(--nacht-weg); color: var(--nacht); }
+.weg::before { content: ""; position: absolute; left: 23px; top: 20px; bottom: 30px; border-left: 2.2px dashed var(--nacht-weg); }
+.weg h3 { margin-bottom: 6px; }
+.weg p { color: var(--nacht-leise); }
+@media (min-width: 900px) {
+  .weg { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .weg li { padding-left: 0; padding-top: 70px; }
+  .weg li::before { top: 0; }
+  .weg::before { left: 24px; right: 30%; top: 23px; bottom: auto; border-left: 0; border-top: 2.2px dashed var(--nacht-weg); }
+}
+
+/* Übungen */
+.raster { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.karte { background: var(--karte); border: 1.5px solid var(--tinte); border-radius: 2px; padding: 22px 22px 18px; }
+.karte--betont { outline: 1px solid var(--tinte); outline-offset: -6px; }
+.karte .sc { color: var(--weg-text); font-size: 0.95rem; display: block; margin-bottom: 4px; }
+.karte h3 { margin-bottom: 8px; }
+.karte p:last-child { margin-bottom: 0; }
+.zusatz { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--zart); color: var(--leise); max-width: 52em; }
+
+/* Hintergrund mit Belegen */
+.hintergrund { display: grid; gap: 28px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .hintergrund { grid-template-columns: 1.3fr 1fr; align-items: start; } }
+.belege { font-size: 1rem; color: var(--leise); border-left: 2.2px dashed var(--weg); padding-left: 16px; }
+.belege ol { margin: 6px 0 0; padding-left: 1.3em; }
+.belege li { margin-bottom: 8px; }
+sup a { text-decoration: none; font-weight: 700; padding: 0 2px; }
+
+/* Bilder */
+.galerie { list-style: none; margin: 0; padding: 4px 4px 18px; display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; }
+.galerie li { flex: none; width: 236px; scroll-snap-align: start; }
+.galerie img { border: 1.5px solid var(--nacht-text); border-radius: 2px; width: 236px; height: auto; }
+.galerie figure { margin: 0; }
+.galerie figcaption { font-family: "Alegreya SC", serif; letter-spacing: 0.04em; font-size: 1rem; margin-top: 8px; color: var(--nacht-leise); }
+.galerie:focus-visible { outline-color: var(--nacht-weg); }
+
+/* Preise */
+.preis { display: grid; gap: 24px; grid-template-columns: 1fr; }
+@media (min-width: 860px) { .preis { grid-template-columns: 1fr 1fr; } }
+.preis ul { margin: 0; padding-left: 1.2em; }
+.preis li { margin-bottom: 6px; }
+.betrag { font: 700 2.4rem/1 Alegreya, serif; color: var(--tinte); margin: 6px 0 12px; }
+.kleingedruckt { font-size: 0.98rem; color: var(--leise); margin-top: 14px; }
+
+/* Fragen */
+.fragen { display: grid; gap: 12px; max-width: 860px; }
+.fragen details { background: var(--karte); border: 1.5px solid var(--tinte); border-radius: 2px; }
+.fragen summary { cursor: pointer; list-style: none; min-height: 52px; padding: 12px 48px 12px 18px; position: relative;
+  font: 700 1.2rem Alegreya, serif; color: var(--tinte); display: flex; align-items: center; }
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::after { content: "+"; position: absolute; right: 18px; font-size: 1.5rem; color: var(--weg-text); }
+.fragen details[open] summary::after { content: "–"; }
+.fragen details > div { padding: 0 18px 8px; border-top: 1px solid var(--zart); padding-top: 12px; }
+
+/* Abschluss */
+.schluss { text-align: center; }
+.schluss .huelle > * { margin-inline: auto; }
+.schluss .vorspann { margin-bottom: 22px; }
+
+/* Fuß */
+.fuss { background: var(--nacht); color: var(--nacht-leise); padding: 40px 0 48px; font-size: 1rem; }
+.fuss ul { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 22px; }
+.fuss a { color: var(--nacht-text); display: inline-flex; min-height: 44px; align-items: center; }
+.fuss p { margin: 0 0 6px; }
+
+/* Fragen-Karten liegen auch im Nachtband auf Kartenpapier */
+.abschnitt--nacht .fragen details { color: var(--text); }
+.abschnitt--nacht .fragen a { color: var(--weg-text); }
+@media (max-width: 560px) {
+  /* Die Wegkarte schrumpft am Handy auf gut 60 %: Beschriftungen im SVG größer setzen */
+  .wegkarte .station .ort { font-size: 23px; letter-spacing: 0.02em; }
+  .wegkarte .station text { font-size: 21px; }
+  .wegkarte .station circle { r: 23px; }
+}

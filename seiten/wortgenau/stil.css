@@ -1,0 +1,194 @@
+/* Wortgenau – „Fokuslinie“ (Gestaltung beschlossen 25.09.2026, wortgenau/CLAUDE.md)
+   Fixationspunkt: zwei feine Zielmarken, dazwischen der rote Erkennungsbuchstabe, darunter die
+   Fokuslinie (Verlauf zum Fixationspunkt). Lavendel/Tinte/Amethyst; ORP-Rot nur als Funktion, nie Akzent.
+   Lexend für alles, 10-px-Ecken, rechteckige Knöpfe, Haarlinien, keine Pillen. Keine Fremdabrufe. */
+
+@font-face { font-family: "Lexend WG"; font-weight: 300 700; font-display: swap;
+  src: url("schrift/lexend.woff2") format("woff2"); }
+
+:root {
+  --grund: #F5F2FB;          /* Lavendel */
+  --flaeche: #FFFFFF;
+  --flaeche-2: #EDE7F8;
+  --tinte: #1F1433;          /* 16 : 1 auf Lavendel */
+  --leise: #5B4F72;          /* 6,8 : 1 */
+  --amethyst: #6B3FD1;       /* Akzent tief – 5,8 : 1 auf Lavendel */
+  --auf-amethyst: #FFFFFF;
+  --marke: #9D5CF0;          /* Grafik: Zielmarken */
+  --orp: #E5484D;            /* ORP-Rot wie in der App – nur der Erkennungsbuchstabe, nur in großer Schrift (3,9 : 1) */
+  --haar: #D9D0EA;
+  --zone-gruen: #1F6E2B;
+  --zone-gelb: #8A5A00;
+  --zone-rot: #B3261E;
+  --fuss: #1F1433;
+  --fuss-text: #F1ECFA;
+  --fuss-leise: #C9BEE0;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grund: #1A1130;        /* Nacht */
+    --flaeche: #22163A;
+    --flaeche-2: #2C1F48;
+    --tinte: #F1ECFA;
+    --leise: #C3B6DC;
+    --amethyst: #C3A2F7;     /* Amethyst hell – 8,4 : 1 auf Nacht */
+    --auf-amethyst: #1A1130;
+    --marke: #9D5CF0;
+    --orp: #E5484D;
+    --haar: #3A2C58;
+    --zone-gruen: #7BD88F;
+    --zone-gelb: #F2C14E;
+    --zone-rot: #FF8A80;
+    --fuss: #120B22;
+    --fuss-text: #F1ECFA;
+    --fuss-leise: #C3B6DC;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--grund); color: var(--tinte);
+  font: 350 1.0625rem/1.65 "Lexend WG", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--amethyst); font-weight: 500; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--amethyst); outline-offset: 3px; }
+strong { font-weight: 600; }
+
+h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.75rem, 3.8vw, 2.5rem); line-height: 1.15; margin: 0 0 .45em; }
+h3 { font-size: 1.18rem; line-height: 1.25; margin: 0 0 .4em; }
+p { margin: 0 0 .9em; }
+.unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.huelle { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.ueberspringen { position: absolute; left: -999px; top: 8px; z-index: 10; background: var(--flaeche); color: var(--tinte); padding: 10px 14px; border: 1px solid var(--tinte); border-radius: 10px; }
+.ueberspringen:focus { left: 8px; }
+
+/* ---------- Kopf ---------- */
+.kopf { border-bottom: 1px solid var(--haar); background: var(--grund); }
+.kopf .huelle { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.marke { display: inline-flex; align-items: center; gap: 10px; color: var(--tinte); text-decoration: none; font-weight: 600; font-size: 1.25rem; min-height: 48px; }
+.marke img { border-radius: 8px; }
+.kopf ul { list-style: none; display: flex; gap: 2px; margin: 0; padding: 0; }
+.kopf li a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 12px; color: var(--tinte); text-decoration: none; font-weight: 400; border-radius: 10px; }
+.kopf li a:hover { background: var(--flaeche-2); }
+.kopf .sprache { border: 1px solid var(--haar); }
+@media (max-width: 760px) { .kopf li:not(.immer) { display: none; } }
+
+/* ---------- Abschnittsmarke: kleines Fadenkreuz ---------- */
+.ziel { display: inline-flex; align-items: center; gap: 10px; color: var(--leise); font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+.ziel::before { content: ""; width: 28px; height: 1px; background: linear-gradient(90deg, transparent, var(--marke)); }
+
+/* ---------- Held ---------- */
+.held { padding: 40px 0 56px; }
+.held .huelle { display: grid; gap: 36px; align-items: center; }
+@media (min-width: 920px) { .held .huelle { grid-template-columns: 1fr 1.05fr; } .held { padding: 72px 0 84px; } }
+h1 { font-size: clamp(2.9rem, 10vw, 5rem); line-height: 1; margin: 0 0 .3em; font-weight: 600; }
+h1 .orp { color: var(--orp); }
+.versprechen { font-size: clamp(1.12rem, 2.3vw, 1.35rem); line-height: 1.5; max-width: 32em; }
+.fakten { list-style: none; display: flex; flex-wrap: wrap; gap: 0; padding: 0; margin: 18px 0 26px; border: 1px solid var(--haar); border-radius: 10px; width: fit-content; max-width: 100%; background: var(--flaeche); }
+.fakten li { padding: 8px 14px; font-size: .95rem; border-right: 1px solid var(--haar); }
+.fakten li:last-child { border-right: 0; }
+@media (max-width: 480px) { .fakten li { flex: 1 1 50%; border-bottom: 1px solid var(--haar); } }
+.bald { display: inline-flex; flex-direction: column; gap: 2px; padding: 12px 18px; border: 1px dashed var(--amethyst); border-radius: 10px; background: var(--flaeche); max-width: 100%; }
+.bald strong { font-size: 1.1rem; }
+.bald span { color: var(--leise); font-size: .95rem; }
+.hinweis { color: var(--leise); font-size: .95rem; margin-top: 14px; max-width: 32em; }
+
+/* RSVP-Bühne */
+.leser { background: var(--flaeche); border: 1px solid var(--haar); border-radius: 10px; padding: 18px 18px 20px; }
+.anzeige { position: relative; height: 200px; display: grid; place-items: center; overflow: hidden; }
+.anzeige .marke-o, .anzeige .marke-u { position: absolute; left: 50%; width: 2px; height: 34px; margin-left: -1px; background: var(--marke); border-radius: 1px; }
+.anzeige .marke-o { top: 22px; }
+.anzeige .marke-u { bottom: 22px; }
+.wort { display: grid; grid-template-columns: 1fr auto 1fr; width: 100%; font-size: clamp(2rem, 7.5vw, 3.1rem); font-weight: 400; line-height: 1; white-space: pre; }
+.wort .vor { text-align: right; }
+.wort .orp { color: var(--orp); }
+.fokuslinie { height: 2px; margin: 0 0 16px; background: linear-gradient(90deg, transparent 0%, var(--marke) 46%, var(--marke) 54%, transparent 100%); opacity: .8; }
+.steuer { display: grid; gap: 14px; }
+.zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.knopf { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; min-width: 48px; padding: 0 18px; border-radius: 10px; border: 1px solid var(--amethyst);
+  background: var(--amethyst); color: var(--auf-amethyst); font: 500 1rem/1 "Lexend WG", system-ui, sans-serif; cursor: pointer; }
+.knopf--leise { background: transparent; color: var(--amethyst); }
+.knopf svg { width: 18px; height: 18px; fill: currentColor; }
+.tempo { border: 0; padding: 0; margin: 0; }
+.tempo legend { font-size: .9rem; color: var(--leise); margin-bottom: 6px; padding: 0; }
+.tempo .wahl { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--haar); border-radius: 10px; overflow: hidden; }
+.tempo label { position: relative; display: grid; place-items: center; min-height: 48px; cursor: pointer; border-right: 1px solid var(--haar); font-size: .95rem; }
+.tempo label:last-child { border-right: 0; }
+.tempo input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.tempo input:checked + span { font-weight: 600; }
+.tempo label:has(input:checked) { background: var(--flaeche-2); box-shadow: inset 0 -3px 0 var(--amethyst); }
+.tempo label:has(input:focus-visible) { outline: 2px solid var(--amethyst); outline-offset: -4px; }
+.zone { font-size: .92rem; margin: 0; }
+.zone[data-zone="gruen"] { color: var(--zone-gruen); }
+.zone[data-zone="gelb"] { color: var(--zone-gelb); }
+.zone[data-zone="rot"] { color: var(--zone-rot); }
+.zone::before { content: "● "; }
+
+/* ---------- Abschnitte ---------- */
+.abschnitt { padding: 64px 0; border-top: 1px solid var(--haar); }
+.abschnitt--flaeche { background: var(--flaeche); }
+.vorspann { font-size: 1.1rem; color: var(--leise); max-width: 40em; margin-bottom: 1.6em; }
+.raster { display: grid; gap: 16px; }
+@media (min-width: 720px) { .raster { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .raster--3 { grid-template-columns: repeat(3, 1fr); } }
+.karte { background: var(--flaeche); border: 1px solid var(--haar); border-radius: 10px; padding: 22px; }
+.abschnitt--flaeche .karte { background: var(--grund); }
+.karte p:last-child, .karte ul:last-child { margin-bottom: 0; }
+.schritte { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.schritte li { counter-increment: s; }
+.schritte li::before { content: counter(s); display: block; font-size: 2.2rem; font-weight: 300; color: var(--amethyst); line-height: 1; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--haar); }
+.liste { margin: 0; padding-left: 1.1em; }
+.liste li { margin-bottom: .4em; }
+.liste li::marker { color: var(--marke); }
+.forschung { margin-top: 26px; display: grid; gap: 0; border: 1px solid var(--haar); border-radius: 10px; overflow: hidden; }
+@media (min-width: 720px) { .forschung { grid-template-columns: repeat(3, 1fr); } }
+.forschung div { padding: 18px 20px; background: var(--flaeche); border-bottom: 1px solid var(--haar); }
+@media (min-width: 720px) { .forschung div { border-bottom: 0; border-right: 1px solid var(--haar); } .forschung div:last-child { border-right: 0; } }
+.forschung b { display: block; font-size: 1.6rem; font-weight: 600; }
+.forschung span { color: var(--leise); font-size: .95rem; }
+
+/* Galerie */
+.galerie { list-style: none; display: flex; gap: 16px; overflow-x: auto; padding: 4px 4px 18px; margin: 0; scroll-snap-type: x mandatory; }
+.galerie li { flex: none; width: 236px; scroll-snap-align: start; }
+.galerie figure { margin: 0; }
+.galerie img { border-radius: 10px; border: 1px solid var(--haar); }
+.galerie figcaption { font-size: .92rem; color: var(--leise); margin-top: 10px; }
+
+/* Preise */
+.preise { display: grid; gap: 16px; }
+@media (min-width: 900px) { .preise { grid-template-columns: 1fr 1fr; } }
+.preiszeile { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--haar); padding-bottom: 10px; margin-bottom: 14px; }
+.preiszeile h3 { margin: 0; }
+.betrag { font-size: 1.6rem; font-weight: 600; color: var(--amethyst); white-space: nowrap; }
+.kleingedruckt { font-size: .92rem; color: var(--leise); margin-top: 14px; }
+
+/* Fragen */
+.fragen { display: grid; gap: 0; max-width: 820px; border-top: 1px solid var(--haar); }
+.fragen details { border-bottom: 1px solid var(--haar); }
+.fragen summary { cursor: pointer; padding: 12px 0; min-height: 48px; display: flex; align-items: center; gap: 14px; font-weight: 500; list-style: none; }
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::before { content: ""; flex: none; width: 2px; height: 18px; background: var(--marke); }
+.fragen details[open] summary::before { background: var(--orp); }
+.fragen details > div { padding: 0 0 16px 16px; }
+
+.schluss { text-align: center; }
+.schluss .vorspann { margin-inline: auto; }
+
+/* Fuß */
+.fuss { background: var(--fuss); color: var(--fuss-leise); padding: 40px 0 48px; font-size: .95rem; }
+.fuss ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 22px; padding: 0; margin: 0 0 16px; }
+.fuss a { display: inline-flex; align-items: center; min-height: 48px; color: var(--fuss-text); }
+.fuss a:focus-visible { outline-color: var(--fuss-text); }
+.fuss p { margin: 0 0 6px; }
+
+[hidden] { display: none !important; }
+.badge { display: inline-block; width: 220px; }
+.badge img { width: 100%; }

@@ -33,8 +33,9 @@ APPS = ["deepwave", "lesepfadfinder", "mancala", "nennedrei", "wortgenau", "malf
 SCREENS = {  # nur Apps, die bei Google Play stehen
     "deepwave": "telefon-de-01", "lesepfadfinder": "telefon-01_entscheidung",
     "mancala": "telefon-de-2", "nennedrei": "telefon-1_spiel",
+    "malfeld": "telefon-02_reise", "wortgenau": "telefon-de-01",
 }
-SCREENS_EN = {"deepwave": "telefon-en-01", "mancala": "telefon-en-2"}
+SCREENS_EN = {"deepwave": "telefon-en-01", "mancala": "telefon-en-2", "wortgenau": "telefon-en-01"}
 
 # Fundstuecke im Canva-Export (x0, y0, x1, y1), grosszuegig; danach Zuschnitt auf Inhalt.
 FUNDE = {
@@ -77,8 +78,11 @@ def groesstes_stueck(alpha):
 
 
 def badges():
+    """Logo unveraendert, nur den durchsichtigen Leerraum ringsum wegschneiden (Apples
+    App-Store-Badge-SVG hat keinen -- sonst wirkt Google trotz gleicher CSS-Hoehe kleiner)."""
     for sprache in ("de", "en"):
-        shutil.copy(SEITEN / f"deepwave/bilder/google-play-badge-{sprache}.png", OUT / "bilder" / f"google-play-{sprache}.png")
+        quelle = Image.open(SEITEN / f"deepwave/bilder/google-play-badge-{sprache}.png").convert("RGBA")
+        quelle.crop(quelle.getbbox()).save(OUT / "bilder" / f"google-play-{sprache}.png", optimize=True)
 
 
 def fundstuecke():

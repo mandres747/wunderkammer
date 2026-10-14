@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mancala Ukoo – elf Mancala-Spiele für Android</title>
+<meta name="description" content="Mancala ist keine Variante, sondern eine Familie: Kalah, Oware, Bao, Omweso und sieben weitere, mit belegten Regeln. Ohne Werbung, ohne Abo, offline.">
+<link rel="canonical" href="https://mancala.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="de" href="https://mancala.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="en" href="https://mancala.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://mancala.wunderkammer-apps.de/">
+<meta name="theme-color" content="#2A1C12" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2A1C12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="bilder/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="bilder/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wunderkammer-Apps">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Mancala Ukoo – keine Variante, eine Familie">
+<meta property="og:description" content="Elf Spiele der Mancala-Familie unter ihren echten Namen, mit belegten Regeln. Kalah und Oware gratis, ohne Werbung, ohne Abo.">
+<meta property="og:url" content="https://mancala.wunderkammer-apps.de/">
+<meta property="og:image" content="https://mancala.wunderkammer-apps.de/bilder/og-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="„Mancala Ukoo – Keine Variante. Eine Familie.“ neben einem Holzbrett mit Samen in den Mulden; darunter die Namen Kalah, Oware, Bao, Omweso, Congkak.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="schrift/kurale-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="stil.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Mancala Ukoo","operatingSystem":"Android","applicationCategory":"GameApplication","inLanguage":["de","en","es","fr","pt","ar","hi","id","pl","ru"],"url":"https://mancala.wunderkammer-apps.de/","installUrl":"https://play.google.com/store/apps/details?id=de.mancalaukoo.app","image":"https://mancala.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
+</script>
+</head>
+<body>
+<a class="ueberspringen" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="kopf">
+  <div class="huelle">
+    <a class="marke" href="./"><img src="bilder/icon-192.png" alt="" width="36" height="36">Mancala Ukoo</a>
+    <nav aria-label="Seitennavigation">
+      <ul>
+        <li><a href="#so-gehts">So geht’s</a></li>
+        <li><a href="#familie">Die Familie</a></li>
+        <li><a href="#preise">Preise</a></li>
+        <li><a href="#fragen">Fragen</a></li>
+        <li class="immer"><a class="sprache" href="en/" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="held" aria-labelledby="titel">
+  <div class="huelle">
+    <div>
+      <h1 id="titel">Mancala Ukoo</h1>
+      <p class="versprechen">Mancala ist keine Variante, sondern eine Familie. Elf ihrer Spiele unter ihren echten Namen – mit Regeln, die belegt sind, nicht geglättet.</p>
+      <ul class="fakten" aria-label="Auf einen Blick">
+        <li>Kalah und Oware gratis</li>
+        <li>Ohne Werbung</li>
+        <li>Ohne Abo</li>
+        <li>Ohne Konto, offline</li>
+      </ul>
+      <a class="badge" href="https://play.google.com/store/apps/details?id=de.mancalaukoo.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play"></a>
+      <p class="hinweis">Für Android-Handys und -Tablets ab Android 8.</p>
+    </div>
+
+    <div class="probe" data-kalah='{"unten":"unten","oben":"oben","mulde":"Mulde {nr} {seite}, {n} Samen","speicher":"Speicher {seite}, {n} Samen","start":"Probieren Sie Kalah zu zweit: Unten beginnt. Tippen Sie eine grüne Mulde an.","zugUnten":"Unten ist am Zug.","zugOben":"Oben ist am Zug.","nochmal":"Letzter Same im eigenen Speicher: noch einmal ziehen.","fang":"Gefangen: {n} Samen.","siegUnten":"Partie beendet – unten gewinnt {u} zu {o}.","siegOben":"Partie beendet – oben gewinnt {o} zu {u}.","remis":"Partie beendet – unentschieden, {u} zu {o}."}' hidden>
+      <div class="probe-kopf"><span>Oben<b data-punkte-oben>0</b></span><span>Unten<b data-punkte-unten>0</b></span></div>
+      <div class="brett" role="group" aria-label="Kalah-Brett: zwei Reihen mit je sechs Mulden, links der Speicher von oben, rechts der Speicher von unten"></div>
+      <p class="probe-status" aria-live="polite"></p>
+      <button class="mulde-knopf" type="button" data-neu hidden>Neue Partie</button>
+      <p class="probe-leise">Kalah zum Ausprobieren, im Browser, zu zweit. In der App spielen Sie auch gegen den Computer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--band" id="so-gehts" aria-labelledby="h-so">
+  <div class="huelle">
+    <h2 id="h-so">So geht’s</h2>
+    <p class="vorspann">Säen, zählen, fangen: Samen wandern Mulde für Mulde über das Brett. Wie man gewinnt, regelt jedes Spiel anders – meist zählt, wer mehr Samen gesammelt hat; bei Bao, Omweso und Igisoro gewinnt, wer als Letzter noch ziehen kann.</p>
+    <ol class="schritte raster">
+      <li class="karte"><h3>Von null an</h3><p>Die Einführung führt in fünf Schritten am Kalah-Brett durch das erste Spiel – erst zusehen, dann selbst ziehen. Das Übungsbrett ist ein verkürztes Kalah für eine Partie in wenigen Minuten.</p></li>
+      <li class="karte"><h3>Gegen den Computer oder zu zweit</h3><p>Drei Spielstärken, oder zwei Spieler an einem Gerät. Kein Online-Spiel: Am anderen Ende sitzt niemand, und die App behauptet es auch nicht.</p></li>
+      <li class="karte"><h3>Weiter in die Familie</h3><p>Für jedes weitere Spiel zeigt die App, was anders ist als bei Kalah – mit gestellten Aufgaben zum Ausprobieren, bevor die erste Partie beginnt.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="abschnitt" id="familie" aria-labelledby="h-familie">
+  <div class="huelle">
+    <h2 id="h-familie">Die Familie</h2>
+    <p class="vorspann">Zu jedem Spiel steht in der App, woher es stammt, welcher Überlieferung gefolgt wird und auf welche Quelle sich die Regeln stützen. Wo Überlieferungen sich widersprechen, sagt die App, welcher Sie folgen.</p>
+    <ul class="familie">
+      <li class="frei"><span class="name">Kalah</span><span class="region">USA</span><br><span class="preis">gratis</span></li>
+      <li class="frei"><span class="name">Oware</span><span class="region">Ghana, Côte d’Ivoire (Akan)</span><br><span class="preis">gratis</span></li>
+      <li><span class="name">Ayoayo</span><span class="region">Nigeria (Yoruba)</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Bao la kujifunza</span><span class="region">Swahili-Küste: Sansibar, Tansania, Kenia</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Bao</span><span class="region">Swahili-Küste: Sansibar, Tansania, Kenia</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Omweso</span><span class="region">Uganda (Baganda)</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Congkak</span><span class="region">Malaysia, Indonesien</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Sungka</span><span class="region">Philippinen</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Dakon</span><span class="region">Java, Indonesien</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Endodoi</span><span class="region">Kenia, Tansania (Maasai)</span><br><span class="preis">im Kauf</span></li>
+      <li><span class="name">Igisoro</span><span class="region">Ruanda, Burundi</span><br><span class="preis">im Kauf</span></li>
+    </ul>
+    <p class="zusatz">Kalah wurde 1955 in den USA patentiert und ist eine Vereinfachung für westliches Publikum. Die App weist es genau so aus: als Einstieg, nicht als „das“ Mancala. Oware folgt der Turnierfassung Abapa – mit Fütterpflicht: Wer den Gegner nicht mehr ziehen lässt, muss ihm Samen geben. Man gewinnt durch Sammeln, nie durch Aushungern.</p>
+    <p class="zusatz">Samen überdecken sich nie: Wie viele in einer Mulde liegen, ist die wichtigste Information des Spiels – deshalb steht die Zahl auch unter jeder Mulde.</p>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--band" id="weg" aria-labelledby="h-weg">
+  <div class="huelle weg">
+    <div class="scheibe" role="img" aria-label="Holzscheibe mit Jahresringen, in der Mitte ein Samen"></div>
+    <div>
+      <h2 id="h-weg">Ihr Weg durch die Familie</h2>
+      <p>Jeder Sieg gegen eine neue Computerstufe bringt einen Samen – einen je Spiel und Stufe. Mit den Samen wachsen die Jahresringe:</p>
+      <ul class="raenge">
+        <li><b>Samenkorn</b><span>zu Beginn</span></li>
+        <li><b>Keimling</b><span>ab 1 Samen</span></li>
+        <li><b>Setzling</b><span>ab 3 Samen</span></li>
+        <li><b>Strauch</b><span>ab 6 Samen – mit Kalah und Oware allein erreichbar</span></li>
+        <li><b>Baum</b><span>ab 12 Samen</span></li>
+        <li><b>Baobab</b><span>ab 21 Samen</span></li>
+      </ul>
+      <p><strong>Tagesstellung:</strong> Jeden Tag eine Stellung in Kalah oder Oware, ein bester Zug, für alle dieselbe. Ohne Serien, ohne Erinnerungen – spielen Sie, wann Sie wollen. Ein Rang, einmal erreicht, bleibt.</p>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="bilder" aria-labelledby="h-bilder">
+  <div class="huelle">
+    <h2 id="h-bilder">So sieht’s aus</h2>
+    <ul class="galerie" tabindex="0" aria-label="Bildschirmfotos vom Handy">
+      <li><figure><img src="bilder/telefon-de-1-360.webp" srcset="bilder/telefon-de-1-360.webp 360w, bilder/telefon-de-1-720.webp 720w" sizes="230px" width="360" height="780" loading="lazy" decoding="async" alt="Übersicht: oben „Dein Weg“ mit Holzscheibe und Rang Setzling, darunter Tagesstellung, Übungsbrett und Einführung."><figcaption>Weg, Tagesstellung, Einstieg</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-2-360.webp" srcset="bilder/telefon-de-2-360.webp 360w, bilder/telefon-de-2-720.webp 720w" sizes="230px" width="360" height="780" loading="lazy" decoding="async" alt="Kalah-Partie gegen den Computer: Holzbrett mit Samen, grüne Mulden zeigen die möglichen Züge, darunter Gegner und Tempo."><figcaption>Kalah gegen den Computer</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-3-360.webp" srcset="bilder/telefon-de-3-360.webp 360w, bilder/telefon-de-3-720.webp 720w" sizes="230px" width="360" height="780" loading="lazy" decoding="async" alt="„Partie beendet – du gewinnst 27 zu 21.“ Grünes Band: „Neuer Samen: ‚Schwer‘ in Kalah besiegt – 3 von 3. Neuer Rang: Strauch“."><figcaption>Ein neuer Samen, ein neuer Rang</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-4-360.webp" srcset="bilder/telefon-de-4-360.webp 360w, bilder/telefon-de-4-720.webp 720w" sizes="230px" width="360" height="780" loading="lazy" decoding="async" alt="Tagesstellung in Oware: „Du ziehst unten. Ein Zug ist hier deutlich besser als alle anderen – finde ihn.“"><figcaption>Jeden Tag eine Stellung</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-5-360.webp" srcset="bilder/telefon-de-5-360.webp 360w, bilder/telefon-de-5-720.webp 720w" sizes="230px" width="360" height="780" loading="lazy" decoding="async" alt="Liste „Die Familie“: Kalah und Oware kostenfrei, Ayoayo, Bao la kujifunza, Bao, Omweso und Congkak im Kauf, jeweils mit Herkunft und Brettgröße."><figcaption>Die Familie mit Herkunft</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-6-360.webp" srcset="bilder/telefon-de-6-360.webp 360w, bilder/telefon-de-6-720.webp 720w" sizes="230px" width="360" height="780" loading="lazy" decoding="async" alt="Einführung, Schritt 1 von 5: „Tippe eine der grünen Mulden an und sieh zu, was passiert.“"><figcaption>Einführung in fünf Schritten</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--band" id="fuer-wen" aria-labelledby="h-fuerwen">
+  <div class="huelle">
+    <h2 id="h-fuerwen">Für wen?</h2>
+    <div class="raster">
+      <article class="karte"><h3>Neugierige</h3><p>Sie kennen Mancala als Kalah – oder gar nicht. Die Einführung beginnt bei null, und mit Kalah und Oware stehen das Vertraute und das bekannteste traditionelle Spiel gratis nebeneinander.</p></article>
+      <article class="karte"><h3>Brettspiel-Kenner</h3><p>Sie wollen Bao mit seinen zwei Phasen, Omweso auf vier Reihen oder Igisoro aus Ruanda spielen – nach einer genannten Quelle statt nach erfundenen Regeln.</p></article>
+      <article class="karte"><h3>Zu zweit am Tisch</h3><p>Ein Gerät, zwei Spieler: das Handy oder Tablet als Brett zwischen sich, ohne Steine zu suchen und ohne zu verzählen.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="preise" aria-labelledby="h-preise">
+  <div class="huelle">
+    <h2 id="h-preise">Was gratis ist – und was kostet</h2>
+    <p class="vorspann">Kein Banner, kein Video, keine Energie, keine Truhen. Kein Abo. Was kostet, ist ein einziger, einmaliger Kauf.</p>
+    <div class="preise">
+      <div class="karte">
+        <h3>Gratis</h3>
+        <ul>
+          <li>Kalah und Oware – gegen den Computer in drei Stufen oder zu zweit</li>
+          <li>Einführung in fünf Schritten und Übungsbrett</li>
+          <li>Tagesstellung, jeden Tag neu</li>
+          <li>Ihr Weg bis zum Rang Strauch</li>
+          <li>Regeln mit Quellen für alle elf Spiele</li>
+        </ul>
+      </div>
+      <div class="karte">
+        <h3>Alle Varianten freischalten</h3>
+        <p class="betrag">2,99&nbsp;€</p>
+        <p>Einmalig. Öffnet die neun weiteren Spiele: Ayoayo, Bao la kujifunza, Bao, Omweso, Congkak, Sungka, Dakon, Endodoi und Igisoro.</p>
+        <p class="kleingedruckt">Preis in Deutschland, Stand Oktober 2026. Verbindlich ist der Preis, den Google Play beim Kauf anzeigt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--band" id="fragen" aria-labelledby="h-fragen">
+  <div class="huelle">
+    <h2 id="h-fragen">Fragen</h2>
+    <div class="fragen">
+      <details><summary>Brauche ich Internet?</summary><div><p>Nein. Gespielt wird ganz ohne Verbindung. Internet nutzt die App ausschließlich für Käufe über Google Play – außerhalb eines Kaufvorgangs überträgt sie nichts.</p></div></details>
+      <details><summary>Kann ich online gegen andere spielen?</summary><div><p>Nein, und das ist Absicht. Sie spielen gegen den Computer oder zu zweit an einem Gerät. Wir geben keinen Computergegner als Menschen aus.</p></div></details>
+      <details><summary>Gibt es Mancala Ukoo fürs iPhone?</summary><div><p>Bisher nicht. Die App gibt es für Android-Handys und -Tablets.</p></div></details>
+      <details><summary>Sammelt die App Daten?</summary><div><p>Nein. Kein Nutzerkonto, keine Werbung, keine Tracker. Was Sie spielen, bleibt auf Ihrem Gerät. Die Einzelheiten stehen in der <a href="https://wunderkammer-apps.de/mancala-ukoo/">Datenschutzerklärung</a>.</p></div></details>
+      <details><summary>Ich habe ein neues Gerät. Ist mein Kauf weg?</summary><div><p>Nein. Der Kauf hängt an Ihrem Google-Konto. Ist auf dem neuen Gerät dasselbe Konto angemeldet, übernimmt die App ihn beim Start von selbst.</p></div></details>
+      <details><summary>In welchen Sprachen gibt es die App?</summary><div><p>Deutsch, Englisch, Spanisch, Französisch, Portugiesisch, Arabisch, Hindi, Indonesisch, Polnisch und Russisch. Die Übersetzungen sind maschinell erstellt und nicht von Muttersprachlern geprüft – das sagt die App auch selbst.</p></div></details>
+      <details><summary>Eine Regel stimmt nicht mit meiner Überlieferung überein.</summary><div><p>Das kommt vor: Regionale Überlieferungen widersprechen sich teils. Die App nennt zu jedem Spiel ihre Quelle. Wenn Sie eine andere kennen, schreiben Sie uns an <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt schluss" aria-labelledby="h-schluss">
+  <div class="huelle">
+    <h2 id="h-schluss">Elf Spiele, eine Familie.</h2>
+    <p class="vorspann">Kalah und Oware gratis, ohne Werbung, ohne Konto.</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=de.mancalaukoo.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play" loading="lazy"></a>
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="huelle">
+    <ul>
+      <li><a href="https://wunderkammer-apps.de/">Weitere Apps der Wunderkammer</a></li>
+      <li><a href="https://wunderkammer-apps.de/mancala-ukoo/">Datenschutz der App</a></li>
+      <li><a href="https://wunderkammer-apps.de/impressum/">Impressum und Datenschutz der Website</a></li>
+      <li><a href="mailto:kontakt@wunderkammer-apps.de">Kontakt</a></li>
+    </ul>
+    <p>Diese Seite setzt keine Cookies, lädt nichts von fremden Servern und zählt keine Besuche.</p>
+    <p>Google Play und das Google Play-Logo sind Marken von Google LLC.</p>
+  </div>
+</footer>
+<script src="probier.js" defer></script>
+</body>
+</html>

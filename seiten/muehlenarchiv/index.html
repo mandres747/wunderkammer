@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Noch nicht in Produktion (Stand 03.10.2026: nur geschlossener Test 0.3.0). Beim Start: noindex entfernen,
+     Badge-Links unten einschalten, JSON-LD einschalten, Preise und Gratis-Umfang gegen die Produktionsversion prüfen. -->
+<meta name="robots" content="noindex">
+<title>Mühlenarchiv – Mühle-Brettspiel für Android</title>
+<meta name="description" content="Die ganze Mühle-Familie ohne Werbung: sieben Spielarten, Gegner mit Charakter und ein Archiv voller offener Partien. Erscheint bald bei Google Play.">
+<link rel="canonical" href="https://muehlenarchiv.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="de" href="https://muehlenarchiv.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="en" href="https://muehlenarchiv.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://muehlenarchiv.wunderkammer-apps.de/">
+<meta name="theme-color" content="#EFEEE8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#19141C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="bilder/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="bilder/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wunderkammer-Apps">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Mühlenarchiv – die ganze Mühle-Familie">
+<meta property="og:description" content="Sieben Spielarten, Gegner mit Charakter und ein Archiv voller offener Partien – ohne Werbung, ohne Abo, offline.">
+<meta property="og:url" content="https://muehlenarchiv.wunderkammer-apps.de/">
+<meta property="og:image" content="https://muehlenarchiv.wunderkammer-apps.de/bilder/og-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Violett gezeichnetes Mühlebrett mit weißen und schwarzen Steinen, ein Punkt als gestrichelter Kreis; daneben „Mühlenarchiv – Die ganze Mühle-Familie und ein Archiv voller offener Partien“.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="schrift/young-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="stil.css">
+<!-- Beim Start einschalten:
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Mühlenarchiv: Mühle-Brettspiel","operatingSystem":"Android","applicationCategory":"GameApplication","inLanguage":["de","en"],"url":"https://muehlenarchiv.wunderkammer-apps.de/","installUrl":"https://play.google.com/store/apps/details?id=de.muehlenarchiv.app","image":"https://muehlenarchiv.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
+</script>
+-->
+</head>
+<body>
+<a class="ueberspringen" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="kopf">
+  <div class="huelle">
+    <a class="marke" href="./"><img src="bilder/icon-192.png" alt="" width="36" height="36">Mühlenarchiv</a>
+    <nav aria-label="Seitennavigation">
+      <ul>
+        <li><a href="#so-gehts">So geht’s</a></li>
+        <li><a href="#spielarten">Spielarten</a></li>
+        <li><a href="#preise">Preise</a></li>
+        <li><a href="#fragen">Fragen</a></li>
+        <li class="immer"><a class="sprache" href="en/" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="held" aria-labelledby="titel">
+  <div class="huelle">
+    <div>
+      <span class="akte">Archiv der offenen Partien</span>
+      <h1 id="titel">Mühlenarchiv</h1>
+      <p class="versprechen">Mühle ist mehr als ein Spiel – es ist eine Familie. Sieben ihrer Mitglieder, Gegner mit Charakter und ein Archiv voller Partien, die mittendrin abbrechen. Du spielst sie zu Ende.</p>
+      <ul class="fakten" aria-label="Auf einen Blick">
+        <li>Ohne Werbung</li>
+        <li>Ohne Abo</li>
+        <li>Ohne Konto</li>
+        <li>Offline</li>
+      </ul>
+      <p class="bald"><strong>Erscheint bald bei Google Play</strong><span>Mühlenarchiv ist noch im geschlossenen Test. Diese Seite beschreibt die Testversion; bis zum Start kann sich noch etwas ändern.</span></p>
+      <!-- Beim Start statt des Hinweises oben:
+      <a class="badge" href="https://play.google.com/store/apps/details?id=de.muehlenarchiv.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play"></a>
+      -->
+      <p class="hinweis">Für Android ab Version 8. Im Unterricht stimmt die Klasse im Browser ab – mit jedem Gerät, das einen Browser hat, ohne App.</p>
+    </div>
+
+    <div class="blatt fund" data-fund='{"start":"Tippe den Punkt an, an dem Weiß eine Mühle schließt.","richtig":"Mühle auf {p}! Jetzt dürfte Weiß einen schwarzen Stein vom Brett nehmen.","falsch":"{p} schließt keine Mühle. Schau dir die Linien noch einmal an.","hinweis":"Die offene Stelle ist gestrichelt: {p}. Tippe sie an.","weiss":"weißer Stein","schwarz":"schwarzer Stein","offen":"offene Stelle","leer":"frei"}' hidden>
+      <span class="akte">Probefund · Neunermühle</span>
+      <h2>Eine Mühle fehlt</h2>
+      <p class="aufgabe">Weiß ist am Zug und setzt einen Stein. Wo schließt Weiß eine Mühle?</p>
+      <div class="muehle" role="group" aria-label="Neunermühle-Brett mit 24 Punkten">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"></svg>
+      </div>
+      <p class="fund-status" aria-live="polite"></p>
+      <div class="fund-knoepfe">
+        <button class="knopf" type="button" data-loesung>Tipp</button>
+        <button class="knopf" type="button" data-neu>Von vorn</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="abriss">
+
+<section class="abschnitt" id="so-gehts" aria-labelledby="h-so">
+  <div class="huelle">
+    <h2 id="h-so">So geht’s</h2>
+    <p class="vorspann">Im Keller einer alten Stadtbibliothek sammelt Ilse Mühlebretter: geritzte Dachziegel, Fotos aus dem Sand, Kerben im Wirtshausbrett, Turnierprotokolle. Viele Partien brechen mittendrin ab.</p>
+    <ol class="schritte raster">
+      <li class="blatt"><span class="akte">Fund</span><h3>Eine offene Partie</h3><p>Jeder Fund ist eine abgebrochene Stellung mit Aufgabe, etwa „Weiß ist am Zug und gewinnt einen Stein in zwei Zügen“. Über 130 Funde in sieben Kästen, jeder mit genau einer Lösung – vom Programm bewiesen, nicht geraten.</p></li>
+      <li class="blatt"><span class="akte">Spur</span><h3>Z. folgen</h3><p>Zwischen den Funden taucht immer wieder ein rätselhaftes „Z.“ auf. Wer die Kästen löst, kommt der Geschichte näher.</p></li>
+      <li class="blatt"><span class="akte">Partie</span><h3>Selbst spielen</h3><p>Gegen Figuren mit eigenem Stil, zu zweit an einem Gerät oder als Briefpartie über jeden Messenger. Dazu jeden Tag ein neuer Fund des Tages, für alle gleich – ohne Serien, ohne Druck.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--blatt" id="spielarten" aria-labelledby="h-spielarten">
+  <div class="huelle">
+    <h2 id="h-spielarten">Sieben Spielarten, belegt statt geglättet</h2>
+    <p class="vorspann">Zu jeder Spielart stehen Herkunft und Quelle in der App. Ob man mit drei Steinen springen darf, ist in den Quellen strittig – du entscheidest per Schalter.</p>
+    <ul class="register">
+      <li><b>Neunermühle</b><span>Europa</span></li>
+      <li><b>Sechsermühle</b><span>Europa, Mittelalter</span></li>
+      <li><b>Zwölfermühle</b><span>Europa, Nordamerika</span></li>
+      <li><b>Dreiermühle</b><span>Europa, Asien, Antike</span></li>
+      <li><b>Lasker-Mühle</b><span>Deutschland, 1931</span></li>
+      <li><b>Morabaraba</b><span>Südliches Afrika</span></li>
+      <li><b>Achi</b><span>Ghana</span></li>
+    </ul>
+    <div class="raster">
+      <article class="blatt"><span class="akte">Gegner</span><h3>Gegner mit Charakter</h3><p>Statt „leicht, mittel, schwer“: Wirtin Hedwig stellt dir die Wege zu, Förster Anton schlägt, wo er kann, Kantorin Marlene baut Zwickmühlen. In Dreiermühle und Achi wartet der Unbesiegbare, der jede Stellung kennt.</p></article>
+      <article class="blatt"><span class="akte">Spielweise</span><h3>Verkehrte Welt</h3><p>Wer eine Mühle schließen kann, muss es – und hilft damit dem Gegner. Gewonnen hat, wer zuerst nur noch zwei Steine hat.</p></article>
+      <article class="blatt"><span class="akte">Spielweise</span><h3>Geheime Linie</h3><p>Jede Seite legt heimlich eine Linie fest. Schließ deine – oder rate die deines Gegenübers, bevor es so weit ist. Bluffen ausdrücklich erwünscht.</p></article>
+      <article class="blatt"><span class="akte">Werkstatt</span><h3>Mühlenmaschine</h3><p>Baue Roboter aus Regelkarten, ordne sie und sieh zu, welche Regel welchen Zug entscheidet – mit Turnier gegen die Figuren. Ein Einstieg ins Thema Algorithmen, kein Programmierkurs und keine KI: Der Roboter lernt nichts, er tut, was die Karten sagen.</p></article>
+      <article class="blatt"><span class="akte">Kampagne</span><h3>Wirtshausabende</h3><p>Zehn Abende an Z.s altem Brett. Wer gewinnt, hinterlässt eine Spur – ein Punkt bricht aus, eine Verbindung reißt, eine Diagonale wird eingeritzt. Das Brett erinnert sich.</p></article>
+      <article class="blatt"><span class="akte">Kampagne</span><h3>Z.s Rundreise</h3><p>Sieben Besuche auf Z.s alten Wegen, jeder schwerer als der letzte, mit drei Kerzen und einem Talisman vor jedem Besuch. Die Reise endet, wo sie begann: im Archiv.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="bilder" aria-labelledby="h-bilder">
+  <div class="huelle">
+    <h2 id="h-bilder">So sieht’s aus</h2>
+    <ul class="galerie" tabindex="0" aria-label="Bildschirmfotos vom Handy">
+      <li><figure><img src="bilder/telefon-de-1-start-360.webp" srcset="bilder/telefon-de-1-start-360.webp 360w, bilder/telefon-de-1-start-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Startseite: Fund des Tages, das Archiv der offenen Partien mit 136 Funden, laufende Partien und weitere Spielweisen."><figcaption>Die ganze Mühle-Familie</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-2-geheime-linie-360.webp" srcset="bilder/telefon-de-2-geheime-linie-360.webp 360w, bilder/telefon-de-2-geheime-linie-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Geheime Linie gegen Wirtin Hedwig: Auf dem Brett ist eine Linie markiert, darunter der Knopf zum Festlegen."><figcaption>Wähle heimlich deine Linie</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-3-wirtshaus-360.webp" srcset="bilder/telefon-de-3-wirtshaus-360.webp 360w, bilder/telefon-de-3-wirtshaus-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Wirtshausabende: Brett mit ausgebrochenen Punkten und einer eingeritzten Diagonale, darunter die Chronik der Abende."><figcaption>Das Brett erinnert sich</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-4-fund-360.webp" srcset="bilder/telefon-de-4-fund-360.webp 360w, bilder/telefon-de-4-fund-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Fund des Tages „Kreide an der Tafel“: Weiß ist am Zug und gewinnt einen Stein in zwei Zügen."><figcaption>Jeden Tag eine offene Partie</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-5-rundreise-360.webp" srcset="bilder/telefon-de-5-rundreise-360.webp 360w, bilder/telefon-de-5-rundreise-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Z.s Rundreise: Auswahl eines Talismans und die sieben Stationen der Reise mit Kerzen."><figcaption>Sieben Besuche, ein Talisman</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-6-klasse-360.webp" srcset="bilder/telefon-de-6-klasse-360.webp 360w, bilder/telefon-de-6-klasse-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Klasse gegen Computer: QR-Code zum Beitreten, das Brett und „Noch 27 Sekunden zum Abstimmen“."><figcaption>Die ganze Klasse stimmt ab</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-7-maschine-360.webp" srcset="bilder/telefon-de-7-maschine-360.webp 360w, bilder/telefon-de-7-maschine-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Mühlenmaschine: Roboter „Vorsichtige Vera“ gegen Lehrling Paul, darunter die Regelkarten und welche Karte den Zug entschieden hat."><figcaption>Bau dir einen Roboter</figcaption></figure></li>
+      <li><figure><img src="bilder/telefon-de-8-partie-360.webp" srcset="bilder/telefon-de-8-partie-360.webp 360w, bilder/telefon-de-8-partie-720.webp 720w" sizes="240px" width="360" height="640" loading="lazy" decoding="async" alt="Partie Neunermühle gegen Wirtin Hedwig mit den Knöpfen Zurücknehmen, Remis anbieten, Aufgeben sowie Regeln und Herkunft."><figcaption>Gegner mit Charakter</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--blatt" id="fuer-wen" aria-labelledby="h-fuerwen">
+  <div class="huelle">
+    <h2 id="h-fuerwen">Für wen?</h2>
+    <div class="raster">
+      <article class="blatt"><h3>Mühle-Spieler</h3><p>Du kennst die Neunermühle und willst mehr: Zwölfer, Morabaraba, Lasker-Mühle – und Gegner, die nicht alle gleich spielen.</p></article>
+      <article class="blatt"><h3>Rätselfreunde</h3><p>Jeden Tag ein Fund, über 130 im Archiv, jeder mit genau einer Lösung. Dazu eine Geschichte, die mit den Kästen weitergeht.</p></article>
+      <article class="blatt"><h3>Unterricht</h3><p>Klasse gegen Computer: Das Lehrergerät zeigt das Brett am Beamer, alle anderen stimmen im Browser über den nächsten Zug ab – im selben WLAN, ohne App, ohne Konto, ohne Namen. Die Mühlenmaschine zeigt, wie ein Algorithmus Regeln abarbeitet.</p></article>
+      <article class="blatt"><h3>Zu zweit</h3><p>An einem Gerät am Tisch oder als Briefpartie: Jeder Zug wird ein kurzer Code, den du per Messenger schickst. Kein Konto, kein Server.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="preise" aria-labelledby="h-preise">
+  <div class="huelle">
+    <h2 id="h-preise">Was gratis ist – und was kostet</h2>
+    <p class="vorspann">Keine Werbung, kein Abo. Geplant ist ein einziger, einmaliger Kauf.</p>
+    <div class="preise">
+      <div class="blatt">
+        <span class="akte">Gratis</span>
+        <ul>
+          <li>Die Neunermühle mit allen Gegnern – auch als Verkehrte Welt und Geheime Linie</li>
+          <li>Zu zweit an einem Gerät und als Briefpartie</li>
+          <li>Mühlenmaschine und Klasse gegen Computer</li>
+          <li>Zwei Fundkästen und der Fund des Tages</li>
+          <li>Der erste Wirtshausabend und der erste Besuch der Rundreise</li>
+        </ul>
+      </div>
+      <div class="blatt">
+        <span class="akte">Einmalkauf</span>
+        <h3>Das ganze Archiv</h3>
+        <p class="betrag">2,99&nbsp;€</p>
+        <p>Alle sieben Spielarten, alle Fundkästen samt der Partie von Z., der Unbesiegbare, die Wirtshausabende und Z.s Rundreise.</p>
+        <p class="kleingedruckt">Geplanter Preis in Deutschland, Stand Oktober 2026. Die App ist noch nicht erschienen; verbindlich ist der Preis, den Google Play beim Kauf anzeigt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--blatt" id="fragen" aria-labelledby="h-fragen">
+  <div class="huelle">
+    <h2 id="h-fragen">Fragen</h2>
+    <div class="fragen">
+      <details><summary>Wann erscheint Mühlenarchiv?</summary><div><p>Sobald der geschlossene Test bei Google Play abgeschlossen ist. Ein festes Datum gibt es noch nicht.</p></div></details>
+      <details><summary>Brauche ich Internet?</summary><div><p>Nein. Mühlenarchiv läuft offline. Nur Klasse gegen Computer nutzt das eigene WLAN, damit die Klasse abstimmen kann – nichts davon verlässt das WLAN.</p></div></details>
+      <details><summary>Gibt es Mühlenarchiv fürs iPhone?</summary><div><p>Die App gibt es nur für Android. Bei Klasse gegen Computer stimmen aber alle Geräte mit Browser ab, auch iPhones.</p></div></details>
+      <details><summary>Sammelt die App Daten?</summary><div><p>Kein Konto, keine Werbung, keine Datensammlung. Bei der Briefpartie schickst du deine Züge selbst über deinen Messenger; bei uns kommt nichts an. Die Einzelheiten stehen in der <a href="https://wunderkammer-apps.de/muehlenarchiv/">Datenschutzerklärung</a>.</p></div></details>
+      <details><summary>Ich habe ein neues Handy. Ist mein Kauf weg?</summary><div><p>Nein. Käufe hängen an deinem Google-Konto. Auf dem neuen Gerät holt „Kauf wiederherstellen“ ihn zurück.</p></div></details>
+      <details><summary>In welchen Sprachen gibt es die App?</summary><div><p>Deutsch und Englisch.</p></div></details>
+      <details><summary>Eine Regel stimmt nicht mit meiner Quelle überein.</summary><div><p>Schreib uns an <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a> – am besten mit der Quelle, die du kennst.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt schluss" aria-labelledby="h-schluss">
+  <div class="huelle">
+    <span class="akte">Akte noch offen</span>
+    <h2 id="h-schluss">Viele Partien warten auf ihr Ende.</h2>
+    <p class="vorspann">Mühlenarchiv erscheint bald bei Google Play – ohne Werbung, ohne Abo, ohne Konto.</p>
+    <!-- Beim Start einschalten:
+    <a class="badge" href="https://play.google.com/store/apps/details?id=de.muehlenarchiv.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play" loading="lazy"></a>
+    -->
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="huelle">
+    <ul>
+      <li><a href="https://wunderkammer-apps.de/">Weitere Apps der Wunderkammer</a></li>
+      <li><a href="https://wunderkammer-apps.de/muehlenarchiv/">Datenschutz der App</a></li>
+      <li><a href="https://wunderkammer-apps.de/impressum/">Impressum und Datenschutz der Website</a></li>
+      <li><a href="mailto:kontakt@wunderkammer-apps.de">Kontakt</a></li>
+    </ul>
+    <p>Diese Seite setzt keine Cookies, lädt nichts von fremden Servern und zählt keine Besuche.</p>
+    <p>Google Play und das Google Play-Logo sind Marken von Google LLC.</p>
+  </div>
+</footer>
+<script src="probier.js" defer></script>
+</body>
+</html>

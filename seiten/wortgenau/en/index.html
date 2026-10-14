@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wortgenau – RSVP reader for Android</title>
+<meta name="description" content="Read word by word at one fixed point, without eye jumps. Honest about speed, with classics, accessible with no paywall. No ads, no account.">
+<link rel="canonical" href="https://wortgenau.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="de" href="https://wortgenau.wunderkammer-apps.de/">
+<link rel="alternate" hreflang="en" href="https://wortgenau.wunderkammer-apps.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://wortgenau.wunderkammer-apps.de/">
+<meta name="theme-color" content="#F5F2FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1130" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../bilder/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../bilder/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wunderkammer Apps">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:title" content="Wortgenau – read in focus">
+<meta property="og:description" content="Read word by word at one fixed point, without eye jumps – honest about speed, no ads, no account.">
+<meta property="og:url" content="https://wortgenau.wunderkammer-apps.de/en/">
+<meta property="og:image" content="https://wortgenau.wunderkammer-apps.de/bilder/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The word “Fokus” between two violet target marks, the o in red, below it “Wortgenau – Read in focus – word by word, no eye jumps”.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../schrift/lexend.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../stil.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Wortgenau – RSVP Reader","operatingSystem":"Android","applicationCategory":"BookApplication","inLanguage":["de","en"],"url":"https://wortgenau.wunderkammer-apps.de/en/","installUrl":"https://play.google.com/store/apps/details?id=com.wortgenau.app","image":"https://wortgenau.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Wunderkammer Apps","url":"https://wunderkammer-apps.de/"}}
+</script>
+</head>
+<body>
+<a class="ueberspringen" href="#inhalt">Skip to content</a>
+
+<header class="kopf">
+  <div class="huelle">
+    <a class="marke" href="./"><img src="../bilder/icon-192.png" alt="" width="36" height="36">Wortgenau</a>
+    <nav aria-label="Page navigation">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="immer"><a class="sprache" href="../" hreflang="de" lang="de">Deutsch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="held" aria-labelledby="titel">
+  <div class="huelle">
+    <div>
+      <h1 id="titel">Wor<span class="orp">t</span>genau</h1>
+      <p class="versprechen">Text word by word at one fixed point: your eyes stop jumping, you simply keep looking. Honest about speed – no “read three times faster”.</p>
+      <ul class="fakten" aria-label="At a glance">
+        <li>Free to use</li>
+        <li>No account</li>
+        <li>No ads</li>
+        <li>No subscription</li>
+      </ul>
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.wortgenau.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play"></a>
+      <p class="hinweis">For Android 8 or later.</p>
+    </div>
+
+    <div class="leser" data-rsvp data-text="Wortgenau shows you a text word by word at one fixed point. Your eyes no longer have to jump. The red letter marks the recognition point of every word. Long words stay a little longer, and the display pauses briefly after each sentence. Comprehension stays intact up to about 350 words per minute.">
+      <p class="unsichtbar">Sample of the word display with this text: Wortgenau shows you a text word by word at one fixed point. Your eyes no longer have to jump. The red letter marks the recognition point of every word. Long words stay a little longer, and the display pauses briefly after each sentence. Comprehension stays intact up to about 350 words per minute.</p>
+      <div class="anzeige" aria-hidden="true">
+        <span class="marke-o"></span>
+        <p class="wort"><span class="vor">Bo</span><span class="orp">h</span><span class="nach">emia</span></p>
+        <span class="marke-u"></span>
+      </div>
+      <div class="fokuslinie" aria-hidden="true"></div>
+      <div class="steuer" hidden>
+        <div class="zeile">
+          <button class="knopf" type="button" data-start aria-pressed="false" data-los="Try reading" data-pause="Pause">
+            <svg class="spiel" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="halt" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+            <span>Try reading</span>
+          </button>
+          <button class="knopf knopf--leise" type="button" data-neu>Start over</button>
+        </div>
+        <fieldset class="tempo">
+          <legend>Speed in words per minute</legend>
+          <div class="wahl">
+            <label><input type="radio" name="tempo" value="200"><span>200</span></label>
+            <label><input type="radio" name="tempo" value="250" checked><span>250</span></label>
+            <label><input type="radio" name="tempo" value="350"><span>350</span></label>
+            <label><input type="radio" name="tempo" value="450"><span>450</span></label>
+          </div>
+        </fieldset>
+        <p class="zone" data-zone="gruen" aria-live="polite" data-gruen="Comprehension stays intact (up to about 350)" data-gelb="Transition zone (350 to 400)" data-rot="Skim speed – comprehension drops above 400">Comprehension stays intact (up to about 350)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="how" aria-labelledby="h-so">
+  <div class="huelle">
+    <p class="ziel">How it works</p>
+    <h2 id="h-so">Get a text, pick a speed, look</h2>
+    <ol class="schritte raster raster--3">
+      <li class="karte"><h3>Get a text</h3><p>Share an article from another app, paste a URL, open a text file or choose one of the 24 public-domain classics.</p></li>
+      <li class="karte"><h3>Pick a speed</h3><p>The speed slider shows the zones from research. A short baseline test measures your natural pace and recommends a starting speed; a gentle ramp lets you start slower.</p></li>
+      <li class="karte"><h3>Read</h3><p>A swipe to the right replays the sentence – re-reading is part of understanding. Prefer context? Flow mode highlights the current word within the whole paragraph.</p></li>
+    </ol>
+    <div class="forschung">
+      <div><b>up to ≈ 350</b><span>words per minute: comprehension stays intact.</span></div>
+      <div><b>from 400</b><span>words per minute: comprehension measurably drops.</span></div>
+      <div><b>250</b><span>words per minute: the app’s default.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="features" aria-labelledby="h-funktionen">
+  <div class="huelle">
+    <p class="ziel">Features</p>
+    <h2 id="h-funktionen">Fully usable for free</h2>
+    <div class="raster raster--3">
+      <article class="karte"><h3>Free</h3>
+        <ul class="liste">
+          <li>RSVP mode and flow mode with a moving word highlight</li>
+          <li>Share articles from any app or paste a URL</li>
+          <li>Open text and TXT files, keep up to five of your own documents</li>
+          <li>24 public-domain classics in German and English – they don’t count towards the limit</li>
+          <li>Rare words automatically get more time</li>
+          <li>“Detail” and “Skim” presets, speed ramp, eye-break reminder</li>
+          <li>Baseline test and training levels 1 and 2 with comprehension questions</li>
+        </ul>
+      </article>
+      <article class="karte"><h3>Accessible – never behind the paywall</h3>
+        <ul class="liste">
+          <li>OpenDyslexic typeface and maximum-contrast theme</li>
+          <li>TalkBack with custom actions for previous and next sentence</li>
+          <li>Volume-key control</li>
+          <li>Light, dark and sepia themes, adjustable text size</li>
+        </ul>
+      </article>
+      <article class="karte"><h3>Full version – one-time</h3>
+        <ul class="liste">
+          <li>Import EPUB, PDF, DOCX, FB2 and HTML</li>
+          <li>Link an EPUB folder: new books appear automatically, with chapter navigation</li>
+          <li>Unlimited documents</li>
+          <li>Read aloud using your device’s speech engine, with follow-along highlight</li>
+          <li>2 to 3 words per flash, aligned to punctuation</li>
+          <li>Statistics with daily goal, reading streaks and a 12-week overview</li>
+          <li>Training levels 3 to 10, bookmarks, fixation highlighting</li>
+          <li>Backup and restore as a file</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="screens" aria-labelledby="h-bilder">
+  <div class="huelle">
+    <p class="ziel">Screenshots</p>
+    <h2 id="h-bilder">Take a look</h2>
+    <ul class="galerie" tabindex="0" aria-label="Phone screenshots">
+      <li><figure><img src="../bilder/telefon-en-01-360.webp" srcset="../bilder/telefon-en-01-360.webp 360w, ../bilder/telefon-en-01-720.webp 720w" sizes="236px" width="360" height="640" loading="lazy" decoding="async" alt="Reading view from “The Adventures of Sherlock Holmes”: the word “Bohemia” between two target marks, the h in red, below it the speed slider at 250 WPM."><figcaption>One word, one fixed point</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-02-360.webp" srcset="../bilder/telefon-en-02-360.webp 360w, ../bilder/telefon-en-02-720.webp 720w" sizes="236px" width="360" height="640" loading="lazy" decoding="async" alt="Flow mode: the table of contents and opening of a Sherlock Holmes story, the current word is highlighted."><figcaption>Flowing text, word by word</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-03-360.webp" srcset="../bilder/telefon-en-03-360.webp 360w, ../bilder/telefon-en-03-720.webp 720w" sizes="236px" width="360" height="640" loading="lazy" decoding="async" alt="Library with “Alice’s Adventures in Wonderland”, “The Adventures of Sherlock Holmes” and “Pride and Prejudice”, each with word count and progress."><figcaption>Your library</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-04-360.webp" srcset="../bilder/telefon-en-04-360.webp 360w, ../bilder/telefon-en-04-720.webp 720w" sizes="236px" width="360" height="640" loading="lazy" decoding="async" alt="Reading view in the sepia theme with OpenDyslexic: the word “Quadrille” from “Alice’s Adventures in Wonderland”, the d in red."><figcaption>Accessible, with no paywall</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-05-360.webp" srcset="../bilder/telefon-en-05-360.webp 360w, ../bilder/telefon-en-05-720.webp 720w" sizes="236px" width="360" height="640" loading="lazy" decoding="async" alt="Training: baseline test at the top, below it levels from 200 to 400 words per minute; from level 2 on with a lock."><figcaption>Comprehension counts, not just speed</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-06-360.webp" srcset="../bilder/telefon-en-06-360.webp 360w, ../bilder/telefon-en-06-720.webp 720w" sizes="236px" width="360" height="640" loading="lazy" decoding="async" alt="List of classics, including “Pride and Prejudice”, “Dracula”, “Moby-Dick”, “Frankenstein” and “The Great Gatsby”."><figcaption>24 public-domain classics</figcaption></figure></li>
+      <li><figure><img src="../bilder/telefon-en-07-360.webp" srcset="../bilder/telefon-en-07-360.webp 360w, ../bilder/telefon-en-07-720.webp 720w" sizes="236px" width="360" height="640" loading="lazy" decoding="async" alt="Settings: theme System, Light, Dark, Sepia or Contrast, reading font size, font Standard, Serif or OpenDyslexic, preview and words per flash."><figcaption>Choose your theme and type</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt" id="for-whom" aria-labelledby="h-fuerwen">
+  <div class="huelle">
+    <p class="ziel">Who is it for?</p>
+    <h2 id="h-fuerwen">For anyone who wants to read with focus</h2>
+    <div class="raster">
+      <article class="karte"><h3>Article readers</h3><p>Share that long article from your browser and read it in peace – no ads around it, no distractions from the page.</p></article>
+      <article class="karte"><h3>Bookworms</h3><p>Classics for free, your own e-books with the full version: link an EPUB folder, jump to chapters, set bookmarks, build streaks.</p></article>
+      <article class="karte"><h3>People who read better differently</h3><p>OpenDyslexic, sepia, maximum contrast, large text, TalkBack and volume keys are free – they are never behind a paywall.</p></article>
+      <article class="karte"><h3>Anyone curious about their pace</h3><p>The baseline test measures your natural pace. The training levels raise it step by step – you only move on with two correct answers out of three. Levels 1 and 2 are free, levels 3 to 10 come with the full version.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche" id="pricing" aria-labelledby="h-preise">
+  <div class="huelle">
+    <p class="ziel">Pricing</p>
+    <h2 id="h-preise">What’s free – and what costs money</h2>
+    <p class="vorspann">No ads, no subscription. The full version is a one-time purchase; texts you already have are never locked.</p>
+    <div class="preise">
+      <div class="karte">
+        <div class="preiszeile"><h3>Free</h3><span class="betrag">$0</span></div>
+        <p>Reading in both modes, sharing, URL and TXT, all classics, up to five of your own documents, training levels 1 and 2 and everything for accessibility.</p>
+      </div>
+      <div class="karte">
+        <div class="preiszeile"><h3>Full version</h3><span class="betrag">$4.89</span></div>
+        <p>All file formats, unlimited documents, read-aloud, several words per flash, statistics, all training levels, bookmarks and backup.</p>
+        <p class="kleingedruckt">Price in the United States as of October 2026 (in Germany: 4.99&nbsp;€). The price Google Play shows at checkout is binding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="faq" aria-labelledby="h-fragen">
+  <div class="huelle">
+    <p class="ziel">FAQ</p>
+    <h2 id="h-fragen">Frequently asked questions</h2>
+    <div class="fragen">
+      <details><summary>Will I read three times faster?</summary><div><p>No, and Wortgenau doesn’t promise that. Studies show that comprehension stays intact up to about 350 words per minute and measurably drops above 400. Wortgenau shows you these zones right on the speed slider.</p></div></details>
+      <details><summary>Do I need an internet connection?</summary><div><p>Only to fetch an article from a URL and to download a classic from Project Gutenberg the first time you open it. After that the text is on your device and you read offline.</p></div></details>
+      <details><summary>Which files can I open?</summary><div><p>Free: shared text, text from the clipboard, articles via URL and TXT files. With the full version also EPUB, PDF, DOCX, FB2 and HTML.</p></div></details>
+      <details><summary>Is Wortgenau available for iPhone?</summary><div><p>No, Wortgenau is only available for Android.</p></div></details>
+      <details><summary>Does the app collect data?</summary><div><p>No ads, no account, no data collection. Your library stays on your device. The details are in the <a href="https://wunderkammer-apps.de/wortgenau/" hreflang="de">privacy policy</a> (German).</p></div></details>
+      <details><summary>I got a new phone. Is my purchase gone?</summary><div><p>No. The purchase is tied to your Google account; “Restore purchase” brings it back on the new device. With the full version you can also take your library along as a backup file.</p></div></details>
+      <details><summary>Which languages does the app support?</summary><div><p>The interface is available in English and German, and so are the classics.</p></div></details>
+      <details><summary>I have a question or found a bug.</summary><div><p>Write to <a href="mailto:kontakt@wunderkammer-apps.de">kontakt@wunderkammer-apps.de</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--flaeche schluss" aria-labelledby="h-schluss">
+  <div class="huelle">
+    <h2 id="h-schluss">One word. One point. Calm.</h2>
+    <p class="vorspann">Free, no account, no ads.</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=com.wortgenau.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play" loading="lazy"></a>
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="huelle">
+    <ul>
+      <li><a href="https://wunderkammer-apps.de/">More apps from the Wunderkammer</a></li>
+      <li><a href="https://wunderkammer-apps.de/wortgenau/" hreflang="de">App privacy policy (German)</a></li>
+      <li><a href="https://wunderkammer-apps.de/impressum/" hreflang="de">Legal notice and website privacy (German)</a></li>
+      <li><a href="mailto:kontakt@wunderkammer-apps.de">Contact</a></li>
+    </ul>
+    <p>This page sets no cookies, loads nothing from third-party servers and does not count visits.</p>
+    <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </div>
+</footer>
+<script src="../probier.js" defer></script>
+</body>
+</html>
