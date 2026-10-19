@@ -87,6 +87,10 @@ p { margin: 0 0 0.9em; }
 .fakten li:nth-child(even)::before { background: var(--samen-dunkel); }
 .badge { display: inline-block; margin-left: -10px; }
 .badge img { width: 240px; height: auto; }
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.badge--apple { display: inline-flex; align-items: center; margin-left: 0; padding: 15px 0; }
+.badge--apple img { height: 58px; width: auto; }
+.schluss .badges { justify-content: center; }
 .hinweis { font-size: 0.95rem; color: var(--leise); max-width: 32em; margin-top: 6px; }
 
 /* Probierbrett (Leitmotiv): echtes Kalah zu zweit */
