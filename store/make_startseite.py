@@ -34,8 +34,10 @@ SCREENS = {  # nur Apps, die bei Google Play stehen
     "deepwave": "telefon-de-01", "lesepfadfinder": "telefon-01_entscheidung",
     "mancala": "telefon-de-2", "nennedrei": "telefon-1_spiel",
     "malfeld": "telefon-02_reise", "wortgenau": "telefon-de-01",
+    "zunft": "telefon-de-03_spieltisch",
 }
-SCREENS_EN = {"deepwave": "telefon-en-01", "mancala": "telefon-en-2", "wortgenau": "telefon-en-01"}
+SCREENS_EN = {"deepwave": "telefon-en-01", "mancala": "telefon-en-2", "wortgenau": "telefon-en-01",
+              "zunft": "telefon-en-03_spieltisch"}
 
 # Fundstuecke im Canva-Export (x0, y0, x1, y1), grosszuegig; danach Zuschnitt auf Inhalt.
 FUNDE = {
