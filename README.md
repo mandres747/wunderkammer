@@ -3,13 +3,18 @@
 Projektseite der Wunderkammer-Apps: enthaelt ausschliesslich die
 Datenschutzerklaerungen und die Uebersichtsseite.
 
-**Bewusst ohne Quelltext.** Die Apps liegen in eigenen Repositories; dieses hier
-ist oeffentlich, weil GitHub Pages das verlangt. Nur deshalb steht hier kein
-Code und kein Inhalt der Apps.
+**Bewusst ohne Quelltext.** Die Apps liegen in eigenen Repositories; hier steht
+kein Code und kein Inhalt der Apps.
 
-- Uebersicht: https://mandres747.github.io/wunderkammer/
-- Nenne drei: https://mandres747.github.io/wunderkammer/nenne-drei/
-- Mancala Ukoo: https://mandres747.github.io/wunderkammer/mancala-ukoo/
+Veroeffentlicht wird seit dem 03.10.2026 auf dem eigenen Server, nicht mehr
+ueber GitHub Pages - der Inhalt geht per `tar | ssh` aus dem Arbeitsordner
+dorthin (siehe unten). GitHub Pages lieferte bis zum 26.10.2026 unter
+`mandres747.github.io/wunderkammer/` noch einen alten Stand aus und ist seitdem
+abgeschaltet; das Repo musste nur dafuer oeffentlich sein.
+
+- Uebersicht: https://wunderkammer-apps.de/
+- Nenne drei: https://wunderkammer-apps.de/nenne-drei/
+- Mancala Ukoo: https://wunderkammer-apps.de/mancala-ukoo/
 
 Kontakt: kontakt@wunderkammer-apps.de
 

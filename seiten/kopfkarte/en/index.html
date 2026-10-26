@@ -3,9 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Not in production yet (closed testing only, as of 3 Oct 2026): after the Google Play launch remove
-     noindex, switch on the badge and add installUrl to the JSON-LD. -->
-<meta name="robots" content="noindex">
 <title>Kopfkarte – Memory Palace Trainer for Android</title>
 <meta name="description" content="The method of loci, ready to practise: build your own memory palace and remember words, numbers, playing cards and your own lists. No ads, no account.">
 <link rel="canonical" href="https://kopfkarte.wunderkammer-apps.de/en/">
@@ -32,7 +29,7 @@
 <link rel="preload" href="../schrift/alegreya-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../stil.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","name":"Kopfkarte: Memory Palace","operatingSystem":"Android","applicationCategory":"EducationalApplication","inLanguage":["en","de"],"url":"https://kopfkarte.wunderkammer-apps.de/en/","image":"https://kopfkarte.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Kopfkarte: Memory Palace","operatingSystem":"Android","applicationCategory":"EducationalApplication","inLanguage":["en","de"],"url":"https://kopfkarte.wunderkammer-apps.de/en/","installUrl":"https://play.google.com/store/apps/details?id=de.kopfkarte.app","image":"https://kopfkarte.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
 </script>
 </head>
 <body>
@@ -67,10 +64,7 @@
         <li data-n="3">No ads, no subscription</li>
         <li data-n="4">No account</li>
       </ul>
-      <p class="bald" role="status"><strong>Coming soon to Google Play</strong><span>Kopfkarte is currently in closed testing.</span></p>
-      <!-- Switch on once the app is in production:
       <a class="badge" href="https://play.google.com/store/apps/details?id=de.kopfkarte.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play"></a>
-      -->
       <p class="hinweis">For Android phones and tablets, in English and German.</p>
     </div>
 
@@ -195,21 +189,24 @@
       <div class="gradleiste" aria-hidden="true"></div>
     </div>
     <div class="preis">
-      <div class="karte karte--betont">
-        <span class="sc">For the launch</span>
-        <p class="betrag">Free</p>
+      <div class="karte">
+        <span class="sc">Free</span>
+        <p class="betrag">0&nbsp;€</p>
         <ul>
-          <li>All four exercises: words, numbers, your lists, playing cards</li>
-          <li>Unlimited palaces</li>
-          <li>Major System with your own image list</li>
+          <li>One palace</li>
+          <li>The "Words" exercise</li>
           <li>Personal bests, history and suggested levels</li>
         </ul>
       </div>
-      <div class="karte">
-        <span class="sc">Always</span>
-        <h3>No ads, no subscription, no account</h3>
-        <p>Your palaces, lists and results stay on your device.</p>
-        <p class="kleingedruckt">Kopfkarte is still in closed testing and coming soon to Google Play. As of October 2026. The price Google Play shows at checkout is what counts.</p>
+      <div class="karte karte--betont">
+        <span class="sc">Full version – one-time</span>
+        <p class="betrag">2.99&nbsp;€</p>
+        <ul>
+          <li>Unlimited palaces</li>
+          <li>All four exercises: words, numbers, your lists, playing cards</li>
+          <li>Major System with your own image list</li>
+        </ul>
+        <p class="kleingedruckt">No ads, no subscription, no account. Your palaces, lists and results stay on your device. Price in Germany, as of October 2026. The price Google Play shows at checkout is what counts.</p>
       </div>
     </div>
   </div>
@@ -223,7 +220,6 @@
       <div class="gradleiste" aria-hidden="true"></div>
     </div>
     <div class="fragen">
-      <details><summary>When will Kopfkarte be available?</summary><div><p>The app is currently in closed testing on Google Play. As soon as it is available to everyone, the link to the store listing will appear here.</p></div></details>
       <details><summary>Do I need an internet connection?</summary><div><p>No. Palaces, words and exercises are all in the app and on your device.</p></div></details>
       <details><summary>Is there an iPhone version?</summary><div><p>No, Kopfkarte is only available for Android phones and tablets.</p></div></details>
       <details><summary>Does the app collect data?</summary><div><p>No sign-up, no account, no ads, no trackers. Your palaces, lists and results stay on your device. The details are in the <a href="https://wunderkammer-apps.de/kopfkarte/" hreflang="de">privacy policy</a> (in German).</p></div></details>
@@ -238,11 +234,8 @@
 <section class="abschnitt schluss" aria-labelledby="h-schluss">
   <div class="huelle">
     <h2 id="h-schluss">A place you know – one location at a time.</h2>
-    <p class="vorspann">Kopfkarte is coming soon to Google Play.</p>
-    <p class="bald"><strong>Coming soon to Google Play</strong><span>Free for the launch, no ads, no account.</span></p>
-    <!-- Switch on once the app is in production:
+    <p class="vorspann">Kopfkarte is now available on Google Play.</p>
     <a class="badge" href="https://play.google.com/store/apps/details?id=de.kopfkarte.app&amp;hl=en"><img src="../bilder/google-play-badge-en.png" width="646" height="250" alt="Get it on Google Play" loading="lazy"></a>
-    -->
   </div>
 </section>
 </main>

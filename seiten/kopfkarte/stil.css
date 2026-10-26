@@ -103,9 +103,8 @@ h1 { font-size: clamp(3.4rem, 13vw, 6.4rem); letter-spacing: -0.01em; }
   display: grid; place-items: center; font: 700 0.85rem/1 Alegreya, serif; color: var(--tinte); }
 .legende li:first-child::before { background: var(--weg); border-color: var(--weg); color: var(--auf-weg); }
 
-.bald { display: inline-block; border: 1.5px dashed var(--weg); border-radius: 2px; padding: 12px 18px; background: var(--karte); }
-.bald strong { display: block; font-family: Alegreya, serif; font-size: 1.3rem; color: var(--tinte); }
-.bald span { color: var(--leise); font-size: 1rem; }
+.badge { display: inline-block; width: 220px; }
+.badge img { width: 100%; }
 .hinweis { color: var(--leise); font-size: 1rem; margin-top: 14px; max-width: 34em; }
 
 /* Kartenbogen mit Doppelrahmen */

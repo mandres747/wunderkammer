@@ -56,3 +56,16 @@ Englischen (memorise, practise) wie im Store-Eintrag und in der App.
 **Vor dem Produktionsstart zu ändern:** `noindex` raus, Badge-Kommentare einschalten, `installUrl` ins JSON-LD,
 „Erscheint bald“ und den Satz zum geschlossenen Test ersetzen, Preise neu gegen Code und API prüfen
 (vor allem, wenn `ALLES_FREI` auf `false` geht).
+
+## 23.10.2026: Produktionsstart nachgezogen (DE + EN)
+
+Die App ist seit 19.10. in Produktion (Build 4 / 0.2.1, `ALLES_FREI = false`, vgl. `Apps/kopfkarte`-Gedächtnis),
+die Werbeseite stand aber noch auf dem Vor-Produktions-Text. Nutzer hatte den 0-€-„Einführungspreis“ bemängelt.
+Nachgezogen in beiden Sprachen:
+- `noindex`-Meta + Kommentar entfernt, `installUrl` ins JSON-LD.
+- Held + Abschluss: „Erscheint bald/Coming soon“ durch den echten Play-Badge-Link ersetzt; `stil.css` bekam dafür
+  erst eine `.badge`-Breite (220 px) – vorher nur für den jetzt entfernten `.bald`-Hinweis gestylt.
+- Preise: „Zur Einführung 0 €“ (stimmte mit `ALLES_FREI = true` in 0.2.0, nicht mehr mit 0.2.1) ersetzt durch das
+  tatsächliche Modell – Gratis (1 Palast, Begriffe) + Vollversion 2,99 € einmalig, Preis gegen `store/eintrag.md`
+  und die Play-Produktseite `vollversion` abgeglichen.
+- FAQ „Wann erscheint Kopfkarte?“ gestrichen (beantwortet durch den Badge/„gibt es jetzt“).

@@ -3,9 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Noch nicht in Produktion (nur geschlossener Test, Stand 03.10.2026): erst nach dem Start bei Google Play
-     noindex entfernen, Badge einschalten und installUrl im JSON-LD ergänzen. -->
-<meta name="robots" content="noindex">
 <title>Kopfkarte – Gedächtnispalast-Trainer für Android</title>
 <meta name="description" content="Die Loci-Methode zum Üben: Leg deinen eigenen Gedächtnispalast an und merk dir Begriffe, Zahlen, Spielkarten und eigene Listen. Ohne Werbung, ohne Konto.">
 <link rel="canonical" href="https://kopfkarte.wunderkammer-apps.de/">
@@ -32,7 +29,7 @@
 <link rel="preload" href="schrift/alegreya-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="stil.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MobileApplication","name":"Kopfkarte – Gedächtnispalast","operatingSystem":"Android","applicationCategory":"EducationalApplication","inLanguage":["de","en"],"url":"https://kopfkarte.wunderkammer-apps.de/","image":"https://kopfkarte.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Kopfkarte – Gedächtnispalast","operatingSystem":"Android","applicationCategory":"EducationalApplication","inLanguage":["de","en"],"url":"https://kopfkarte.wunderkammer-apps.de/","installUrl":"https://play.google.com/store/apps/details?id=de.kopfkarte.app","image":"https://kopfkarte.wunderkammer-apps.de/bilder/icon-192.png","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Wunderkammer-Apps","url":"https://wunderkammer-apps.de/"}}
 </script>
 </head>
 <body>
@@ -67,10 +64,7 @@
         <li data-n="3">Ohne Werbung, ohne Abo</li>
         <li data-n="4">Ohne Konto</li>
       </ul>
-      <p class="bald" role="status"><strong>Erscheint bald bei Google Play</strong><span>Kopfkarte ist gerade im geschlossenen Test.</span></p>
-      <!-- Badge einschalten, sobald die App in Produktion ist:
       <a class="badge" href="https://play.google.com/store/apps/details?id=de.kopfkarte.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play"></a>
-      -->
       <p class="hinweis">Für Android-Handys und -Tablets, auf Deutsch und Englisch.</p>
     </div>
 
@@ -195,21 +189,24 @@
       <div class="gradleiste" aria-hidden="true"></div>
     </div>
     <div class="preis">
-      <div class="karte karte--betont">
-        <span class="sc">Zur Einführung</span>
+      <div class="karte">
+        <span class="sc">Gratis</span>
         <p class="betrag">0&nbsp;€</p>
         <ul>
-          <li>Alle vier Übungen: Begriffe, Zahlen, eigene Listen, Spielkarten</li>
-          <li>Beliebig viele Paläste</li>
-          <li>Major-System mit eigener Bildliste</li>
+          <li>Ein Palast</li>
+          <li>Die Übung „Begriffe“</li>
           <li>Bestwerte, Verlauf und Stufenvorschlag</li>
         </ul>
       </div>
-      <div class="karte">
-        <span class="sc">Immer</span>
-        <h3>Keine Werbung, kein Abo, kein Konto</h3>
-        <p>Deine Paläste, Listen und Ergebnisse bleiben auf deinem Gerät.</p>
-        <p class="kleingedruckt">Kopfkarte ist noch im geschlossenen Test und erscheint bald bei Google Play. Stand Oktober 2026. Verbindlich ist der Preis, den Google Play beim Kauf anzeigt.</p>
+      <div class="karte karte--betont">
+        <span class="sc">Vollversion – einmalig</span>
+        <p class="betrag">2,99&nbsp;€</p>
+        <ul>
+          <li>Beliebig viele Paläste</li>
+          <li>Alle vier Übungen: Begriffe, Zahlen, eigene Listen, Spielkarten</li>
+          <li>Major-System mit eigener Bildliste</li>
+        </ul>
+        <p class="kleingedruckt">Keine Werbung, kein Abo, kein Konto. Deine Paläste, Listen und Ergebnisse bleiben auf deinem Gerät. Preis in Deutschland, Stand Oktober 2026. Verbindlich ist der Preis, den Google Play beim Kauf anzeigt.</p>
       </div>
     </div>
   </div>
@@ -223,7 +220,6 @@
       <div class="gradleiste" aria-hidden="true"></div>
     </div>
     <div class="fragen">
-      <details><summary>Wann erscheint Kopfkarte?</summary><div><p>Die App ist gerade im geschlossenen Test bei Google Play. Sobald sie für alle erscheint, steht hier der Link zum Store-Eintrag.</p></div></details>
       <details><summary>Brauche ich Internet?</summary><div><p>Nein. Paläste, Begriffe und Übungen stecken in der App und auf deinem Gerät.</p></div></details>
       <details><summary>Gibt es Kopfkarte fürs iPhone?</summary><div><p>Nein, Kopfkarte gibt es nur für Android: für Handys und Tablets.</p></div></details>
       <details><summary>Sammelt die App Daten?</summary><div><p>Keine Registrierung, kein Konto, keine Werbung, keine Tracker. Deine Paläste, Listen und Ergebnisse bleiben auf deinem Gerät. Die Einzelheiten stehen in der <a href="https://wunderkammer-apps.de/kopfkarte/">Datenschutzerklärung</a>.</p></div></details>
@@ -238,11 +234,8 @@
 <section class="abschnitt schluss" aria-labelledby="h-schluss">
   <div class="huelle">
     <h2 id="h-schluss">Ein Ort, den du kennst – Station für Station.</h2>
-    <p class="vorspann">Kopfkarte erscheint bald bei Google Play.</p>
-    <p class="bald"><strong>Erscheint bald bei Google Play</strong><span>Zur Einführung kostenlos, ohne Werbung, ohne Konto.</span></p>
-    <!-- Badge einschalten, sobald die App in Produktion ist:
+    <p class="vorspann">Kopfkarte gibt es jetzt bei Google Play.</p>
     <a class="badge" href="https://play.google.com/store/apps/details?id=de.kopfkarte.app&amp;hl=de"><img src="bilder/google-play-badge-de.png" width="646" height="250" alt="Jetzt bei Google Play" loading="lazy"></a>
-    -->
   </div>
 </section>
 </main>
