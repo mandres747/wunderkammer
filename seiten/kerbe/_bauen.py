@@ -17,7 +17,7 @@ HIER = Path(__file__).resolve().parent
 sys.path.insert(0, str(HIER.parent / "werkzeug"))
 from helfer import webp, woff2  # noqa: E402
 
-APP = Path(r"D:/OneDrive/Apps/Spiele/glut")
+APP = Path(r"D:/Apps/Spiele/glut")
 FONTS = APP / "app/src/main/res/font"
 SCREENS = APP / "docs/screens"
 S = HIER / "schrift"

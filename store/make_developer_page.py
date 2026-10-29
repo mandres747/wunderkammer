@@ -13,7 +13,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 HERE = Path(__file__).resolve().parent
-APPS = HERE.parent.parent  # D:\OneDrive\Apps
+APPS = HERE.parent.parent  # D:\Apps
 
 # Farbwelt: Tinte, Messing, Pergament
 INK = (18, 30, 38)

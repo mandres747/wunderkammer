@@ -12,7 +12,7 @@ HIER = Path(__file__).resolve().parent
 sys.path.insert(0, str(HIER.parent / "werkzeug"))
 from helfer import png, webp, woff2  # noqa: E402
 
-APP = Path(r"D:/OneDrive/Apps/Spiele/mancala-ukoo")
+APP = Path(r"D:/Apps/Spiele/mancala-ukoo")
 STORE = APP / "store"
 
 # Schrift: Kurale (einziger Schnitt, Titel); Fliesstext wie in der App: Systemschrift

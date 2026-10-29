@@ -21,7 +21,7 @@ HIER = Path(__file__).resolve().parent
 sys.path.insert(0, str(HIER.parent / "werkzeug"))
 from helfer import png, webp, woff2  # noqa: E402
 
-APP = Path(r"D:/OneDrive/Apps/eb-player")
+APP = Path(r"D:/Apps/eb-player")
 FONTS = APP / "app/src/main/res/font"
 STORE = APP / "docs/store"
 PROD = "f089522"            # 1.0.4 (9), Produktion live

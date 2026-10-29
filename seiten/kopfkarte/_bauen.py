@@ -12,7 +12,7 @@ HIER = Path(__file__).resolve().parent
 sys.path.insert(0, str(HIER.parent / "werkzeug"))
 from helfer import png, webp, woff2  # noqa: E402
 
-APP = Path(r"D:/OneDrive/Apps/kopfkarte")
+APP = Path(r"D:/Apps/kopfkarte")
 STORE = APP / "store"
 FONTS = APP / "app/src/main/res/font"
 
