@@ -41,3 +41,34 @@ Leerzeichen vor €, keine geraden Anführungszeichen im sichtbaren Text, keine 
 - Probe auf der Seite: 200 Hz links, 200 Hz + 2–12 Hz rechts, Lautstärke 0,12, Ein-/Ausblenden, Stopp nach 60 s;
   Text sagt nur, was man hört, keine Wirkung.
 - Preise „Stand Oktober 2026“ – bei Preisänderung nachziehen.
+
+---
+
+## Nachtrag 17.11.2026 – zwei Läden statt einem
+
+**Anlass:** iOS 1.5.2 ist seit dem 17.11.2026 im App Store (DE und US, Apple-ID 6821700218, belegt
+durch den öffentlichen iTunes-Lookup; die App-Store-Connect-API lieferte an diesem Tag durchgehend
+HTTP 500). Die Seite behauptete bis dahin an zwei Stellen ausdrücklich das Gegenteil.
+
+**Geändert (DE und EN, je acht Stellen):**
+
+| Stelle | vorher | jetzt | Beleg |
+|---|---|---|---|
+| FAQ „Gibt es DeepWave fürs iPhone?“ | „Nein, DeepWave gibt es nur für Android.“ | Ja, seit dem 17.11.2026, iPhone und iPad ab iOS 16, gleicher Preis, gleicher Umfang; Käufe gelten je Laden | iTunes-Lookup: `minimumOsVersion` 16.0, Preis 3,99 € (= Android-Preis) |
+| Titel | „… für Android“ | „… für Android und iOS“ | dito |
+| JSON-LD `operatingSystem` | `Android` | `Android, iOS` | Muster `seiten/malfeld/index.html` |
+| Hinweis unter den Abzeichen | nur Android 8 | Android 8 **sowie** iPhone und iPad ab iOS 16 | `minimumOsVersion` |
+| Abzeichen (Held und Schluss) | nur Google Play | Google Play **und** App Store, in `<div class="badges">` | offizielle Apple-Abzeichen aus `assets/bilder/`, unverändert |
+| Preisfußnote | „den Google Play beim Kauf anzeigt“ | „den Google Play **oder der App Store** beim Kauf anzeigt“ | – |
+| FAQ Internet | „Nur Käufe laufen über Google Play.“ | „… über Google Play **oder den App Store**.“ | – |
+| Fußzeile | nur Google-Marken | dazu Apple, iPhone, iPad, App Store als Marken von Apple Inc. | Wortlaut wie `seiten/malfeld/index.html` |
+
+**Geprüft:** beide Seiten lokal im Browser angesehen (Abzeichen stehen nebeneinander, gleiche Höhe,
+Hinweistext stimmt), Apple-Link gegen den Laden gegengeprüft (`itunes.apple.com/lookup?id=6821700218`
+→ „DeepWave: Binaural Beats“, Michael Andres, 1.5.2).
+
+**Bewusst nicht geändert:** Die US-Preise bleiben mit „Stand Oktober 2026“ stehen – der App-Store-Preis
+ist in den USA nicht gegengeprüft, die ASC-API antwortete nicht. Wer das nachholt, prüft `app-preis`
+und zieht die Zeile nach.
+
+**Nicht veröffentlicht.** Hochladen bleibt beim Nutzer: `seiten/hochladen.sh deepwave`.
