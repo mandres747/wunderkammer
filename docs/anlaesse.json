@@ -32,11 +32,11 @@
       "app": "Mondraute - Almanach",
       "kanal": "pinterest",
       "art": "saison",
-      "was": "Nachschub 3-5 Pins: der letzte terminierte Pin liegt auf dem 01.12., der Saisonschwerpunkt reicht bis 20.12. und die Rauhnaechte bis 06.01.",
-      "faellig": "2026-11-20",
+      "was": "Vier neue Pins liegen fertig (8-11, gebaut 17.11.) - im Pin-Builder hochladen und terminieren; Vorschlag 11./15./19./27.12.",
+      "faellig": "2026-11-17",
       "frist": "2026-12-20",
-      "beleg": "almanach/docs/MARKETING.md §10 (Nachschub-Rhythmus, 3-5 Pins, 4-6 Wochen Vorlauf); docs/LAUNCH.md §3 (Schwerpunkt 20.11.-20.12.); PINTEREST_MAPPE.md (letzter Termin 01.12.)",
-      "entwurf": null,
+      "beleg": "almanach/docs/PINTEREST_MAPPE.md, Abschnitt 'Nachschub 17.11.2026' (je Pin Titel, Beschreibung, Link, Alternativtext, Termin); almanach/docs/MARKETING.md §14",
+      "entwurf": "almanach/docs/PINTEREST_MAPPE.md",
       "erledigt": null
     },
     {
