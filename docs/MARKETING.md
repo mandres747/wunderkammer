@@ -12,6 +12,11 @@ Account zu prüfen und zu bespielen“ – ein Konto braucht laufende Pflege, ke
 | Instagram | – | ggf. später (Nutzer-Entscheidung 07.10. morgens) | nicht angelegt |
 
 ## 2. Prüfen (§11.4, geteilt wie die Werbeseiten-Beobachtung in §11.2)
+- **Landezone (seit 17.11.2026):** Der Befund der Cloud-Routine landete bis dahin nur in einer
+  Cloud-Sitzung – sieben lückenlose Läufe, die niemand sah. Jetzt läuft `werbecheck.py`
+  zusätzlich wöchentlich lokal (geplante Aufgabe, Journal und Laufmarke in `D:\apps-data`), und
+  der Sitzungsstart-Hook meldet offene Anlässe, einen ausgebliebenen Lauf und einen überfälligen
+  `play_scan.py` (§11.2 der Monetarisierung, §3.1 unten).
 - **Cloud, geheimnisfrei, wöchentlich** (Teil der Routine „Wunderkammer Werbeseiten- und
   Bluesky-Beobachtung“, https://claude.ai/code/routines/trig_01WwK1cA55GQhPGwf9gHwfE8): öffentliche Kennzahlen über
   `public.api.bsky.app` ohne Login – Follower-Zahl, Post-Zahl, als Trend. Kein Login nötig, also
@@ -44,6 +49,24 @@ Account zu prüfen und zu bespielen“ – ein Konto braucht laufende Pflege, ke
 - **Cross-Promotion:** jeder App-Start/jede größere Version ist ein natürlicher Anlass; umgekehrt
   verweist die Werbeseite/Entwicklerseite nicht zwingend auf den Account (kein Pflichtbanner),
   erst wenn er eine gewisse Aktivität zeigt.
+
+### 3.1 Anlass-Register und Wächter (seit 17.11.2026)
+„Keine künstliche Kadenz" war richtig – aber ohne Gedächtnis heißt es in der Praxis: kein Post.
+Zwischen dem 08.10. und dem 17.11.2026 gingen fünf Store-Ereignisse und der Start von Mondraute
+(02.11.) vorbei, ohne dass eine Zeile erschien; das Konto stand unverändert bei zwei Posts. Nicht
+weil entschieden wurde, zu schweigen, sondern weil niemand den Anlass vor Augen hatte.
+
+- **`anlaesse.json`** (dieser Ordner) hält jeden Anlass fest: App, Kanal, Art (Start, Version,
+  Saison, Frist), was zu tun ist, ab wann er offen ist, eine Frist, die **Fundstelle** und den
+  Entwurf. Ohne Fundstelle kein Anlass (`_grundgeruest/BEFUNDE.md`).
+- **`_tools/werbecheck.py`** liest es: Teil F im Wochenlauf (montags, geplante Aufgabe) und
+  `--hook` beim Sitzungsstart. Offene Anlässe stehen damit vor der Arbeit auf dem Tisch, nicht
+  in einer Cloud-Sitzung, die niemand öffnet.
+- **Erledigt oder abgewählt – aber entschieden.** Gepostet → `erledigt` mit Datum eintragen.
+  Zu alt, unpassend, bewusst übersprungen → `"entfaellt: Grund"`. Beides beendet die Erinnerung;
+  nur das Liegenlassen nicht.
+- **Entwürfe:** `POSTS_ENTWUERFE.md` (gemessene Zeichenzahl, Bildvorschlag, Alternativtext).
+  Posten bleibt beim Nutzer – der Wächter erinnert, er veröffentlicht nichts (§11.4).
 
 ## 4. Offen
 - Erster Bild-Post (Banner oder Screenshot) – Datei-Upload im Bluesky-Composer hat sich der

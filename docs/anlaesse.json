@@ -1,0 +1,67 @@
+{
+  "stand": "2026-11-17",
+  "zweck": "Anlass-Register der Marketing-Beobachtung. Grundlage ist MARKETING.md §3 (Bespielen nach echten Anlaessen, keine kuenstliche Kadenz) und MONETARISIERUNG.md §11.4. Gelesen von _tools/werbecheck.py (Teil F und --hook): offene Anlaesse erscheinen beim Sitzungsstart, bis sie erledigt oder begruendet abgewaehlt sind. Das Register ERINNERT - es postet nichts. Posten und Pinnen bleibt beim Nutzer (§4.9).",
+  "hinweis": "Felder je Anlass: id (kurz, eindeutig) | app | kanal (bluesky | pinterest | beides) | art (start = App-Start/Store-Freigabe, version = neue Version mit sichtbarer Aenderung, saison = Saisonfenster mit 4-6 Wochen Vorlauf, frist = etwas verfaellt) | was (eine Zeile, was zu tun ist) | faellig (ab diesem Tag gilt der Anlass als offen, ISO) | frist (Tag, an dem es zu spaet ist, oder null) | beleg (Fundstelle - ohne Fundstelle kein Anlass, APP_REGELN/BEFUNDE) | entwurf (Datei mit dem fertigen Entwurf, oder null) | erledigt (null, oder 'JJJJ-MM-TT: was passiert ist', oder 'entfaellt: Grund'). Neue Anlaesse traegt die Sitzung ein, die das Ereignis bemerkt - ein Anlass ohne Eintrag ist ein Anlass, der vergessen wird.",
+  "anlaesse": [
+    {
+      "id": "mondraute-start-bluesky",
+      "app": "Mondraute - Almanach",
+      "kanal": "bluesky",
+      "art": "start",
+      "was": "Startpost: Mondraute steht seit dem 02.11. bei Google Play - bisher keine Ankuendigung auf Bluesky",
+      "faellig": "2026-11-02",
+      "frist": null,
+      "beleg": "almanach/docs/MARKETING.md §13 (Play-Seite am 02.11. oeffentlich mit 200 gegengeprueft); Bluesky-Feed oeffentlich am 17.11. gelesen: letzter Post 08.10.2026",
+      "entwurf": "wunderkammer/docs/POSTS_ENTWUERFE.md",
+      "erledigt": null
+    },
+    {
+      "id": "pin3-tageskarte-terminieren",
+      "app": "Mondraute - Almanach",
+      "kanal": "pinterest",
+      "art": "frist",
+      "was": "Pin 3 (Tageskarte) liegt als Entwurf im Pin-Builder: oeffnen, 'Spaeter veroeffentlichen' einschalten, 08.12.2026 eintragen, 'Planen'",
+      "faellig": "2026-11-08",
+      "frist": "2026-12-02",
+      "beleg": "almanach/docs/PINTEREST_MAPPE.md: 'Ab dem 08.11. liegt der 08.12. im Fenster ... Entwuerfe verfallen nach 30 Tagen (also um den 02.12.)' - Pinterest terminiert hoechstens 30 Tage im Voraus",
+      "entwurf": null,
+      "erledigt": null
+    },
+    {
+      "id": "pinterest-nachschub-rauhnaechte",
+      "app": "Mondraute - Almanach",
+      "kanal": "pinterest",
+      "art": "saison",
+      "was": "Nachschub 3-5 Pins: der letzte terminierte Pin liegt auf dem 01.12., der Saisonschwerpunkt reicht bis 20.12. und die Rauhnaechte bis 06.01.",
+      "faellig": "2026-11-20",
+      "frist": "2026-12-20",
+      "beleg": "almanach/docs/MARKETING.md §10 (Nachschub-Rhythmus, 3-5 Pins, 4-6 Wochen Vorlauf); docs/LAUNCH.md §3 (Schwerpunkt 20.11.-20.12.); PINTEREST_MAPPE.md (letzter Termin 01.12.)",
+      "entwurf": null,
+      "erledigt": null
+    },
+    {
+      "id": "store-starts-nachholen-bluesky",
+      "app": "mehrere",
+      "kanal": "bluesky",
+      "art": "start",
+      "was": "Store-Ereignisse seit dem letzten Post (08.10.) ohne Ankuendigung: Zunft der Sechs Android 1.2 live (27.10.), Mancala Ukoo 0.5.3 live (27.10.), DeepWave 1.5.2 in Produktion (26.10.), Malfeld und Nenne drei auf iOS verfuegbar (19.10.)",
+      "faellig": "2026-10-19",
+      "frist": null,
+      "beleg": "PROJEKTE.md, Zeilen zu Zunft der Sechs, Mancala Ukoo, DeepWave, Malfeld, Nenne drei (Stand 27.10.2026)",
+      "entwurf": "wunderkammer/docs/POSTS_ENTWUERFE.md",
+      "erledigt": null
+    },
+    {
+      "id": "pinterest-nachschub-aussaat",
+      "app": "Mondraute - Almanach",
+      "kanal": "pinterest",
+      "art": "saison",
+      "was": "Saisonfenster Aussaat (Februar-April): 3-5 Pins mit 4-6 Wochen Vorlauf bauen und terminieren",
+      "faellig": "2027-01-05",
+      "frist": "2027-02-01",
+      "beleg": "almanach/docs/MARKETING.md §10 ('naechstes Fenster: Rauhnaechte 21.12.-1.1., danach Aussaat Februar-April'); MONETARISIERUNG.md §4.6 (Vorlauf 4-6 Wochen)",
+      "entwurf": null,
+      "erledigt": null
+    }
+  ]
+}
