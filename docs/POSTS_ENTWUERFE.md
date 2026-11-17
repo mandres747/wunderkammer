@@ -61,19 +61,25 @@ Gartenübersicht und vier Bildtafeln aus alten Kräuterbüchern.“
 
 ## Anlass `store-starts-nachholen-bluesky` – der Herbst in einem Post
 
-Seit dem letzten Post (8.10.) sind fünf Store-Ereignisse vorbeigegangen, ohne
-angekündigt zu werden (Belege in `anlaesse.json`). Fünf einzelne Nachposts wären
-die künstliche Kadenz, die §3 ausdrücklich nicht will – **einer**, der es offen
-als Nachtrag benennt, ist ehrlicher.
+Seit dem letzten Post (8.10.) sind sieben Store-Ereignisse vorbeigegangen, ohne
+angekündigt zu werden (Belege in `anlaesse.json`). Zwei davon sind erst am
+17.11.2026 aufgefallen, beim nachgeholten `play_scan.py` und einem öffentlichen
+iTunes-Lookup: **Zunft der Sechs steht seit dem 5.11. im App Store**, DeepWave
+seit heute. Sieben einzelne Nachposts wären die künstliche Kadenz, die §3
+ausdrücklich nicht will – **einer**, der es offen als Nachtrag benennt, ist
+ehrlicher.
 
 **Entwurf C – ein Nachtrag, als Nachtrag kenntlich**
 
 > Nachgetragen, weil hier zuletzt der Herbst dazwischenkam: Zunft der Sechs und
-> Mancala Ukoo sind bei Google Play, DeepWave in neuer Fassung, Malfeld und Nenne
-> drei jetzt auch für iPhone und iPad. Alles ohne Abo, ohne Werbung, ohne Tracker.
-> Übersicht: https://wunderkammer-apps.de
+> Mancala Ukoo sind bei Google Play, Zunft und DeepWave inzwischen auch im App
+> Store, Malfeld und Nenne drei ebenso. Alles ohne Abo, ohne Werbung, ohne
+> Tracker. Übersicht: https://wunderkammer-apps.de
 
-*278 Zeichen.*
+*276 Zeichen.* **Vor dem Posten prüfen**, ob Zunft der Sechs 1.1 auf iOS wirklich
+beworben werden soll: in dieser Version ist die Werkstatt auf iOS laut
+`PROJEKTE.md` eine Sackgasse, und 1.2 soll den Android-Stand nachziehen. Dann
+lieber nur Android nennen oder auf 1.2 warten.
 
 **Oder weglassen.** Ein drei bis vier Wochen alter Store-Start ist keine Neuigkeit
 mehr; wenn dir der Nachtrag zu bemüht wirkt, ist „entfällt: zu alt, beim nächsten
